@@ -1,0 +1,69 @@
+## Compilação
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+*.exe
+*.dll
+*.pdb
+*.cache
+*.mdb
+*.log
+
+## Arquivos do Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+## Configurações locais
+*.dbmdl
+*.localhistory/
+*.idea/
+
+## Arquivos de backup e temporários
+*.tmp
+*.bak
+*.old
+*.orig
+
+## Configuração de pacotes
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Logs
+*.log
+
+## Arquivos do Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Publicação
+publish/
+*.Publish.xml
+
+## Testes
+TestResults/
+*.trx
+
+## Arquivos de AutoGerados
+Generated\_Files/
+
+## ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+## Rider
+.idea/
+
+## Arquivos ocultos de sistema
+*.swp
+*.DS_Store

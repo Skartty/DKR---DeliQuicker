@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D30A4E46-469C-405C-B7FB-9FE959542DE2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoDKR</RootNamespace>
+    <AssemblyName>ProjetoDKR</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\RoundedTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\RoundedTextBox2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\CadastroConsModel.cs" />
+    <Compile Include="Telas\CadastroCons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroCons.Designer.cs">
+      <DependentUpon>CadastroCons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadastroProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroProd.Designer.cs">
+      <DependentUpon>CadastroProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\IntroAnimada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\IntroAnimada.Designer.cs">
+      <DependentUpon>IntroAnimada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroForn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadastroForn.Designer.cs">
+      <DependentUpon>CadastroForn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserLogin.cs" />
+    <Compile Include="Telas\PesquisaProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\PesquisaProd.Designer.cs">
+      <DependentUpon>PesquisaProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\LoginValidacao.cs" />
+    <Compile Include="Telas\TelaUsuarioCons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaUsuarioCons.Designer.cs">
+      <DependentUpon>TelaUsuarioCons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaUsuarioForn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaUsuarioForn.Designer.cs">
+      <DependentUpon>TelaUsuarioForn.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\CadastroCons.resx">
+      <DependentUpon>CadastroCons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadastroForn.resx">
+      <DependentUpon>CadastroForn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadastroProd.resx">
+      <DependentUpon>CadastroProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\IntroAnimada.resx">
+      <DependentUpon>IntroAnimada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\PesquisaProd.resx">
+      <DependentUpon>PesquisaProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\TelaUsuarioCons.resx">
+      <DependentUpon>TelaUsuarioCons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaUsuarioForn.resx">
+      <DependentUpon>TelaUsuarioForn.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
