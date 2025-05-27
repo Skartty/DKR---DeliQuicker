@@ -9,37 +9,17 @@ namespace ProjetoDKR.Service
         {
         }
 
-        private static bool Autenticar(UserLogin userLogin)
+        public static string Autenticar(UserLogin userLogin)
         {
             if (userLogin != null)
             {
-                if (string.IsNullOrEmpty (userLogin.Senha))
+                if (string.IsNullOrEmpty (userLogin.Senha) || string.IsNullOrEmpty(userLogin.Email))
                 {
-                    Console.WriteLine("É necessario que seja inserida a senha");
-                    return true;
+                    return "É necessario que os dados sejam inseridos corretamente";
                 }
-                if (string.IsNullOrEmpty(userLogin.Email))
-                {
-                    Console.WriteLine("É necessario que seja inserido o email");
-                    return true;
-                }
-                return false;
+                return null;
             }
-            return true;
-        }
-
-        public static string Logar(UserLogin userLogin)
-        {
-            if (!Autenticar(userLogin))
-            {
-                Console.WriteLine("Logado com sucesso");
-                return "Logado com sucesso";
-            }
-            else
-            {
-                Console.WriteLine("Falha ao logar");
-                return "Falha ao logar";
-            }
+            return "Deve Inserir os dados para Login";
         }
     }
 }

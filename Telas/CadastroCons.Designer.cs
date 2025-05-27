@@ -59,6 +59,15 @@
             this.BoxNomeOng = new System.Windows.Forms.TextBox();
             this.btnFornO = new System.Windows.Forms.Button();
             this.btnOngO = new System.Windows.Forms.Button();
+            this.txtNomeOngErro = new System.Windows.Forms.Label();
+            this.txtCNPJOngErro = new System.Windows.Forms.Label();
+            this.txtTelOngErro = new System.Windows.Forms.Label();
+            this.txtEmailOngErro = new System.Windows.Forms.Label();
+            this.txtSenhaOngErro = new System.Windows.Forms.Label();
+            this.txtConfirmOngErro = new System.Windows.Forms.Label();
+            this.txtCEPOngErro = new System.Windows.Forms.Label();
+            this.txtNumOngErro = new System.Windows.Forms.Label();
+            this.txtEndOngErro = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +76,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtVoltarOng);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label16);
@@ -96,6 +106,15 @@
             this.panel1.Controls.Add(this.BoxNomeOng);
             this.panel1.Controls.Add(this.btnFornO);
             this.panel1.Controls.Add(this.btnOngO);
+            this.panel1.Controls.Add(this.txtNomeOngErro);
+            this.panel1.Controls.Add(this.txtCNPJOngErro);
+            this.panel1.Controls.Add(this.txtTelOngErro);
+            this.panel1.Controls.Add(this.txtEmailOngErro);
+            this.panel1.Controls.Add(this.txtSenhaOngErro);
+            this.panel1.Controls.Add(this.txtConfirmOngErro);
+            this.panel1.Controls.Add(this.txtCEPOngErro);
+            this.panel1.Controls.Add(this.txtNumOngErro);
+            this.panel1.Controls.Add(this.txtEndOngErro);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(366, 820);
@@ -103,6 +122,7 @@
             // 
             // txtVoltarOng
             // 
+            this.txtVoltarOng.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtVoltarOng.Image = ((System.Drawing.Image)(resources.GetObject("txtVoltarOng.Image")));
             this.txtVoltarOng.Location = new System.Drawing.Point(21, 27);
             this.txtVoltarOng.Name = "txtVoltarOng";
@@ -130,6 +150,7 @@
             // RBNaoOng
             // 
             this.RBNaoOng.AutoSize = true;
+            this.RBNaoOng.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RBNaoOng.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBNaoOng.Location = new System.Drawing.Point(100, 742);
             this.RBNaoOng.Name = "RBNaoOng";
@@ -142,6 +163,7 @@
             // RBSimOng
             // 
             this.RBSimOng.AutoSize = true;
+            this.RBSimOng.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RBSimOng.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBSimOng.Location = new System.Drawing.Point(24, 742);
             this.RBSimOng.Name = "RBSimOng";
@@ -185,7 +207,7 @@
             // 
             this.txtNumOng.AutoSize = true;
             this.txtNumOng.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumOng.Location = new System.Drawing.Point(248, 555);
+            this.txtNumOng.Location = new System.Drawing.Point(199, 555);
             this.txtNumOng.Name = "txtNumOng";
             this.txtNumOng.Size = new System.Drawing.Size(54, 19);
             this.txtNumOng.TabIndex = 5;
@@ -302,10 +324,10 @@
             this.BoxNumOng.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxNumOng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BoxNumOng.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BoxNumOng.Location = new System.Drawing.Point(252, 577);
+            this.BoxNumOng.Location = new System.Drawing.Point(203, 577);
             this.BoxNumOng.Multiline = true;
             this.BoxNumOng.Name = "BoxNumOng";
-            this.BoxNumOng.Size = new System.Drawing.Size(87, 42);
+            this.BoxNumOng.Size = new System.Drawing.Size(136, 42);
             this.BoxNumOng.TabIndex = 2;
             // 
             // BoxCEPOng
@@ -316,7 +338,7 @@
             this.BoxCEPOng.Location = new System.Drawing.Point(24, 577);
             this.BoxCEPOng.Multiline = true;
             this.BoxCEPOng.Name = "BoxCEPOng";
-            this.BoxCEPOng.Size = new System.Drawing.Size(222, 42);
+            this.BoxCEPOng.Size = new System.Drawing.Size(173, 42);
             this.BoxCEPOng.TabIndex = 2;
             // 
             // BoxConfirmOng
@@ -388,6 +410,7 @@
             // btnFornO
             // 
             this.btnFornO.BackColor = System.Drawing.Color.White;
+            this.btnFornO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFornO.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFornO.Location = new System.Drawing.Point(187, 27);
             this.btnFornO.Name = "btnFornO";
@@ -400,6 +423,7 @@
             // btnOngO
             // 
             this.btnOngO.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnOngO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOngO.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOngO.Location = new System.Drawing.Point(89, 27);
             this.btnOngO.Name = "btnOngO";
@@ -408,6 +432,97 @@
             this.btnOngO.Text = "ONG\'s";
             this.btnOngO.UseVisualStyleBackColor = false;
             // 
+            // txtNomeOngErro
+            // 
+            this.txtNomeOngErro.AutoSize = true;
+            this.txtNomeOngErro.BackColor = System.Drawing.Color.Transparent;
+            this.txtNomeOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtNomeOngErro.Location = new System.Drawing.Point(24, 146);
+            this.txtNomeOngErro.Name = "txtNomeOngErro";
+            this.txtNomeOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtNomeOngErro.TabIndex = 5;
+            // 
+            // txtCNPJOngErro
+            // 
+            this.txtCNPJOngErro.AutoSize = true;
+            this.txtCNPJOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNPJOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtCNPJOngErro.Location = new System.Drawing.Point(24, 224);
+            this.txtCNPJOngErro.Name = "txtCNPJOngErro";
+            this.txtCNPJOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtCNPJOngErro.TabIndex = 5;
+            // 
+            // txtTelOngErro
+            // 
+            this.txtTelOngErro.AutoSize = true;
+            this.txtTelOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtTelOngErro.Location = new System.Drawing.Point(24, 300);
+            this.txtTelOngErro.Name = "txtTelOngErro";
+            this.txtTelOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtTelOngErro.TabIndex = 12;
+            // 
+            // txtEmailOngErro
+            // 
+            this.txtEmailOngErro.AutoSize = true;
+            this.txtEmailOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtEmailOngErro.Location = new System.Drawing.Point(24, 378);
+            this.txtEmailOngErro.Name = "txtEmailOngErro";
+            this.txtEmailOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtEmailOngErro.TabIndex = 6;
+            // 
+            // txtSenhaOngErro
+            // 
+            this.txtSenhaOngErro.AutoSize = true;
+            this.txtSenhaOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtSenhaOngErro.Location = new System.Drawing.Point(24, 456);
+            this.txtSenhaOngErro.Name = "txtSenhaOngErro";
+            this.txtSenhaOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtSenhaOngErro.TabIndex = 6;
+            // 
+            // txtConfirmOngErro
+            // 
+            this.txtConfirmOngErro.AutoSize = true;
+            this.txtConfirmOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtConfirmOngErro.Location = new System.Drawing.Point(24, 537);
+            this.txtConfirmOngErro.Name = "txtConfirmOngErro";
+            this.txtConfirmOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtConfirmOngErro.TabIndex = 6;
+            // 
+            // txtCEPOngErro
+            // 
+            this.txtCEPOngErro.AutoSize = true;
+            this.txtCEPOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCEPOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtCEPOngErro.Location = new System.Drawing.Point(24, 618);
+            this.txtCEPOngErro.Name = "txtCEPOngErro";
+            this.txtCEPOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtCEPOngErro.TabIndex = 6;
+            // 
+            // txtNumOngErro
+            // 
+            this.txtNumOngErro.AutoSize = true;
+            this.txtNumOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtNumOngErro.Location = new System.Drawing.Point(202, 618);
+            this.txtNumOngErro.Name = "txtNumOngErro";
+            this.txtNumOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtNumOngErro.TabIndex = 6;
+            // 
+            // txtEndOngErro
+            // 
+            this.txtEndOngErro.AutoSize = true;
+            this.txtEndOngErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndOngErro.ForeColor = System.Drawing.Color.Red;
+            this.txtEndOngErro.Location = new System.Drawing.Point(24, 698);
+            this.txtEndOngErro.Name = "txtEndOngErro";
+            this.txtEndOngErro.Size = new System.Drawing.Size(0, 17);
+            this.txtEndOngErro.TabIndex = 6;
+            // 
             // CadastroCons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +530,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(390, 844);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CadastroCons";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroCons";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -456,5 +575,14 @@
         private System.Windows.Forms.Button btnOngO;
         private System.Windows.Forms.Label txtVoltarOng;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label txtCNPJOngErro;
+        private System.Windows.Forms.Label txtNomeOngErro;
+        private System.Windows.Forms.Label txtEndOngErro;
+        private System.Windows.Forms.Label txtTelOngErro;
+        private System.Windows.Forms.Label txtEmailOngErro;
+        private System.Windows.Forms.Label txtSenhaOngErro;
+        private System.Windows.Forms.Label txtConfirmOngErro;
+        private System.Windows.Forms.Label txtCEPOngErro;
+        private System.Windows.Forms.Label txtNumOngErro;
     }
 }

@@ -176,7 +176,11 @@
             this.Controls.Add(this.BoxSenha);
             this.Controls.Add(this.BoxLogin);
             this.Controls.Add(this.txtLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TelaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaLogin";
             this.ResumeLayout(false);
             this.PerformLayout();
