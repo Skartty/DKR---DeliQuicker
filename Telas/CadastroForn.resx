@@ -120,10 +120,20 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtVoltarForn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAH9JREFUSEvtkssJgDAQBUe0D8GjFViA5XjRBkRrsFx/7CESF0FM4m0H3mmXeUsI
-        GAFkQAHkehCLiAdgBxY9jMGJV2ADSr0QihbXeiEUE99w4gOYgC4yrS+X7ybiVBHfRe9dPj9c8jWNL//1
-        zQUreEUXVHohFlcg8lEPUyJFRhpOecJGiBZ2s+4AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAuhJREFUWEftln9IE2EYx2/vHRjNbHlnKradoTHth6mbM6V0FLgdjBBJ+h1pVCQJ
+        hdIfJgTZJIUoDFyBQVCShGJgDGuJZCJRZP6jGSQFmjZ1itMGtbwntibocffSnfuvPv8M7vlwd9/ned93
+        RxD/UY4q9EsKri9nyUGC66tCdbwgVg18JnBcdJSwGAKVH42OAjCAwRC/VlhUCtlaE7EF5lloa0jYJJGK
+        dN1W74AFFm7amXgJRzbkyNPIIphigEsmIpa1dYXzuUt9GNwMFBcHRyLmyIacHYiugIn1ICwsA3nf01Uw
+        hnVkgzxvtXf4YWYekwR5+tmmn0P0bLjaHICccqV0e/t0w5iVTc50pfTNvdEOEARBCYtKQT6nYXyyW9+K
+        eTDyOTOnpnv1DzCObFTwJN8/02Gsx90U2vbAXHtGDc6RQ3Cm8JADd5PprMT8Qo4VvjqMpRKObNDJdI0G
+        Gi3QczEjXyINqjUl0OCwwrPKtGwJRzZki23bTr7OArf2b46VSEN2FG41Qb0Favcl0JiVLwtyxGY6wlcX
+        wJU/DxW7KfWlKOcUf7lgaQ+LOfIpS0yMWziYjz0YbiQlab2H8rCOUqhPNtOJxepgqkAisVTkaGH2mcVw
+        Jw9BNnHJGVBnhcrc2I1SM2+2peRAvRUumDWacL+AqlTPrAOHBZzn0/ZKnFbo3G7dBrjLwaOS7bkSzuoI
+        7PPJe7vKJToQTMw3c+BxZJ0O13ZbAbTn8Qsu43Vce6EtD350Zl3FOUpBvg7Dt4mXqS2YdMjvNHjcPan3
+        Jbq0KqiJTv0Lb69uEDNfatKlfzX7WvsO85KKQTMDbAP/gfFh0qHpfp3j1yDtxTiKQTBEX4Jx7FeKCj7S
+        VTAahXMUQ405Iw+AmwazOTgCsUVGjT9XH4NpBndgKYZsrI7Qw7wOrlXEsxIzJh/b1enwnQV7lVrqT0ox
+        KrOZWAP+TLDb2cCnsRiqsuKYSPAbobwkLkZYDBdiyYX8jfMP8BvQmgArc/HoywAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

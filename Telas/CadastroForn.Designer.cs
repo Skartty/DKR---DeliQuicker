@@ -66,6 +66,16 @@
             this.btnOngF = new System.Windows.Forms.Button();
             this.CBCategoria = new System.Windows.Forms.ComboBox();
             this.BoxFundo = new System.Windows.Forms.TextBox();
+            this.txtCNPJFornErro = new System.Windows.Forms.Label();
+            this.txtRazaoFornErro = new System.Windows.Forms.Label();
+            this.txtEmailFornErro = new System.Windows.Forms.Label();
+            this.txtSenhaFornErro = new System.Windows.Forms.Label();
+            this.txtConfirmFornErro = new System.Windows.Forms.Label();
+            this.txtTelFornErro = new System.Windows.Forms.Label();
+            this.txtCEPFornErro = new System.Windows.Forms.Label();
+            this.txtNumFornErro = new System.Windows.Forms.Label();
+            this.txtEndFornErro = new System.Windows.Forms.Label();
+            this.txtCategoriaErro = new System.Windows.Forms.Label();
             this.roundedTextBox11 = new RoundedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +120,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtVoltarForn);
             this.panel1.Controls.Add(this.btnFornF);
             this.panel1.Controls.Add(this.label16);
@@ -143,6 +154,16 @@
             this.panel1.Controls.Add(this.btnOngF);
             this.panel1.Controls.Add(this.CBCategoria);
             this.panel1.Controls.Add(this.BoxFundo);
+            this.panel1.Controls.Add(this.txtCNPJFornErro);
+            this.panel1.Controls.Add(this.txtRazaoFornErro);
+            this.panel1.Controls.Add(this.txtEmailFornErro);
+            this.panel1.Controls.Add(this.txtSenhaFornErro);
+            this.panel1.Controls.Add(this.txtConfirmFornErro);
+            this.panel1.Controls.Add(this.txtTelFornErro);
+            this.panel1.Controls.Add(this.txtCEPFornErro);
+            this.panel1.Controls.Add(this.txtNumFornErro);
+            this.panel1.Controls.Add(this.txtEndFornErro);
+            this.panel1.Controls.Add(this.txtCategoriaErro);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(366, 820);
@@ -150,6 +171,7 @@
             // 
             // txtVoltarForn
             // 
+            this.txtVoltarForn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtVoltarForn.Image = ((System.Drawing.Image)(resources.GetObject("txtVoltarForn.Image")));
             this.txtVoltarForn.Location = new System.Drawing.Point(21, 27);
             this.txtVoltarForn.Name = "txtVoltarForn";
@@ -160,6 +182,7 @@
             // btnFornF
             // 
             this.btnFornF.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnFornF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFornF.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFornF.Location = new System.Drawing.Point(187, 27);
             this.btnFornF.Name = "btnFornF";
@@ -171,7 +194,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(21, 1003);
+            this.label16.Location = new System.Drawing.Point(23, 995);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(0, 13);
             this.label16.TabIndex = 9;
@@ -179,8 +202,9 @@
             // RBNaoForn
             // 
             this.RBNaoForn.AutoSize = true;
+            this.RBNaoForn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RBNaoForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBNaoForn.Location = new System.Drawing.Point(100, 898);
+            this.RBNaoForn.Location = new System.Drawing.Point(100, 897);
             this.RBNaoForn.Name = "RBNaoForn";
             this.RBNaoForn.Size = new System.Drawing.Size(46, 21);
             this.RBNaoForn.TabIndex = 8;
@@ -191,8 +215,9 @@
             // RBSimForn
             // 
             this.RBSimForn.AutoSize = true;
+            this.RBSimForn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RBSimForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBSimForn.Location = new System.Drawing.Point(24, 898);
+            this.RBSimForn.Location = new System.Drawing.Point(24, 897);
             this.RBSimForn.Name = "RBSimForn";
             this.RBSimForn.Size = new System.Drawing.Size(46, 21);
             this.RBSimForn.TabIndex = 7;
@@ -204,7 +229,7 @@
             // 
             this.txtPossuiForn.AutoSize = true;
             this.txtPossuiForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPossuiForn.Location = new System.Drawing.Point(20, 875);
+            this.txtPossuiForn.Location = new System.Drawing.Point(20, 874);
             this.txtPossuiForn.Name = "txtPossuiForn";
             this.txtPossuiForn.Size = new System.Drawing.Size(244, 19);
             this.txtPossuiForn.TabIndex = 5;
@@ -214,7 +239,7 @@
             // 
             this.txtCategoria.AutoSize = true;
             this.txtCategoria.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoria.Location = new System.Drawing.Point(20, 797);
+            this.txtCategoria.Location = new System.Drawing.Point(20, 796);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(66, 19);
             this.txtCategoria.TabIndex = 5;
@@ -224,7 +249,7 @@
             // 
             this.txtEndForn.AutoSize = true;
             this.txtEndForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndForn.Location = new System.Drawing.Point(20, 714);
+            this.txtEndForn.Location = new System.Drawing.Point(20, 715);
             this.txtEndForn.Name = "txtEndForn";
             this.txtEndForn.Size = new System.Drawing.Size(63, 19);
             this.txtEndForn.TabIndex = 5;
@@ -234,7 +259,7 @@
             // 
             this.txtComplForn.AutoSize = true;
             this.txtComplForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComplForn.Location = new System.Drawing.Point(208, 714);
+            this.txtComplForn.Location = new System.Drawing.Point(208, 715);
             this.txtComplForn.Name = "txtComplForn";
             this.txtComplForn.Size = new System.Drawing.Size(88, 19);
             this.txtComplForn.TabIndex = 5;
@@ -244,7 +269,7 @@
             // 
             this.txtNumForn.AutoSize = true;
             this.txtNumForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumForn.Location = new System.Drawing.Point(248, 634);
+            this.txtNumForn.Location = new System.Drawing.Point(200, 634);
             this.txtNumForn.Name = "txtNumForn";
             this.txtNumForn.Size = new System.Drawing.Size(54, 19);
             this.txtNumForn.TabIndex = 5;
@@ -336,19 +361,20 @@
             this.btnEntrarForn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrarForn.Font = new System.Drawing.Font("Zen Maru Gothic Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrarForn.ForeColor = System.Drawing.Color.White;
-            this.btnEntrarForn.Location = new System.Drawing.Point(20, 940);
+            this.btnEntrarForn.Location = new System.Drawing.Point(20, 939);
             this.btnEntrarForn.Name = "btnEntrarForn";
             this.btnEntrarForn.Size = new System.Drawing.Size(325, 53);
             this.btnEntrarForn.TabIndex = 4;
             this.btnEntrarForn.Text = "Entrar";
             this.btnEntrarForn.UseVisualStyleBackColor = false;
+            this.btnEntrarForn.Click += new System.EventHandler(this.btnEntrarForn_Click);
             // 
             // BoxEndForn
             // 
             this.BoxEndForn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxEndForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BoxEndForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BoxEndForn.Location = new System.Drawing.Point(24, 736);
+            this.BoxEndForn.Location = new System.Drawing.Point(24, 737);
             this.BoxEndForn.Multiline = true;
             this.BoxEndForn.Name = "BoxEndForn";
             this.BoxEndForn.Size = new System.Drawing.Size(182, 42);
@@ -359,7 +385,7 @@
             this.BoxComplForn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxComplForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BoxComplForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BoxComplForn.Location = new System.Drawing.Point(212, 736);
+            this.BoxComplForn.Location = new System.Drawing.Point(212, 737);
             this.BoxComplForn.Multiline = true;
             this.BoxComplForn.Name = "BoxComplForn";
             this.BoxComplForn.Size = new System.Drawing.Size(127, 42);
@@ -370,10 +396,10 @@
             this.BoxNumForn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxNumForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BoxNumForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BoxNumForn.Location = new System.Drawing.Point(252, 656);
+            this.BoxNumForn.Location = new System.Drawing.Point(203, 656);
             this.BoxNumForn.Multiline = true;
             this.BoxNumForn.Name = "BoxNumForn";
-            this.BoxNumForn.Size = new System.Drawing.Size(87, 42);
+            this.BoxNumForn.Size = new System.Drawing.Size(136, 42);
             this.BoxNumForn.TabIndex = 2;
             // 
             // BoxCEPForn
@@ -384,7 +410,7 @@
             this.BoxCEPForn.Location = new System.Drawing.Point(24, 656);
             this.BoxCEPForn.Multiline = true;
             this.BoxCEPForn.Name = "BoxCEPForn";
-            this.BoxCEPForn.Size = new System.Drawing.Size(222, 42);
+            this.BoxCEPForn.Size = new System.Drawing.Size(173, 42);
             this.BoxCEPForn.TabIndex = 2;
             // 
             // BoxTelForn
@@ -466,6 +492,7 @@
             // 
             // btnOngF
             // 
+            this.btnOngF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOngF.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOngF.Location = new System.Drawing.Point(89, 27);
             this.btnOngF.Name = "btnOngF";
@@ -490,7 +517,7 @@
             "Mercado",
             "Restaurante",
             "Hortifrutti"});
-            this.CBCategoria.Location = new System.Drawing.Point(26, 826);
+            this.CBCategoria.Location = new System.Drawing.Point(26, 825);
             this.CBCategoria.Name = "CBCategoria";
             this.CBCategoria.Size = new System.Drawing.Size(310, 27);
             this.CBCategoria.TabIndex = 6;
@@ -502,11 +529,112 @@
             this.BoxFundo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BoxFundo.Enabled = false;
             this.BoxFundo.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BoxFundo.Location = new System.Drawing.Point(24, 819);
+            this.BoxFundo.Location = new System.Drawing.Point(24, 818);
             this.BoxFundo.Multiline = true;
             this.BoxFundo.Name = "BoxFundo";
             this.BoxFundo.Size = new System.Drawing.Size(315, 42);
             this.BoxFundo.TabIndex = 2;
+            // 
+            // txtCNPJFornErro
+            // 
+            this.txtCNPJFornErro.AutoSize = true;
+            this.txtCNPJFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNPJFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtCNPJFornErro.Location = new System.Drawing.Point(23, 146);
+            this.txtCNPJFornErro.Name = "txtCNPJFornErro";
+            this.txtCNPJFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtCNPJFornErro.TabIndex = 5;
+            // 
+            // txtRazaoFornErro
+            // 
+            this.txtRazaoFornErro.AutoSize = true;
+            this.txtRazaoFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazaoFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtRazaoFornErro.Location = new System.Drawing.Point(23, 224);
+            this.txtRazaoFornErro.Name = "txtRazaoFornErro";
+            this.txtRazaoFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtRazaoFornErro.TabIndex = 13;
+            // 
+            // txtEmailFornErro
+            // 
+            this.txtEmailFornErro.AutoSize = true;
+            this.txtEmailFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtEmailFornErro.Location = new System.Drawing.Point(23, 377);
+            this.txtEmailFornErro.Name = "txtEmailFornErro";
+            this.txtEmailFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtEmailFornErro.TabIndex = 15;
+            // 
+            // txtSenhaFornErro
+            // 
+            this.txtSenhaFornErro.AutoSize = true;
+            this.txtSenhaFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtSenhaFornErro.Location = new System.Drawing.Point(23, 456);
+            this.txtSenhaFornErro.Name = "txtSenhaFornErro";
+            this.txtSenhaFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtSenhaFornErro.TabIndex = 16;
+            // 
+            // txtConfirmFornErro
+            // 
+            this.txtConfirmFornErro.AutoSize = true;
+            this.txtConfirmFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtConfirmFornErro.Location = new System.Drawing.Point(23, 535);
+            this.txtConfirmFornErro.Name = "txtConfirmFornErro";
+            this.txtConfirmFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtConfirmFornErro.TabIndex = 17;
+            // 
+            // txtTelFornErro
+            // 
+            this.txtTelFornErro.AutoSize = true;
+            this.txtTelFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtTelFornErro.Location = new System.Drawing.Point(23, 613);
+            this.txtTelFornErro.Name = "txtTelFornErro";
+            this.txtTelFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtTelFornErro.TabIndex = 18;
+            // 
+            // txtCEPFornErro
+            // 
+            this.txtCEPFornErro.AutoSize = true;
+            this.txtCEPFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCEPFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtCEPFornErro.Location = new System.Drawing.Point(23, 697);
+            this.txtCEPFornErro.Name = "txtCEPFornErro";
+            this.txtCEPFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtCEPFornErro.TabIndex = 19;
+            // 
+            // txtNumFornErro
+            // 
+            this.txtNumFornErro.AutoSize = true;
+            this.txtNumFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtNumFornErro.Location = new System.Drawing.Point(204, 699);
+            this.txtNumFornErro.Name = "txtNumFornErro";
+            this.txtNumFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtNumFornErro.TabIndex = 20;
+            // 
+            // txtEndFornErro
+            // 
+            this.txtEndFornErro.AutoSize = true;
+            this.txtEndFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndFornErro.ForeColor = System.Drawing.Color.Red;
+            this.txtEndFornErro.Location = new System.Drawing.Point(23, 777);
+            this.txtEndFornErro.Name = "txtEndFornErro";
+            this.txtEndFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtEndFornErro.TabIndex = 21;
+            // 
+            // txtCategoriaErro
+            // 
+            this.txtCategoriaErro.AutoSize = true;
+            this.txtCategoriaErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoriaErro.ForeColor = System.Drawing.Color.Red;
+            this.txtCategoriaErro.Location = new System.Drawing.Point(23, 857);
+            this.txtCategoriaErro.Name = "txtCategoriaErro";
+            this.txtCategoriaErro.Size = new System.Drawing.Size(14, 17);
+            this.txtCategoriaErro.TabIndex = 22;
+            this.txtCategoriaErro.Text = "*";
             // 
             // roundedTextBox11
             // 
@@ -525,7 +653,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(390, 844);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CadastroForn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastro";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -572,5 +704,15 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnFornF;
         private System.Windows.Forms.Label txtVoltarForn;
+        private System.Windows.Forms.Label txtCNPJFornErro;
+        private System.Windows.Forms.Label txtRazaoFornErro;
+        private System.Windows.Forms.Label txtEmailFornErro;
+        private System.Windows.Forms.Label txtSenhaFornErro;
+        private System.Windows.Forms.Label txtConfirmFornErro;
+        private System.Windows.Forms.Label txtTelFornErro;
+        private System.Windows.Forms.Label txtCEPFornErro;
+        private System.Windows.Forms.Label txtNumFornErro;
+        private System.Windows.Forms.Label txtEndFornErro;
+        private System.Windows.Forms.Label txtCategoriaErro;
     }
 }

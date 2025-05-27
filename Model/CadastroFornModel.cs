@@ -1,20 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ProjetoDKR.Model
 {
-    public class CadastroConsModel
+    public class CadastroFornModel
     {
-        public CadastroConsModel(string nome, string cnpj, string telefone, string email,
-            string senha, string confirmSenha, string cep, string numero, string endereco,
-            string complemento, bool entrega)
+        public CadastroFornModel(string cnpj, string razaoSocial, string nomeFantasia,
+            string email, string senha, string confirmSenha, string telefone, string cep,
+            string numero, string endereco, string complemento, bool entrega)
         {
-            Nome = nome;
             CNPJ = cnpj;
-            Telefone = telefone;
+            RazaoSocial = razaoSocial;
+            NomeFantasia = nomeFantasia;
             Email = email;
             Senha = senha;
             ConfirmSenha = confirmSenha;
+            Telefone = telefone;
             CEP = cep;
             Numero = numero;
             Endereco = endereco;
@@ -22,12 +26,13 @@ namespace ProjetoDKR.Model
             Entrega = entrega;
         }
 
-        public string Nome { get; set; }
         public string CNPJ { get; set; }
-        public string Telefone { get; set; }
+        public string RazaoSocial { get; set; }
+        public string NomeFantasia { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
         public string ConfirmSenha { get; set; }
+        public string Telefone { get; set; }
         public string CEP { get; set; }
         public string Numero { get; set; }
         public string Endereco { get; set; }
@@ -38,18 +43,13 @@ namespace ProjetoDKR.Model
         {
             var erros = new List<string>();
 
-            if (string.IsNullOrWhiteSpace(Nome)) 
-                erros.Add("Nome não preenchido");
-
-            if (string.IsNullOrWhiteSpace(CNPJ)) 
+            if (string.IsNullOrWhiteSpace(CNPJ))
                 erros.Add("CNPJ não preenchido");
             else if (!CNPJ.All(char.IsDigit))
                 erros.Add("CNPJ deve conter apenas números");
 
-            if (string.IsNullOrWhiteSpace(Telefone))
-                erros.Add("Telefone não preenchido");
-            else if (!Telefone.All(char.IsDigit))
-                erros.Add("Telefone deve conter apenas números");
+            if (string.IsNullOrWhiteSpace(RazaoSocial))
+                erros.Add("Razão Social não preenchida");
 
             if (string.IsNullOrWhiteSpace(Email))
                 erros.Add("Email não preenchido");
@@ -62,6 +62,11 @@ namespace ProjetoDKR.Model
 
             if (Senha != ConfirmSenha)
                 erros.Add("Senha e confirmação não coincidem");
+
+            if (string.IsNullOrWhiteSpace(Telefone))
+                erros.Add("Telefone não preenchido");
+            else if (!Telefone.All(char.IsDigit))
+                erros.Add("Telefone deve conter apenas números");
 
             if (string.IsNullOrWhiteSpace(CEP))
                 erros.Add("CEP não preenchido");
@@ -80,5 +85,5 @@ namespace ProjetoDKR.Model
         }
 
     }
-
 }
+

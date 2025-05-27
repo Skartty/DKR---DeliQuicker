@@ -53,7 +53,15 @@
     <Compile Include="Components\RoundedTextBox2.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Entidades\Login.cs" />
+    <Compile Include="Entidades\PerfilCons.cs" />
+    <Compile Include="Entidades\PerfilForn.cs" />
     <Compile Include="Model\CadastroConsModel.cs" />
+    <Compile Include="Model\CadastroFornModel.cs" />
+    <Compile Include="Model\EditarCons.cs" />
+    <Compile Include="Model\EditarForn.cs" />
+    <Compile Include="MySQL\LoginUsuario.cs" />
+    <Compile Include="MySQL\Perfil.cs" />
     <Compile Include="Telas\CadastroCons.cs">
       <SubType>Form</SubType>
     </Compile>
