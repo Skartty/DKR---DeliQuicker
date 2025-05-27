@@ -8,7 +8,7 @@ namespace ProjetoDKR.MySQL
     {
         public Perfil()
         {
-            
+             
         }
 
         public PerfilCons BuscarPerfilCons(int idCons)
