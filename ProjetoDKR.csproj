@@ -33,9 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,8 +49,15 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ProdutoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ProdutoItem.Designer.cs">
+      <DependentUpon>ProdutoItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -56,12 +67,15 @@
     <Compile Include="Entidades\Login.cs" />
     <Compile Include="Entidades\PerfilCons.cs" />
     <Compile Include="Entidades\PerfilForn.cs" />
+    <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Model\CadastroConsModel.cs" />
     <Compile Include="Model\CadastroFornModel.cs" />
     <Compile Include="Model\EditarCons.cs" />
     <Compile Include="Model\EditarForn.cs" />
+    <Compile Include="Model\ProdutoModel.cs" />
     <Compile Include="MySQL\LoginUsuario.cs" />
     <Compile Include="MySQL\Perfil.cs" />
+    <Compile Include="MySQL\Produtos.cs" />
     <Compile Include="Telas\CadastroCons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +129,10 @@
     <Compile Include="Telas\TelaUsuarioForn.Designer.cs">
       <DependentUpon>TelaUsuarioForn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilidade\RemoverAcentos.cs" />
+    <EmbeddedResource Include="Components\ProdutoItem.resx">
+      <DependentUpon>ProdutoItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\CadastroCons.resx">
       <DependentUpon>CadastroCons.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +179,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

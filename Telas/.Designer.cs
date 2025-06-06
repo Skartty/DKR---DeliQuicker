@@ -154,10 +154,12 @@
             // lblRetornoMsg
             // 
             this.lblRetornoMsg.AutoSize = true;
+            this.lblRetornoMsg.BackColor = System.Drawing.Color.Transparent;
+            this.lblRetornoMsg.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRetornoMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblRetornoMsg.Location = new System.Drawing.Point(38, 644);
+            this.lblRetornoMsg.Location = new System.Drawing.Point(26, 639);
             this.lblRetornoMsg.Name = "lblRetornoMsg";
-            this.lblRetornoMsg.Size = new System.Drawing.Size(0, 13);
+            this.lblRetornoMsg.Size = new System.Drawing.Size(0, 19);
             this.lblRetornoMsg.TabIndex = 9;
             // 
             // TelaLogin

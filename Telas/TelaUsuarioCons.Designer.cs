@@ -54,6 +54,12 @@
             this.btnEditarCons = new System.Windows.Forms.Button();
             this.btnMeusPedidos = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
+            this.MostrarSenhaOng = new System.Windows.Forms.Label();
+            this.IconMenuCons = new System.Windows.Forms.Label();
+            this.PainelSairCons = new System.Windows.Forms.Panel();
+            this.IconSairCons = new System.Windows.Forms.Label();
+            this.txtSairCons = new System.Windows.Forms.Label();
+            this.PainelSairCons.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNomeUC
@@ -306,6 +312,7 @@
             // btnEditarCons
             // 
             this.btnEditarCons.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditarCons.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarCons.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCons.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnEditarCons.Location = new System.Drawing.Point(293, 108);
@@ -319,6 +326,7 @@
             // 
             // btnMeusPedidos
             // 
+            this.btnMeusPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMeusPedidos.Enabled = false;
             this.btnMeusPedidos.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMeusPedidos.Location = new System.Drawing.Point(28, 530);
@@ -337,12 +345,69 @@
             this.label22.Size = new System.Drawing.Size(18, 18);
             this.label22.TabIndex = 8;
             // 
+            // MostrarSenhaOng
+            // 
+            this.MostrarSenhaOng.BackColor = System.Drawing.Color.Transparent;
+            this.MostrarSenhaOng.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MostrarSenhaOng.Image = ((System.Drawing.Image)(resources.GetObject("MostrarSenhaOng.Image")));
+            this.MostrarSenhaOng.Location = new System.Drawing.Point(305, 177);
+            this.MostrarSenhaOng.Name = "MostrarSenhaOng";
+            this.MostrarSenhaOng.Size = new System.Drawing.Size(20, 20);
+            this.MostrarSenhaOng.TabIndex = 35;
+            this.MostrarSenhaOng.Click += new System.EventHandler(this.MostrarSenhaOng_Click);
+            // 
+            // IconMenuCons
+            // 
+            this.IconMenuCons.BackColor = System.Drawing.Color.Transparent;
+            this.IconMenuCons.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IconMenuCons.Image = ((System.Drawing.Image)(resources.GetObject("IconMenuCons.Image")));
+            this.IconMenuCons.Location = new System.Drawing.Point(343, 58);
+            this.IconMenuCons.Name = "IconMenuCons";
+            this.IconMenuCons.Size = new System.Drawing.Size(17, 26);
+            this.IconMenuCons.TabIndex = 37;
+            this.IconMenuCons.Click += new System.EventHandler(this.IconMenuCons_Click);
+            // 
+            // PainelSairCons
+            // 
+            this.PainelSairCons.BackColor = System.Drawing.Color.White;
+            this.PainelSairCons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PainelSairCons.Controls.Add(this.IconSairCons);
+            this.PainelSairCons.Controls.Add(this.txtSairCons);
+            this.PainelSairCons.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PainelSairCons.Location = new System.Drawing.Point(229, 102);
+            this.PainelSairCons.Name = "PainelSairCons";
+            this.PainelSairCons.Size = new System.Drawing.Size(131, 32);
+            this.PainelSairCons.TabIndex = 38;
+            // 
+            // IconSairCons
+            // 
+            this.IconSairCons.BackColor = System.Drawing.Color.Transparent;
+            this.IconSairCons.Image = ((System.Drawing.Image)(resources.GetObject("IconSairCons.Image")));
+            this.IconSairCons.Location = new System.Drawing.Point(105, 7);
+            this.IconSairCons.Name = "IconSairCons";
+            this.IconSairCons.Size = new System.Drawing.Size(20, 20);
+            this.IconSairCons.TabIndex = 1;
+            // 
+            // txtSairCons
+            // 
+            this.txtSairCons.AutoSize = true;
+            this.txtSairCons.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSairCons.Location = new System.Drawing.Point(3, 6);
+            this.txtSairCons.Name = "txtSairCons";
+            this.txtSairCons.Size = new System.Drawing.Size(104, 19);
+            this.txtSairCons.TabIndex = 0;
+            this.txtSairCons.Text = "Encerrar Sessão";
+            this.txtSairCons.Click += new System.EventHandler(this.txtSairCons_Click);
+            // 
             // TelaUsuarioCons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(390, 844);
+            this.Controls.Add(this.PainelSairCons);
+            this.Controls.Add(this.IconMenuCons);
+            this.Controls.Add(this.MostrarSenhaOng);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.btnMeusPedidos);
             this.Controls.Add(this.btnEditarCons);
@@ -374,6 +439,8 @@
             this.Name = "TelaUsuarioCons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaUsuarioCons";
+            this.PainelSairCons.ResumeLayout(false);
+            this.PainelSairCons.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,5 +473,10 @@
         private System.Windows.Forms.Button btnEditarCons;
         private System.Windows.Forms.Button btnMeusPedidos;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label MostrarSenhaOng;
+        private System.Windows.Forms.Label IconMenuCons;
+        private System.Windows.Forms.Panel PainelSairCons;
+        private System.Windows.Forms.Label IconSairCons;
+        private System.Windows.Forms.Label txtSairCons;
     }
 }

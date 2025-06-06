@@ -1,20 +1,177 @@
-﻿using System;
+﻿using ProjetoDKR.Components;
+using ProjetoDKR.Entidades;
+using ProjetoDKR.Model;
+using ProjetoDKR.MySQL;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoDKR
 {
     public partial class PesquisaProd : Form
     {
-        public PesquisaProd()
+        private List<Produto> _produtoMercado;
+        private List<Produto> _produtoHortifrutti;
+        private List<Produto> _produtoRestaurante;
+        private List<Produto> _produtoFornecedor;
+        private List<Produto> listaProd;
+
+        private readonly PerfilForn _perfilForn;
+        private readonly PerfilCons _perfilCons;
+
+        private Produtos produtosSql;
+
+        public PesquisaProd(string tipo, PerfilForn perfilForn = null, PerfilCons perfilCons = null)
         {
+            _perfilCons = perfilCons;
+            _perfilForn = perfilForn;
+
             InitializeComponent();
+
+            produtosSql = new Produtos();
+
+            _produtoMercado = new List<Produto>();
+            _produtoHortifrutti = new List<Produto>();
+            _produtoRestaurante = new List<Produto>();
+            _produtoFornecedor = new List<Produto>();
+
+            if (!string.IsNullOrEmpty(tipo))
+            {
+                if(tipo == "Consumidor")
+                {
+                    listaProd = produtosSql.BuscarListaProdutos();
+
+                    _produtoMercado = listaProd.Where(w => w.Categoria == "Mercado").ToList();
+                    _produtoHortifrutti = listaProd.Where(w => w.Categoria == "Hortifrutti").ToList();
+                    _produtoRestaurante = listaProd.Where(w => w.Categoria == "Restaurante").ToList();
+
+                    CarregarProduto(listaProd);
+                }
+                else if(tipo == "Fornecedor")
+                {
+                    txtFiltroMercado.Visible = false;
+                    txtFiltroHortifrutti.Visible = false;
+                    txtFiltroRestaurante.Text = "   Produtos";
+                    txtFiltroRestaurante.Enabled = false;
+
+                    _produtoFornecedor = produtosSql.BuscarListaProdutoForn(perfilForn.Id);
+
+                    CarregarProduto(_produtoFornecedor);
+                }
+            }
+        }
+
+        private void CarregarProduto(List<Produto> listProd)
+        {
+            List<ProdutoModel> produtoModels = new List<ProdutoModel>();
+
+            listProd.ForEach(f => produtoModels.Add(new ProdutoModel
+            {
+                Descricao = f.Descricao,
+                NomeProduto = f.NomeProduto,
+                Quantidade = f.Quantidade,
+                Imagem = f.Imagem,
+            }));
+
+            painelProd.Controls.Clear();
+
+            int y = 26;
+
+            foreach (ProdutoModel produto in produtoModels)
+            {
+                var item = new ProdutoItem();
+
+                item.Preencher(produto);
+                item.Location = new System.Drawing.Point(27, y);
+                item.Width = painelProd.Width -20;
+                item.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+                painelProd.Controls.Add(item);
+                y += item.Height + 10;
+            }
+        }        
+
+        private void IconBuscaProd_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(BoxPesquisaProd.Text))
+            {
+                List<Produto> listaRef = produtosSql.BuscarListaProdutos(BoxPesquisaProd.Text);
+
+                if(listaRef.Count == 0)
+                {
+                    DialogResult resultado = MessageBox.Show(
+                    "Produto não localizado",
+                    "Busca",
+                    MessageBoxButtons.OK
+                    );
+
+                    BoxPesquisaProd.Text = string.Empty;
+                    CarregarProduto(listaProd);
+                }
+                else
+                {
+                    CarregarProduto(listaRef);
+                }
+            }
+            else
+            {
+                CarregarProduto(listaProd);
+            }
+
+            txtFiltroMercado.ForeColor = System.Drawing.Color.Black;
+            txtFiltroRestaurante.ForeColor = System.Drawing.Color.Black;
+            txtFiltroHortifrutti.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void txtFiltroMercado_Click(object sender, EventArgs e)
+        {
+            txtFiltroMercado.ForeColor = System.Drawing.Color.OrangeRed;
+            txtFiltroRestaurante.ForeColor = System.Drawing.Color.Black;
+            txtFiltroHortifrutti.ForeColor = System.Drawing.Color.Black;
+
+            CarregarProduto(_produtoMercado);
+        }
+
+        private void txtFiltroRestaurante_Click(object sender, EventArgs e)
+        {
+            txtFiltroMercado.ForeColor = System.Drawing.Color.Black;
+            txtFiltroRestaurante.ForeColor = System.Drawing.Color.OrangeRed;
+            txtFiltroHortifrutti.ForeColor = System.Drawing.Color.Black;
+
+            CarregarProduto(_produtoRestaurante);
+        }
+
+        private void txtFiltroHortifrutti_Click(object sender, EventArgs e)
+        {
+            txtFiltroMercado.ForeColor = System.Drawing.Color.Black;
+            txtFiltroRestaurante.ForeColor = System.Drawing.Color.Black;
+            txtFiltroHortifrutti.ForeColor = System.Drawing.Color.OrangeRed;
+
+            CarregarProduto(_produtoHortifrutti);
+        }
+
+        private void iconBusca_Click(object sender, EventArgs e)
+        {
+            CarregarProduto(listaProd);
+            txtFiltroMercado.ForeColor = System.Drawing.Color.Black;
+            txtFiltroRestaurante.ForeColor = System.Drawing.Color.Black;
+            txtFiltroHortifrutti.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void iconPerfilProd_Click(object sender, EventArgs e)
+        {
+            if (_perfilCons != null)
+            {
+                this.Hide();
+                TelaUsuarioCons telaUsuarioCons = new TelaUsuarioCons(_perfilCons.Id);
+                telaUsuarioCons.Show();
+            }
+            else if (_perfilForn != null)
+            {
+                this.Hide();
+                TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_perfilForn.Id);
+                telaUsuarioForn.Show();
+            }
         }
     }
 }

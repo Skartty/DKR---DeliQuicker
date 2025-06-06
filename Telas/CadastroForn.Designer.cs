@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BoxCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelForn = new System.Windows.Forms.Panel();
             this.txtVoltarForn = new System.Windows.Forms.Label();
             this.btnFornF = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.txtEndFornErro = new System.Windows.Forms.Label();
             this.txtCategoriaErro = new System.Windows.Forms.Label();
             this.roundedTextBox11 = new RoundedTextBox();
-            this.panel1.SuspendLayout();
+            this.panelForn.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -116,58 +116,58 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Endereço";
             // 
-            // panel1
+            // panelForn
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtVoltarForn);
-            this.panel1.Controls.Add(this.btnFornF);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.RBNaoForn);
-            this.panel1.Controls.Add(this.RBSimForn);
-            this.panel1.Controls.Add(this.txtPossuiForn);
-            this.panel1.Controls.Add(this.txtCategoria);
-            this.panel1.Controls.Add(this.txtEndForn);
-            this.panel1.Controls.Add(this.txtComplForn);
-            this.panel1.Controls.Add(this.txtNumForn);
-            this.panel1.Controls.Add(this.txtCEPForn);
-            this.panel1.Controls.Add(this.txtTelForn);
-            this.panel1.Controls.Add(this.txtConfirmForn);
-            this.panel1.Controls.Add(this.txtSenhaForn);
-            this.panel1.Controls.Add(this.txtEmailForn);
-            this.panel1.Controls.Add(this.txtNomeForn);
-            this.panel1.Controls.Add(this.txtRazaoForn);
-            this.panel1.Controls.Add(this.txtCNPJForn);
-            this.panel1.Controls.Add(this.btnEntrarForn);
-            this.panel1.Controls.Add(this.BoxEndForn);
-            this.panel1.Controls.Add(this.BoxComplForn);
-            this.panel1.Controls.Add(this.BoxNumForn);
-            this.panel1.Controls.Add(this.BoxCEPForn);
-            this.panel1.Controls.Add(this.BoxTelForn);
-            this.panel1.Controls.Add(this.BoxConfirmForn);
-            this.panel1.Controls.Add(this.BoxSenhaForn);
-            this.panel1.Controls.Add(this.BoxEmailForn);
-            this.panel1.Controls.Add(this.BoxNomeForn);
-            this.panel1.Controls.Add(this.BoxRazaoForn);
-            this.panel1.Controls.Add(this.BoxCNPJForn);
-            this.panel1.Controls.Add(this.btnOngF);
-            this.panel1.Controls.Add(this.CBCategoria);
-            this.panel1.Controls.Add(this.BoxFundo);
-            this.panel1.Controls.Add(this.txtCNPJFornErro);
-            this.panel1.Controls.Add(this.txtRazaoFornErro);
-            this.panel1.Controls.Add(this.txtEmailFornErro);
-            this.panel1.Controls.Add(this.txtSenhaFornErro);
-            this.panel1.Controls.Add(this.txtConfirmFornErro);
-            this.panel1.Controls.Add(this.txtTelFornErro);
-            this.panel1.Controls.Add(this.txtCEPFornErro);
-            this.panel1.Controls.Add(this.txtNumFornErro);
-            this.panel1.Controls.Add(this.txtEndFornErro);
-            this.panel1.Controls.Add(this.txtCategoriaErro);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(366, 820);
-            this.panel1.TabIndex = 0;
+            this.panelForn.AutoScroll = true;
+            this.panelForn.BackColor = System.Drawing.Color.White;
+            this.panelForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelForn.Controls.Add(this.txtVoltarForn);
+            this.panelForn.Controls.Add(this.btnFornF);
+            this.panelForn.Controls.Add(this.label16);
+            this.panelForn.Controls.Add(this.RBNaoForn);
+            this.panelForn.Controls.Add(this.RBSimForn);
+            this.panelForn.Controls.Add(this.txtPossuiForn);
+            this.panelForn.Controls.Add(this.txtCategoria);
+            this.panelForn.Controls.Add(this.txtEndForn);
+            this.panelForn.Controls.Add(this.txtComplForn);
+            this.panelForn.Controls.Add(this.txtNumForn);
+            this.panelForn.Controls.Add(this.txtCEPForn);
+            this.panelForn.Controls.Add(this.txtTelForn);
+            this.panelForn.Controls.Add(this.txtConfirmForn);
+            this.panelForn.Controls.Add(this.txtSenhaForn);
+            this.panelForn.Controls.Add(this.txtEmailForn);
+            this.panelForn.Controls.Add(this.txtNomeForn);
+            this.panelForn.Controls.Add(this.txtRazaoForn);
+            this.panelForn.Controls.Add(this.txtCNPJForn);
+            this.panelForn.Controls.Add(this.btnEntrarForn);
+            this.panelForn.Controls.Add(this.BoxEndForn);
+            this.panelForn.Controls.Add(this.BoxComplForn);
+            this.panelForn.Controls.Add(this.BoxNumForn);
+            this.panelForn.Controls.Add(this.BoxCEPForn);
+            this.panelForn.Controls.Add(this.BoxTelForn);
+            this.panelForn.Controls.Add(this.BoxConfirmForn);
+            this.panelForn.Controls.Add(this.BoxSenhaForn);
+            this.panelForn.Controls.Add(this.BoxEmailForn);
+            this.panelForn.Controls.Add(this.BoxNomeForn);
+            this.panelForn.Controls.Add(this.BoxRazaoForn);
+            this.panelForn.Controls.Add(this.BoxCNPJForn);
+            this.panelForn.Controls.Add(this.btnOngF);
+            this.panelForn.Controls.Add(this.CBCategoria);
+            this.panelForn.Controls.Add(this.BoxFundo);
+            this.panelForn.Controls.Add(this.txtCNPJFornErro);
+            this.panelForn.Controls.Add(this.txtRazaoFornErro);
+            this.panelForn.Controls.Add(this.txtEmailFornErro);
+            this.panelForn.Controls.Add(this.txtSenhaFornErro);
+            this.panelForn.Controls.Add(this.txtConfirmFornErro);
+            this.panelForn.Controls.Add(this.txtTelFornErro);
+            this.panelForn.Controls.Add(this.txtCEPFornErro);
+            this.panelForn.Controls.Add(this.txtNumFornErro);
+            this.panelForn.Controls.Add(this.txtEndFornErro);
+            this.panelForn.Controls.Add(this.txtCategoriaErro);
+            this.panelForn.Location = new System.Drawing.Point(12, 12);
+            this.panelForn.Name = "panelForn";
+            this.panelForn.Size = new System.Drawing.Size(366, 820);
+            this.panelForn.TabIndex = 0;
             // 
             // txtVoltarForn
             // 
@@ -632,9 +632,8 @@
             this.txtCategoriaErro.ForeColor = System.Drawing.Color.Red;
             this.txtCategoriaErro.Location = new System.Drawing.Point(23, 857);
             this.txtCategoriaErro.Name = "txtCategoriaErro";
-            this.txtCategoriaErro.Size = new System.Drawing.Size(14, 17);
+            this.txtCategoriaErro.Size = new System.Drawing.Size(0, 17);
             this.txtCategoriaErro.TabIndex = 22;
-            this.txtCategoriaErro.Text = "*";
             // 
             // roundedTextBox11
             // 
@@ -652,15 +651,15 @@
             this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(390, 844);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelForn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CadastroForn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastro";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelForn.ResumeLayout(false);
+            this.panelForn.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -670,7 +669,7 @@
         private RoundedTextBox roundedTextBox11;
         private System.Windows.Forms.ComboBox BoxCategoria;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelForn;
         private System.Windows.Forms.TextBox BoxCNPJForn;
         private System.Windows.Forms.Button btnOngF;
         private System.Windows.Forms.Button btnEntrarForn;

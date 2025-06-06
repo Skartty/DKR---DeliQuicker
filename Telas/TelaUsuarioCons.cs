@@ -9,10 +9,15 @@ namespace ProjetoDKR
     {
         private PerfilCons _perfilCons;
         private Perfil _perfil;
+
+        private string senhaReal = "";
+        private bool senhaVisivel = false;
         public TelaUsuarioCons(int id)
         {
             InitializeComponent();
             _perfil = new Perfil();
+
+            PainelSairCons.Visible = false;
 
             _perfilCons = _perfil.BuscarPerfilCons(id);
             CarregarDadosPerfil(_perfilCons);
@@ -23,12 +28,17 @@ namespace ProjetoDKR
             txtNomeUC.Text = perfilCons.Nome;
             txtCNPJCons2.Text = perfilCons.CNPJ;
             txtEmailCons2.Text = perfilCons.Email;
-            txtSenhaCons2.Text = perfilCons.Senha;
+
+            senhaReal = perfilCons.Senha;
+            txtSenhaCons2.Text = "*******";
+            senhaVisivel = false;
+
             txtTelCons2.Text = perfilCons.Telefone;
             txtCEPCons2.Text = perfilCons.CEP;
             txtNumCons2.Text = perfilCons.Numero;
             txtEndCons2.Text = perfilCons.Endereco;
             txtComplCons2.Text = perfilCons.Complemento;
+
             if(perfilCons.Transporte)
             {
                 RBSimCons1.Checked = true;
@@ -52,7 +62,43 @@ namespace ProjetoDKR
 
         private void iconBuscaCons_Click(object sender, System.EventArgs e)
         {
-            //chamar a tela de pesquisa de produtos geral
+            this.Hide();
+            PesquisaProd pesquisaProd = new PesquisaProd("Consumidor", null, _perfilCons);
+            pesquisaProd.Show();
+        }
+
+        private void MostrarSenhaOng_Click(object sender, System.EventArgs e)
+        {
+            if (senhaVisivel)
+            {
+                txtSenhaCons2.Text = "*******";
+                senhaVisivel = false;
+            }
+            else
+            {
+                txtSenhaCons2.Text = senhaReal;
+                senhaVisivel = true;
+            }
+        }
+
+        private void IconMenuCons_Click(object sender, System.EventArgs e)
+        {
+            PainelSairCons.Visible = !PainelSairCons.Visible;
+        }
+
+        private void txtSairCons_Click(object sender, System.EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+            "Deseja realmente sair do programa?",
+            "Confirmação de Saída",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
