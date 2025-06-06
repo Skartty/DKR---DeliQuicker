@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoDKR.Model
 {
@@ -10,7 +7,7 @@ namespace ProjetoDKR.Model
     {
         public CadastroFornModel(string cnpj, string razaoSocial, string nomeFantasia,
             string email, string senha, string confirmSenha, string telefone, string cep,
-            string numero, string endereco, string complemento, bool entrega)
+            string numero, string endereco, string complemento, bool entrega, string categoria)
         {
             CNPJ = cnpj;
             RazaoSocial = razaoSocial;
@@ -24,6 +21,7 @@ namespace ProjetoDKR.Model
             Endereco = endereco;
             Complemento = complemento;
             Entrega = entrega;
+            Categoria = categoria;
         }
 
         public string CNPJ { get; set; }
@@ -38,6 +36,7 @@ namespace ProjetoDKR.Model
         public string Endereco { get; set; }
         public string Complemento { get; set; }
         public bool Entrega { get; set; }
+        public string Categoria { get; set; }
 
         public List<string> Validar()
         {
@@ -80,6 +79,9 @@ namespace ProjetoDKR.Model
 
             if (string.IsNullOrWhiteSpace(Endereco))
                 erros.Add("Endereço não preenchido");
+
+            if (string.IsNullOrWhiteSpace(Categoria))
+                erros.Add("Categoria não preenchida");
 
             return erros;
         }

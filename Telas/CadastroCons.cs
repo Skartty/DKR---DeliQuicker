@@ -46,7 +46,7 @@ namespace ProjetoDKR
 
         private void btnEntrarOng_Click(object sender, EventArgs e)
         {
-            if (_editarCons.Editar)
+            if (_editarCons != null && _editarCons.Editar)
             {
                 Perfil editarPerfil = new Perfil();
                 editarPerfil.EditarPerfilCons(_editarCons.Perfil);

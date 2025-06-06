@@ -43,6 +43,7 @@
             this.Name = "IntroAnimada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IntroAnimada";
+            this.Load += new System.EventHandler(this.IntroAnimada_Load);
             this.ResumeLayout(false);
 
         }

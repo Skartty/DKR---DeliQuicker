@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCons));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelCons = new System.Windows.Forms.Panel();
             this.txtVoltarOng = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -68,57 +68,57 @@
             this.txtCEPOngErro = new System.Windows.Forms.Label();
             this.txtNumOngErro = new System.Windows.Forms.Label();
             this.txtEndOngErro = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panelCons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelCons
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtVoltarOng);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.RBNaoOng);
-            this.panel1.Controls.Add(this.RBSimOng);
-            this.panel1.Controls.Add(this.txtPossuiOng);
-            this.panel1.Controls.Add(this.txtEndOng);
-            this.panel1.Controls.Add(this.txtComplOng);
-            this.panel1.Controls.Add(this.txtNumOng);
-            this.panel1.Controls.Add(this.txtCEPOng);
-            this.panel1.Controls.Add(this.txtConfirmOng);
-            this.panel1.Controls.Add(this.txtSenhaOng);
-            this.panel1.Controls.Add(this.txtEmailOng);
-            this.panel1.Controls.Add(this.txtTelOng);
-            this.panel1.Controls.Add(this.txtCNPJOng);
-            this.panel1.Controls.Add(this.txtNomeOng);
-            this.panel1.Controls.Add(this.btnEntrarOng);
-            this.panel1.Controls.Add(this.BoxEndOng);
-            this.panel1.Controls.Add(this.BoxComplOng);
-            this.panel1.Controls.Add(this.BoxNumOng);
-            this.panel1.Controls.Add(this.BoxCEPOng);
-            this.panel1.Controls.Add(this.BoxConfirmOng);
-            this.panel1.Controls.Add(this.BoxSenhaOng);
-            this.panel1.Controls.Add(this.BoxEmailOng);
-            this.panel1.Controls.Add(this.BoxTelOng);
-            this.panel1.Controls.Add(this.BoxCNPJOng);
-            this.panel1.Controls.Add(this.BoxNomeOng);
-            this.panel1.Controls.Add(this.btnFornO);
-            this.panel1.Controls.Add(this.btnOngO);
-            this.panel1.Controls.Add(this.txtNomeOngErro);
-            this.panel1.Controls.Add(this.txtCNPJOngErro);
-            this.panel1.Controls.Add(this.txtTelOngErro);
-            this.panel1.Controls.Add(this.txtEmailOngErro);
-            this.panel1.Controls.Add(this.txtSenhaOngErro);
-            this.panel1.Controls.Add(this.txtConfirmOngErro);
-            this.panel1.Controls.Add(this.txtCEPOngErro);
-            this.panel1.Controls.Add(this.txtNumOngErro);
-            this.panel1.Controls.Add(this.txtEndOngErro);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(366, 820);
-            this.panel1.TabIndex = 1;
+            this.panelCons.AutoScroll = true;
+            this.panelCons.BackColor = System.Drawing.Color.White;
+            this.panelCons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCons.Controls.Add(this.txtVoltarOng);
+            this.panelCons.Controls.Add(this.pictureBox1);
+            this.panelCons.Controls.Add(this.label16);
+            this.panelCons.Controls.Add(this.RBNaoOng);
+            this.panelCons.Controls.Add(this.RBSimOng);
+            this.panelCons.Controls.Add(this.txtPossuiOng);
+            this.panelCons.Controls.Add(this.txtEndOng);
+            this.panelCons.Controls.Add(this.txtComplOng);
+            this.panelCons.Controls.Add(this.txtNumOng);
+            this.panelCons.Controls.Add(this.txtCEPOng);
+            this.panelCons.Controls.Add(this.txtConfirmOng);
+            this.panelCons.Controls.Add(this.txtSenhaOng);
+            this.panelCons.Controls.Add(this.txtEmailOng);
+            this.panelCons.Controls.Add(this.txtTelOng);
+            this.panelCons.Controls.Add(this.txtCNPJOng);
+            this.panelCons.Controls.Add(this.txtNomeOng);
+            this.panelCons.Controls.Add(this.btnEntrarOng);
+            this.panelCons.Controls.Add(this.BoxEndOng);
+            this.panelCons.Controls.Add(this.BoxComplOng);
+            this.panelCons.Controls.Add(this.BoxNumOng);
+            this.panelCons.Controls.Add(this.BoxCEPOng);
+            this.panelCons.Controls.Add(this.BoxConfirmOng);
+            this.panelCons.Controls.Add(this.BoxSenhaOng);
+            this.panelCons.Controls.Add(this.BoxEmailOng);
+            this.panelCons.Controls.Add(this.BoxTelOng);
+            this.panelCons.Controls.Add(this.BoxCNPJOng);
+            this.panelCons.Controls.Add(this.BoxNomeOng);
+            this.panelCons.Controls.Add(this.btnFornO);
+            this.panelCons.Controls.Add(this.btnOngO);
+            this.panelCons.Controls.Add(this.txtNomeOngErro);
+            this.panelCons.Controls.Add(this.txtCNPJOngErro);
+            this.panelCons.Controls.Add(this.txtTelOngErro);
+            this.panelCons.Controls.Add(this.txtEmailOngErro);
+            this.panelCons.Controls.Add(this.txtSenhaOngErro);
+            this.panelCons.Controls.Add(this.txtConfirmOngErro);
+            this.panelCons.Controls.Add(this.txtCEPOngErro);
+            this.panelCons.Controls.Add(this.txtNumOngErro);
+            this.panelCons.Controls.Add(this.txtEndOngErro);
+            this.panelCons.Location = new System.Drawing.Point(12, 12);
+            this.panelCons.Name = "panelCons";
+            this.panelCons.Size = new System.Drawing.Size(366, 820);
+            this.panelCons.TabIndex = 1;
             // 
             // txtVoltarOng
             // 
@@ -529,15 +529,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(390, 844);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelCons);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CadastroCons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroCons";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelCons.ResumeLayout(false);
+            this.panelCons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -545,7 +545,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelCons;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RadioButton RBNaoOng;
         private System.Windows.Forms.RadioButton RBSimOng;

@@ -46,7 +46,7 @@ namespace ProjetoDKR
 
         private void btnEntrarForn_Click(object sender, System.EventArgs e)
         {
-            if(_editarForn.Editar)
+            if(_editarForn != null && _editarForn.Editar)
             {
                 Perfil editarPerfil = new Perfil();
                 editarPerfil.EditarPerfilForn(_editarForn.Perfil);
@@ -68,7 +68,7 @@ namespace ProjetoDKR
                 string numero = BoxNumForn.Text;
                 string endereco = BoxEndForn.Text;
                 string complemento = BoxComplForn.Text;
-                //ver como validar combobox categoria
+                string categoria = CBCategoria.Text;
 
                 bool entrega = false;
 
@@ -78,7 +78,7 @@ namespace ProjetoDKR
                 }
 
                 CadastroFornModel cadastroFornModel = new CadastroFornModel(cnpj, razaoSocial, nomeFantasia,
-                email, senha, confirmSenha, telefone, cep, numero, endereco, complemento, entrega);
+                email, senha, confirmSenha, telefone, cep, numero, endereco, complemento, entrega, categoria);
 
                 List<string> erros = new List<string>();
                 erros = cadastroFornModel.Validar();
@@ -93,6 +93,7 @@ namespace ProjetoDKR
                 txtCEPForn.Text = "CEP";
                 txtNumForn.Text = "Numero";
                 txtEndForn.Text = "Endereço";
+                txtCategoria.Text = "Categoria";
 
                 if (erros.Count > 0)
                 {
@@ -138,6 +139,10 @@ namespace ProjetoDKR
                         {
                             txtConfirmFornErro.Text = "* " + erro;
                         }
+                        else if (erro.Contains("Categoria"))
+                        {
+                            txtCategoriaErro.Text = "* " + erro;
+                        }
                     }
                 }
                 else
@@ -163,8 +168,7 @@ namespace ProjetoDKR
             BoxNumForn.Text = editarForn.Perfil.Numero;
             BoxEndForn.Text = editarForn.Perfil.Endereco;
             BoxComplForn.Text = editarForn.Perfil.Complemento;
-
-            //Ver como editar o combobox de categoria
+            CBCategoria.SelectedItem = editarForn.Perfil.Categoria;
 
             if (editarForn.Perfil.Transporte)
             {
