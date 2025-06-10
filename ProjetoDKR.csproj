@@ -68,11 +68,11 @@
     <Compile Include="Entidades\PerfilCons.cs" />
     <Compile Include="Entidades\PerfilForn.cs" />
     <Compile Include="Entidades\Produto.cs" />
-    <Compile Include="Model\CadastroConsModel.cs" />
-    <Compile Include="Model\CadastroFornModel.cs" />
-    <Compile Include="Model\EditarCons.cs" />
-    <Compile Include="Model\EditarForn.cs" />
-    <Compile Include="Model\ProdutoModel.cs" />
+    <Compile Include="Modelo\CadastroConsModel.cs" />
+    <Compile Include="Modelo\CadastroFornModel.cs" />
+    <Compile Include="Modelo\EditarCons.cs" />
+    <Compile Include="Modelo\EditarForn.cs" />
+    <Compile Include="Modelo\ProdutoModel.cs" />
     <Compile Include="MySQL\LoginUsuario.cs" />
     <Compile Include="MySQL\Perfil.cs" />
     <Compile Include="MySQL\Produtos.cs" />
@@ -107,7 +107,7 @@
     <Compile Include="Telas\CadastroForn.Designer.cs">
       <DependentUpon>CadastroForn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\UserLogin.cs" />
+    <Compile Include="Modelo\UserLogin.cs" />
     <Compile Include="Telas\PesquisaProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,7 +116,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\LoginValidacao.cs" />
+    <Compile Include="Servicos\LoginValidacao.cs" />
     <Compile Include="Telas\TelaUsuarioCons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +129,7 @@
     <Compile Include="Telas\TelaUsuarioForn.Designer.cs">
       <DependentUpon>TelaUsuarioForn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilidade\MascaraUtil.cs" />
     <Compile Include="Utilidade\RemoverAcentos.cs" />
     <EmbeddedResource Include="Components\ProdutoItem.resx">
       <DependentUpon>ProdutoItem.cs</DependentUpon>

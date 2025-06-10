@@ -47,7 +47,7 @@
             this.txtLogin.Font = new System.Drawing.Font("Zen Maru Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.Location = new System.Drawing.Point(159, 438);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(69, 25);
+            this.txtLogin.Size = new System.Drawing.Size(83, 25);
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "LOGIN";
             this.txtLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,7 +132,7 @@
             this.txtCadastrese.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCadastrese.Font = new System.Drawing.Font("Zen Maru Gothic", 10.7F);
             this.txtCadastrese.ForeColor = System.Drawing.Color.DarkOrange;
-            this.txtCadastrese.Location = new System.Drawing.Point(221, 657);
+            this.txtCadastrese.Location = new System.Drawing.Point(227, 657);
             this.txtCadastrese.Name = "txtCadastrese";
             this.txtCadastrese.Size = new System.Drawing.Size(94, 21);
             this.txtCadastrese.TabIndex = 7;

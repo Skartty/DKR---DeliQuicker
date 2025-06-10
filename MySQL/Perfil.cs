@@ -1,6 +1,4 @@
 ﻿using ProjetoDKR.Entidades;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ProjetoDKR.MySQL
 {
@@ -13,6 +11,8 @@ namespace ProjetoDKR.MySQL
 
         public PerfilCons BuscarPerfilCons(int idCons)
         {
+            //Banco Fictício de Perfis de Consumidores
+            /*
             List<PerfilCons> cons = new List<PerfilCons>();
             cons.Add(new PerfilCons()
             {
@@ -51,12 +51,14 @@ namespace ProjetoDKR.MySQL
             {
                 return cons.Where(w => w.IdLogin == idCons).First();
             }
-
+            */
             return null;
         }
 
         public PerfilCons EditarPerfilCons(PerfilCons perfil)
         {
+            //Banco Fictício de Perfis de Consumidores
+            /*
             List<PerfilCons> cons = new List<PerfilCons>();
             cons.Add(new PerfilCons()
             {
@@ -108,12 +110,14 @@ namespace ProjetoDKR.MySQL
                     perfilEditar.Transporte = perfil.Transporte;
                 }
             }
-
+            */
             return null;
         }
 
         public PerfilForn BuscarPerfilForn(int idForn)
         {
+            //Banco Fictício de Perfis de Fornecedores
+            /*
             List<PerfilForn> forn = new List<PerfilForn>();
             forn.Add(new PerfilForn()
             {
@@ -156,12 +160,14 @@ namespace ProjetoDKR.MySQL
             {
                 return forn.Where(w => w.IdLogin == idForn).First();
             }
-
+            */
             return null;
         }
 
         public PerfilForn EditarPerfilForn(PerfilForn perfil)
         {
+            //Banco Fictício de Perfis de Fornecedores
+            /*
             List<PerfilForn> Forn = new List<PerfilForn>();
             Forn.Add(new PerfilForn()
             {
@@ -219,7 +225,7 @@ namespace ProjetoDKR.MySQL
                     perfilEditar.Transporte = perfil.Transporte;
                 }
             }
-
+            */
             return null;
         }
     }

@@ -179,6 +179,21 @@ namespace ProjetoDKR
                 RBNaoForn.Checked = true;
             }
         }
+
+        private void BoxCNPJForn_TextChanged(object sender, System.EventArgs e)
+        {
+            MascaraUtil.AplicarMascaraCNPJ(BoxCNPJForn);
+        }
+
+        private void BoxTelForn_TextChanged(object sender, System.EventArgs e)
+        {
+            MascaraUtil.AplicarMascaraTelefone(BoxTelForn);
+        }
+
+        private void BoxCEPForn_TextChanged(object sender, System.EventArgs e)
+        {
+            MascaraUtil.AplicarMascaraCEP(BoxCEPForn);
+        }
     }
 }
 

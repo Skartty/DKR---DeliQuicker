@@ -27,9 +27,12 @@ namespace ProjetoDKR.Components
                         
             txtQuant.Text = produto.Quantidade.ToString("D2");
 
-            if (!string.IsNullOrEmpty(produto.Imagem) && File.Exists(produto.Imagem))
+            if (produto.Imagem != null && produto.Imagem.Length > 0)
             {
-                ImgProd.Image = Image.FromFile(produto.Imagem);
+                using (MemoryStream ms = new MemoryStream(produto.Imagem))
+                {
+                    ImgProd.Image = Image.FromStream(ms);
+                }
             }
         }
     }

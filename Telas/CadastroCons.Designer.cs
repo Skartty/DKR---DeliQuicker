@@ -340,6 +340,7 @@
             this.BoxCEPOng.Name = "BoxCEPOng";
             this.BoxCEPOng.Size = new System.Drawing.Size(173, 42);
             this.BoxCEPOng.TabIndex = 2;
+            this.BoxCEPOng.TextChanged += new System.EventHandler(this.BoxCEPOng_TextChanged);
             // 
             // BoxConfirmOng
             // 
@@ -384,6 +385,7 @@
             this.BoxTelOng.Name = "BoxTelOng";
             this.BoxTelOng.Size = new System.Drawing.Size(315, 42);
             this.BoxTelOng.TabIndex = 2;
+            this.BoxTelOng.TextChanged += new System.EventHandler(this.BoxTelOng_TextChanged);
             // 
             // BoxCNPJOng
             // 
@@ -395,6 +397,7 @@
             this.BoxCNPJOng.Name = "BoxCNPJOng";
             this.BoxCNPJOng.Size = new System.Drawing.Size(315, 42);
             this.BoxCNPJOng.TabIndex = 2;
+            this.BoxCNPJOng.TextChanged += new System.EventHandler(this.BoxCNPJOng_TextChanged);
             // 
             // BoxNomeOng
             // 

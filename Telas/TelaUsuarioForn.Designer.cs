@@ -82,9 +82,9 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.Location = new System.Drawing.Point(293, 105);
+            this.button1.Location = new System.Drawing.Point(287, 105);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 27);
+            this.button1.Size = new System.Drawing.Size(73, 27);
             this.button1.TabIndex = 29;
             this.button1.Text = " Editar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -363,7 +363,7 @@
             // 
             this.btnMeusProd.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnMeusProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMeusProd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMeusProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMeusProd.Font = new System.Drawing.Font("Zen Maru Gothic Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMeusProd.Location = new System.Drawing.Point(34, 629);
             this.btnMeusProd.Name = "btnMeusProd";
@@ -377,7 +377,7 @@
             // 
             this.btnCadastrarProd.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCadastrarProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrarProd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCadastrarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarProd.Font = new System.Drawing.Font("Zen Maru Gothic Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarProd.Location = new System.Drawing.Point(34, 705);
             this.btnCadastrarProd.Name = "btnCadastrarProd";
@@ -428,16 +428,16 @@
             this.PainelSairForn.Controls.Add(this.IconSairForn);
             this.PainelSairForn.Controls.Add(this.txtSairForn);
             this.PainelSairForn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PainelSairForn.Location = new System.Drawing.Point(229, 99);
+            this.PainelSairForn.Location = new System.Drawing.Point(218, 99);
             this.PainelSairForn.Name = "PainelSairForn";
-            this.PainelSairForn.Size = new System.Drawing.Size(131, 32);
+            this.PainelSairForn.Size = new System.Drawing.Size(142, 32);
             this.PainelSairForn.TabIndex = 35;
             // 
             // IconSairForn
             // 
             this.IconSairForn.BackColor = System.Drawing.Color.Transparent;
             this.IconSairForn.Image = ((System.Drawing.Image)(resources.GetObject("IconSairForn.Image")));
-            this.IconSairForn.Location = new System.Drawing.Point(105, 7);
+            this.IconSairForn.Location = new System.Drawing.Point(114, 7);
             this.IconSairForn.Name = "IconSairForn";
             this.IconSairForn.Size = new System.Drawing.Size(20, 20);
             this.IconSairForn.TabIndex = 1;

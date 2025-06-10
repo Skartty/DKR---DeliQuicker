@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroProd));
-            this.iconBuscaProd = new System.Windows.Forms.Label();
-            this.iconPerfilProd = new System.Windows.Forms.Label();
             this.txtNomeProd = new System.Windows.Forms.Label();
             this.BoxNomeProd = new System.Windows.Forms.TextBox();
             this.BoxValidadeProd = new System.Windows.Forms.TextBox();
@@ -49,31 +47,9 @@
             this.BoxFundo = new System.Windows.Forms.TextBox();
             this.txtEndFornErro = new System.Windows.Forms.Label();
             this.txtCategoriaErro = new System.Windows.Forms.Label();
+            this.iconPerfilProd = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAddProd)).BeginInit();
             this.SuspendLayout();
-            // 
-            // iconBuscaProd
-            // 
-            this.iconBuscaProd.BackColor = System.Drawing.Color.Transparent;
-            this.iconBuscaProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconBuscaProd.Image = ((System.Drawing.Image)(resources.GetObject("iconBuscaProd.Image")));
-            this.iconBuscaProd.Location = new System.Drawing.Point(93, 807);
-            this.iconBuscaProd.Name = "iconBuscaProd";
-            this.iconBuscaProd.Size = new System.Drawing.Size(30, 28);
-            this.iconBuscaProd.TabIndex = 8;
-            this.iconBuscaProd.Text = "      ";
-            // 
-            // iconPerfilProd
-            // 
-            this.iconPerfilProd.BackColor = System.Drawing.Color.Transparent;
-            this.iconPerfilProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconPerfilProd.Image = ((System.Drawing.Image)(resources.GetObject("iconPerfilProd.Image")));
-            this.iconPerfilProd.Location = new System.Drawing.Point(255, 807);
-            this.iconPerfilProd.Name = "iconPerfilProd";
-            this.iconPerfilProd.Size = new System.Drawing.Size(30, 28);
-            this.iconPerfilProd.TabIndex = 9;
-            this.iconPerfilProd.Text = "      ";
-            this.iconPerfilProd.Click += new System.EventHandler(this.iconPerfilForn_Click);
             // 
             // txtNomeProd
             // 
@@ -107,6 +83,7 @@
             this.BoxValidadeProd.Name = "BoxValidadeProd";
             this.BoxValidadeProd.Size = new System.Drawing.Size(154, 42);
             this.BoxValidadeProd.TabIndex = 10;
+            this.BoxValidadeProd.TextChanged += new System.EventHandler(this.BoxValidadeProd_TextChanged);
             // 
             // txtValidadeProd
             // 
@@ -167,23 +144,27 @@
             // 
             this.txtCancelar.AutoSize = true;
             this.txtCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.txtCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCancelar.Font = new System.Drawing.Font("Zen Maru Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCancelar.Location = new System.Drawing.Point(27, 27);
             this.txtCancelar.Name = "txtCancelar";
             this.txtCancelar.Size = new System.Drawing.Size(69, 21);
             this.txtCancelar.TabIndex = 11;
             this.txtCancelar.Text = "Cancelar";
+            this.txtCancelar.Click += new System.EventHandler(this.txtCancelar_Click);
             // 
             // txtSalvar
             // 
             this.txtSalvar.AutoSize = true;
             this.txtSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.txtSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtSalvar.Font = new System.Drawing.Font("Zen Maru Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalvar.Location = new System.Drawing.Point(310, 27);
             this.txtSalvar.Name = "txtSalvar";
             this.txtSalvar.Size = new System.Drawing.Size(53, 21);
             this.txtSalvar.TabIndex = 11;
             this.txtSalvar.Text = "Salvar";
+            this.txtSalvar.Click += new System.EventHandler(this.txtSalvar_Click);
             // 
             // ImgAddProd
             // 
@@ -235,6 +216,7 @@
             "Hortifrutti"});
             this.CBCategoriaProd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CBCategoriaProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBCategoriaProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCategoriaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CBCategoriaProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBCategoriaProd.FormattingEnabled = true;
@@ -280,6 +262,18 @@
             this.txtCategoriaErro.Size = new System.Drawing.Size(0, 17);
             this.txtCategoriaErro.TabIndex = 27;
             // 
+            // iconPerfilProd
+            // 
+            this.iconPerfilProd.BackColor = System.Drawing.Color.Transparent;
+            this.iconPerfilProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconPerfilProd.Image = ((System.Drawing.Image)(resources.GetObject("iconPerfilProd.Image")));
+            this.iconPerfilProd.Location = new System.Drawing.Point(176, 807);
+            this.iconPerfilProd.Name = "iconPerfilProd";
+            this.iconPerfilProd.Size = new System.Drawing.Size(30, 28);
+            this.iconPerfilProd.TabIndex = 9;
+            this.iconPerfilProd.Text = "      ";
+            this.iconPerfilProd.Click += new System.EventHandler(this.iconPerfilForn_Click);
+            // 
             // CadastroProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,7 +298,6 @@
             this.Controls.Add(this.BoxValidadeProd);
             this.Controls.Add(this.BoxDescricaoProd);
             this.Controls.Add(this.BoxNomeProd);
-            this.Controls.Add(this.iconBuscaProd);
             this.Controls.Add(this.iconPerfilProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -318,9 +311,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label iconBuscaProd;
-        private System.Windows.Forms.Label iconPerfilProd;
         private System.Windows.Forms.Label txtNomeProd;
         private System.Windows.Forms.TextBox BoxNomeProd;
         private System.Windows.Forms.TextBox BoxValidadeProd;
@@ -339,5 +329,6 @@
         private System.Windows.Forms.TextBox BoxFundo;
         private System.Windows.Forms.Label txtEndFornErro;
         private System.Windows.Forms.Label txtCategoriaErro;
+        private System.Windows.Forms.Label iconPerfilProd;
     }
 }
