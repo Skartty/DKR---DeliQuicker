@@ -315,9 +315,9 @@
             this.btnEditarCons.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarCons.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCons.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnEditarCons.Location = new System.Drawing.Point(293, 108);
+            this.btnEditarCons.Location = new System.Drawing.Point(287, 108);
             this.btnEditarCons.Name = "btnEditarCons";
-            this.btnEditarCons.Size = new System.Drawing.Size(67, 27);
+            this.btnEditarCons.Size = new System.Drawing.Size(73, 27);
             this.btnEditarCons.TabIndex = 6;
             this.btnEditarCons.Text = " Editar";
             this.btnEditarCons.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,16 +374,16 @@
             this.PainelSairCons.Controls.Add(this.IconSairCons);
             this.PainelSairCons.Controls.Add(this.txtSairCons);
             this.PainelSairCons.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PainelSairCons.Location = new System.Drawing.Point(229, 102);
+            this.PainelSairCons.Location = new System.Drawing.Point(219, 102);
             this.PainelSairCons.Name = "PainelSairCons";
-            this.PainelSairCons.Size = new System.Drawing.Size(131, 32);
+            this.PainelSairCons.Size = new System.Drawing.Size(142, 32);
             this.PainelSairCons.TabIndex = 38;
             // 
             // IconSairCons
             // 
             this.IconSairCons.BackColor = System.Drawing.Color.Transparent;
             this.IconSairCons.Image = ((System.Drawing.Image)(resources.GetObject("IconSairCons.Image")));
-            this.IconSairCons.Location = new System.Drawing.Point(105, 7);
+            this.IconSairCons.Location = new System.Drawing.Point(114, 7);
             this.IconSairCons.Name = "IconSairCons";
             this.IconSairCons.Size = new System.Drawing.Size(20, 20);
             this.IconSairCons.TabIndex = 1;

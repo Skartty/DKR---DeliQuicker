@@ -412,6 +412,7 @@
             this.BoxCEPForn.Name = "BoxCEPForn";
             this.BoxCEPForn.Size = new System.Drawing.Size(173, 42);
             this.BoxCEPForn.TabIndex = 2;
+            this.BoxCEPForn.TextChanged += new System.EventHandler(this.BoxCEPForn_TextChanged);
             // 
             // BoxTelForn
             // 
@@ -423,6 +424,7 @@
             this.BoxTelForn.Name = "BoxTelForn";
             this.BoxTelForn.Size = new System.Drawing.Size(315, 42);
             this.BoxTelForn.TabIndex = 2;
+            this.BoxTelForn.TextChanged += new System.EventHandler(this.BoxTelForn_TextChanged);
             // 
             // BoxConfirmForn
             // 
@@ -489,6 +491,7 @@
             this.BoxCNPJForn.Name = "BoxCNPJForn";
             this.BoxCNPJForn.Size = new System.Drawing.Size(315, 42);
             this.BoxCNPJForn.TabIndex = 2;
+            this.BoxCNPJForn.TextChanged += new System.EventHandler(this.BoxCNPJForn_TextChanged);
             // 
             // btnOngF
             // 

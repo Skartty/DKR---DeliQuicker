@@ -1,7 +1,5 @@
 ﻿using ProjetoDKR.Entidades;
 using ProjetoDKR.Model;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ProjetoDKR.MySQL
 {
@@ -14,6 +12,8 @@ namespace ProjetoDKR.MySQL
 
         public Login BuscaLoginUsuario(UserLogin user)
         {
+            //Banco Fictício de Login de Usuários
+            /*
             List<Login> list = new List<Login>();
             list.Add(new Login() { Id = 1, Senha = "123", Usuario = "Usuario.Teste@gmail.com", Tipo = "Consumidor" });
             list.Add(new Login() { Id = 2, Senha = "321", Usuario = "Usuario.Teste2@gmail.com", Tipo = "Fornecedor" });
@@ -22,6 +22,7 @@ namespace ProjetoDKR.MySQL
             {
                 return list.Where(w =>  w.Usuario == user.Email && w.Senha == user.Senha).First();
             }
+            */
             return null;
         }
     }

@@ -173,5 +173,14 @@ namespace ProjetoDKR
                 telaUsuarioForn.Show();
             }
         }
+
+        private void BoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                IconBuscaProd_Click(sender, e);
+                e.SuppressKeyPress = true; 
+            }
+        }
     }
 }

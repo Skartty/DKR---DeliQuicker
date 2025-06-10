@@ -86,6 +86,7 @@
             this.BoxPesquisaProd.Name = "BoxPesquisaProd";
             this.BoxPesquisaProd.Size = new System.Drawing.Size(324, 42);
             this.BoxPesquisaProd.TabIndex = 8;
+            this.BoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BoxPesquisaProd_KeyDown);
             // 
             // txtFiltroRestaurante
             // 

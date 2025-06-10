@@ -9,6 +9,6 @@
         public string Validade { get; set; }
         public int Quantidade { get; set; }
         public string Descricao { get; set; }
-        public string Imagem { get; set; }
+        public byte[] Imagem { get; set; } = null;
     }
 }
