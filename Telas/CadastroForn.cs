@@ -1,7 +1,10 @@
-﻿using ProjetoDKR.Model;
+﻿using MySql.Data.MySqlClient;
+using ProjetoDKR.Model;
 using ProjetoDKR.MySQL;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjetoDKR
@@ -46,13 +49,26 @@ namespace ProjetoDKR
 
         private void btnEntrarForn_Click(object sender, System.EventArgs e)
         {
-            if(_editarForn != null && _editarForn.Editar)
+            if (_editarForn != null && _editarForn.Editar)
             {
+                _editarForn.Perfil.CNPJ = BoxCNPJForn.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+                _editarForn.Perfil.RazaoSocial = BoxRazaoForn.Text;
+                _editarForn.Perfil.NomeFantasia = BoxNomeForn.Text;
+                _editarForn.Perfil.Email = BoxEmailForn.Text;
+                _editarForn.Perfil.Senha = BoxSenhaForn.Text;
+                _editarForn.Perfil.Telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
+                _editarForn.Perfil.CEP = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
+                _editarForn.Perfil.Numero = BoxNumForn.Text;
+                _editarForn.Perfil.Endereco = BoxEndForn.Text;
+                _editarForn.Perfil.Complemento = BoxComplForn.Text;
+                _editarForn.Perfil.Categoria = CBCategoria.Text;
+                _editarForn.Perfil.Transporte = RBSimForn.Checked;
+
                 Perfil editarPerfil = new Perfil();
                 editarPerfil.EditarPerfilForn(_editarForn.Perfil);
 
                 this.Hide();
-                TelaUsuarioForn telaUsuario = new TelaUsuarioForn(_editarForn.Perfil.Id);
+                TelaUsuarioForn telaUsuario = new TelaUsuarioForn(_editarForn.Perfil.IdLogin);
                 telaUsuario.Show();
             }
             else
@@ -63,7 +79,8 @@ namespace ProjetoDKR
                 string email = BoxEmailForn.Text;
                 string senha = BoxSenhaForn.Text;
                 string confirmSenha = BoxConfirmForn.Text;
-                string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+                string telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
+                //string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string cep = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 string numero = BoxNumForn.Text;
                 string endereco = BoxEndForn.Text;
@@ -147,13 +164,66 @@ namespace ProjetoDKR
                 }
                 else
                 {
-                    this.Hide();
-                    // Aqui você pode adicionar o código para salvar os dados do cadastro no banco de dados
-                    TelaLogin telaLogin = new TelaLogin();
-                    telaLogin.Show();
+
+                    try
+                    {
+                        this.Hide();
+                        Conexao conexao = new Conexao();
+
+                        using (MySqlConnection conn = conexao.Abrir())
+                        {
+                            // Inserir login
+                            string sqlLogin = @"INSERT INTO login (usuario, senha, tipo)
+                                        VALUES (@usuario, @senha, 'Fornecedor');
+                                        SELECT LAST_INSERT_ID();";
+
+                            int idLogin;
+                            using (MySqlCommand cmdLogin = new MySqlCommand(sqlLogin, conn))
+                            {
+                                cmdLogin.Parameters.AddWithValue("@usuario", email);
+                                cmdLogin.Parameters.AddWithValue("@senha", senha);
+                                idLogin = Convert.ToInt32(cmdLogin.ExecuteScalar());
+                            }
+
+                            // Inserir perfil fornecedor
+                            string sqlPerfil = @"INSERT INTO perfil_forn 
+                        (id_login, cnpj, razao_social, nome_fantasia, email, senha, telefone, cep, numero, endereco, complemento, categoria, transporte)
+                        VALUES
+                        (@idLogin, @cnpj, @razao, @fantasia, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @categoria, @transporte);";
+
+                            using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
+                            {
+                                cmdPerfil.Parameters.AddWithValue("@idLogin", idLogin);
+                                cmdPerfil.Parameters.AddWithValue("@cnpj", cnpj);
+                                cmdPerfil.Parameters.AddWithValue("@razao", razaoSocial);
+                                cmdPerfil.Parameters.AddWithValue("@fantasia", nomeFantasia);
+                                cmdPerfil.Parameters.AddWithValue("@email", email);
+                                cmdPerfil.Parameters.AddWithValue("@senha", senha);
+                                cmdPerfil.Parameters.AddWithValue("@telefone", telefone);
+                                cmdPerfil.Parameters.AddWithValue("@cep", cep);
+                                cmdPerfil.Parameters.AddWithValue("@numero", numero);
+                                cmdPerfil.Parameters.AddWithValue("@endereco", endereco);
+                                cmdPerfil.Parameters.AddWithValue("@complemento", complemento);
+                                cmdPerfil.Parameters.AddWithValue("@categoria", categoria);
+                                cmdPerfil.Parameters.AddWithValue("@transporte", entrega);
+
+                                cmdPerfil.ExecuteNonQuery();
+                            }
+                        }
+
+                        MessageBox.Show("Cadastro de fornecedor realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+                        new TelaLogin().Show();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Erro ao cadastrar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-        }         
+        }
+            
+        
 
         private void PreencherCamposEdicao(EditarForn editarForn)
         {

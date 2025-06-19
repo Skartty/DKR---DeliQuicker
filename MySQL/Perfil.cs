@@ -1,16 +1,61 @@
-﻿using ProjetoDKR.Entidades;
+﻿using MySql.Data.MySqlClient;
+using ProjetoDKR.Entidades;
+using System.Configuration;
+
 
 namespace ProjetoDKR.MySQL
 {
     public class Perfil
     {
+        private readonly string _connectionString;
+
         public Perfil()
         {
-             
+            _connectionString = ConfigurationManager.ConnectionStrings["projeto_dkr"].ConnectionString;
         }
 
-        public PerfilCons BuscarPerfilCons(int idCons)
+
+        public PerfilCons BuscarPerfilCons(int idLogin)
         {
+            PerfilCons perfil = null;
+
+            using (MySqlConnection conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM perfil_cons WHERE id_login = @id_login";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_login", idLogin);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            perfil = new PerfilCons
+                            {
+                                Id = reader.GetInt32("id"),
+                                IdLogin = reader.GetInt32("id_login"),
+                                Nome = reader.GetString("nome"),
+                                CNPJ = reader.GetString("cnpj"),
+                                Email = reader.GetString("email"),
+                                Senha = reader.GetString("senha"),
+                                Telefone = reader.GetString("telefone"),
+                                CEP = reader.GetString("cep"),
+                                Numero = reader.GetString("numero"),
+                                Endereco = reader.GetString("endereco"),
+                                Complemento = reader.GetString("complemento"),
+                                Transporte = reader.GetBoolean("transporte")
+                            };
+                        }
+                    }
+                }
+            }
+
+            return perfil;
+        }
+
+
             //Banco Fictício de Perfis de Consumidores
             /*
             List<PerfilCons> cons = new List<PerfilCons>();
@@ -52,70 +97,156 @@ namespace ProjetoDKR.MySQL
                 return cons.Where(w => w.IdLogin == idCons).First();
             }
             */
-            return null;
-        }
+            //return null;
+        
 
         public PerfilCons EditarPerfilCons(PerfilCons perfil)
         {
-            //Banco Fictício de Perfis de Consumidores
-            /*
-            List<PerfilCons> cons = new List<PerfilCons>();
-            cons.Add(new PerfilCons()
+            using (MySqlConnection conn = new MySqlConnection(_connectionString))
             {
-                Id = 1,
-                IdLogin = 1,
-                Nome = "Isabella Braga",
-                CNPJ = "12.345.678/0001-23",
-                Email = "Usuario.Teste@gmail.com",
-                Senha = "123564646",
-                Telefone = "19999999999",
-                CEP = "11111111",
-                Numero = "123",
-                Endereco = "Rua das Flores Verdes",
-                Complemento = "Casa B",
-                Transporte = false
-            });
-            
-            cons.Add(new PerfilCons()
-            {
-                Id = 2,
-                IdLogin = 3,
-                Nome = "Isabella Braga2",
-                CNPJ = "12.345.678/0001-23",
-                Email = "Usuario.Teste@gmail.com",
-                Senha = "123564646",
-                Telefone = "19999999999",
-                CEP = "11111111",
-                Numero = "123",
-                Endereco = "Rua das Flores Verdes",
-                Complemento = "Casa B",
-                Transporte = false
-            });
+                conn.Open();
 
+                string query = @"UPDATE perfil_cons SET
+                                    nome = @nome,
+                                    cnpj = @cnpj,
+                                    email = @email,
+                                    senha = @senha,
+                                    telefone = @telefone,
+                                    cep = @cep,
+                                    numero = @numero,
+                                    endereco = @endereco,
+                                    complemento = @complemento,
+                                    transporte = @transporte
+                                 WHERE id = @id";
 
-            if (perfil != null)
-            {
-                var perfilEditar = cons.Where(w => w.Id == perfil.Id).FirstOrDefault();
-                if(perfilEditar != null)
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    perfilEditar.Nome = perfil.Nome;
-                    perfilEditar.CNPJ = perfil.CNPJ;
-                    perfilEditar.Telefone = perfil.Telefone;
-                    perfilEditar.Email = perfil.Email;
-                    perfilEditar.Senha = perfil.Senha;
-                    perfilEditar.CEP = perfil.CEP;
-                    perfilEditar.Numero = perfil.Numero;
-                    perfilEditar.Endereco = perfil.Endereco;
-                    perfilEditar.Complemento = perfil.Complemento;
-                    perfilEditar.Transporte = perfil.Transporte;
+                    cmd.Parameters.AddWithValue("@id", perfil.Id);
+                    cmd.Parameters.AddWithValue("@nome", perfil.Nome);
+                    cmd.Parameters.AddWithValue("@cnpj", perfil.CNPJ);
+                    cmd.Parameters.AddWithValue("@email", perfil.Email);
+                    cmd.Parameters.AddWithValue("@senha", perfil.Senha);
+                    cmd.Parameters.AddWithValue("@telefone", perfil.Telefone);
+                    cmd.Parameters.AddWithValue("@cep", perfil.CEP);
+                    cmd.Parameters.AddWithValue("@numero", perfil.Numero);
+                    cmd.Parameters.AddWithValue("@endereco", perfil.Endereco);
+                    cmd.Parameters.AddWithValue("@complemento", perfil.Complemento);
+                    cmd.Parameters.AddWithValue("@transporte", perfil.Transporte);
+
+                    cmd.ExecuteNonQuery();
                 }
             }
-            */
-            return null;
+
+            return BuscarPerfilCons(perfil.IdLogin);
         }
 
-        public PerfilForn BuscarPerfilForn(int idForn)
+
+        public PerfilForn BuscarPerfilForn(int idLogin)
         {
+            PerfilForn perfil = null;
+
+            using (MySqlConnection conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM perfil_forn WHERE id_login = @id_login";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id_login", idLogin);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            perfil = new PerfilForn
+                            {
+                                Id = reader.GetInt32("id"),
+                                IdLogin = reader.GetInt32("id_login"),
+                                CNPJ = reader.GetString("cnpj"),
+                                RazaoSocial = reader.GetString("razao_social"),
+                                NomeFantasia = reader.GetString("nome_fantasia"),
+                                Email = reader.GetString("email"),
+                                Senha = reader.GetString("senha"),
+                                Telefone = reader.GetString("telefone"),
+                                CEP = reader.GetString("cep"),
+                                Numero = reader.GetString("numero"),
+                                Endereco = reader.GetString("endereco"),
+                                Complemento = reader.GetString("complemento"),
+                                Categoria = reader.GetString("categoria"),
+                                Transporte = reader.GetBoolean("transporte")
+                            };
+                        }
+                    }
+                }
+            }
+
+         return perfil;
+        
+
+
+
+
+        //Banco Fictício de Perfis de Consumidores
+        /*
+        List<PerfilCons> cons = new List<PerfilCons>();
+        cons.Add(new PerfilCons()
+        {
+            Id = 1,
+            IdLogin = 1,
+            Nome = "Isabella Braga",
+            CNPJ = "12.345.678/0001-23",
+            Email = "Usuario.Teste@gmail.com",
+            Senha = "123564646",
+            Telefone = "19999999999",
+            CEP = "11111111",
+            Numero = "123",
+            Endereco = "Rua das Flores Verdes",
+            Complemento = "Casa B",
+            Transporte = false
+        });
+
+        cons.Add(new PerfilCons()
+        {
+            Id = 2,
+            IdLogin = 3,
+            Nome = "Isabella Braga2",
+            CNPJ = "12.345.678/0001-23",
+            Email = "Usuario.Teste@gmail.com",
+            Senha = "123564646",
+            Telefone = "19999999999",
+            CEP = "11111111",
+            Numero = "123",
+            Endereco = "Rua das Flores Verdes",
+            Complemento = "Casa B",
+            Transporte = false
+        });
+
+
+        if (perfil != null)
+        {
+            var perfilEditar = cons.Where(w => w.Id == perfil.Id).FirstOrDefault();
+            if(perfilEditar != null)
+            {
+                perfilEditar.Nome = perfil.Nome;
+                perfilEditar.CNPJ = perfil.CNPJ;
+                perfilEditar.Telefone = perfil.Telefone;
+                perfilEditar.Email = perfil.Email;
+                perfilEditar.Senha = perfil.Senha;
+                perfilEditar.CEP = perfil.CEP;
+                perfilEditar.Numero = perfil.Numero;
+                perfilEditar.Endereco = perfil.Endereco;
+                perfilEditar.Complemento = perfil.Complemento;
+                perfilEditar.Transporte = perfil.Transporte;
+            }
+        }
+        */
+        //return null;
+    }
+
+        //public PerfilForn BuscarPerfilForn(int idForn)
+        //{
+
+
             //Banco Fictício de Perfis de Fornecedores
             /*
             List<PerfilForn> forn = new List<PerfilForn>();
@@ -161,11 +292,51 @@ namespace ProjetoDKR.MySQL
                 return forn.Where(w => w.IdLogin == idForn).First();
             }
             */
-            return null;
-        }
+            //return null;
+        
 
         public PerfilForn EditarPerfilForn(PerfilForn perfil)
         {
+            using (MySqlConnection conn = new MySqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                string query = @"UPDATE perfil_forn SET
+                                    cnpj = @cnpj,
+                                    razao_social = @razao_social,
+                                    nome_fantasia = @nome_fantasia,
+                                    email = @email,
+                                    senha = @senha,
+                                    telefone = @telefone,
+                                    cep = @cep,
+                                    numero = @numero,
+                                    endereco = @endereco,
+                                    complemento = @complemento,
+                                    categoria = @categoria,
+                                    transporte = @transporte
+                                 WHERE id = @id";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", perfil.Id);
+                    cmd.Parameters.AddWithValue("@cnpj", perfil.CNPJ);
+                    cmd.Parameters.AddWithValue("@razao_social", perfil.RazaoSocial);
+                    cmd.Parameters.AddWithValue("@nome_fantasia", perfil.NomeFantasia);
+                    cmd.Parameters.AddWithValue("@email", perfil.Email);
+                    cmd.Parameters.AddWithValue("@senha", perfil.Senha);
+                    cmd.Parameters.AddWithValue("@telefone", perfil.Telefone);
+                    cmd.Parameters.AddWithValue("@cep", perfil.CEP);
+                    cmd.Parameters.AddWithValue("@numero", perfil.Numero);
+                    cmd.Parameters.AddWithValue("@endereco", perfil.Endereco);
+                    cmd.Parameters.AddWithValue("@complemento", perfil.Complemento);
+                    cmd.Parameters.AddWithValue("@categoria", perfil.Categoria);
+                    cmd.Parameters.AddWithValue("@transporte", perfil.Transporte);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            return BuscarPerfilForn(perfil.IdLogin);
             //Banco Fictício de Perfis de Fornecedores
             /*
             List<PerfilForn> Forn = new List<PerfilForn>();
@@ -226,7 +397,7 @@ namespace ProjetoDKR.MySQL
                 }
             }
             */
-            return null;
+            //return null;
         }
     }
 }

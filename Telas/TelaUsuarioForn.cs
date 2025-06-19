@@ -13,16 +13,25 @@ namespace ProjetoDKR
 
         private string senhaReal = "";
         private bool senhaVisivel = false;
-        public TelaUsuarioForn(int id)
+
+        public TelaUsuarioForn(int idLogin)
         {
             InitializeComponent();
             _perfil = new Perfil();
-
             PainelSairForn.Visible = false;
 
-            _perfilForn = _perfil.BuscarPerfilForn(id);
+            _perfilForn = _perfil.BuscarPerfilForn(idLogin);
+
+            if (_perfilForn == null)
+            {
+                MessageBox.Show("Erro: Perfil do fornecedor não encontrado.");
+                Close();
+                return;
+            }
+
             CarregarDadosPerfil(_perfilForn);
         }
+
         private void CarregarDadosPerfil(PerfilForn perfilForn)
         {
             txtNomeForn.Text = perfilForn.RazaoSocial;
@@ -42,23 +51,38 @@ namespace ProjetoDKR
             txtCatForn2.Text = perfilForn.Categoria;
 
             if (perfilForn.Transporte)
-            {
                 RBSimForn1.Checked = true;
-            }
             else
-            {
                 RBNaoForn1.Checked = true;
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EditarForn editarForn = new EditarForn();
-            editarForn.Editar = true;
-            editarForn.Perfil = _perfilForn;
+            EditarForn editarForn = new EditarForn
+            {
+                Editar = true,
+                Perfil = _perfilForn
+            };
 
             CadastroForn cadastroForn = new CadastroForn(editarForn);
+
+            cadastroForn.FormClosed += (s, args) =>
+            {
+                Perfil perfilRepo = new Perfil();
+                var perfilAtualizado = perfilRepo.BuscarPerfilForn(_perfilForn.IdLogin);
+
+                if (perfilAtualizado == null)
+                {
+                    MessageBox.Show("Erro: Perfil atualizado não encontrado.");
+                    Application.Exit();
+                    return;
+                }
+
+                TelaUsuarioForn novaTela = new TelaUsuarioForn(perfilAtualizado.IdLogin);
+                novaTela.Show();
+            };
+
+            this.Close(); 
             cadastroForn.Show();
         }
 
@@ -105,10 +129,10 @@ namespace ProjetoDKR
         private void txtSairForn_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show(
-            "Deseja realmente sair do programa?",
-            "Confirmação de Saída",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question
+                "Deseja realmente sair do programa?",
+                "Confirmação de Saída",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
             );
 
             if (resultado == DialogResult.Yes)
@@ -118,3 +142,4 @@ namespace ProjetoDKR
         }
     }
 }
+

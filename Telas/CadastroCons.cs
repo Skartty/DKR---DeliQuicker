@@ -1,8 +1,10 @@
-﻿using ProjetoDKR.Entidades;
+﻿using MySql.Data.MySqlClient;
+using ProjetoDKR.Entidades;
 using ProjetoDKR.Model;
 using ProjetoDKR.MySQL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjetoDKR
@@ -48,18 +50,30 @@ namespace ProjetoDKR
         {
             if (_editarCons != null && _editarCons.Editar)
             {
+                _editarCons.Perfil.Nome = BoxNomeOng.Text;
+                _editarCons.Perfil.CNPJ = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+                _editarCons.Perfil.Telefone = new string(BoxTelOng.Text.Where(char.IsDigit).ToArray());
+                _editarCons.Perfil.Email = BoxEmailOng.Text;
+                _editarCons.Perfil.Senha = BoxSenhaOng.Text;
+                _editarCons.Perfil.CEP = BoxCEPOng.Text.Replace(".", "").Replace("-", "");
+                _editarCons.Perfil.Numero = BoxNumOng.Text;
+                _editarCons.Perfil.Endereco = BoxEndOng.Text;
+                _editarCons.Perfil.Complemento = BoxComplOng.Text;
+                _editarCons.Perfil.Transporte = RBSimOng.Checked;
+
                 Perfil editarPerfil = new Perfil();
                 editarPerfil.EditarPerfilCons(_editarCons.Perfil);
 
                 this.Hide();
-                TelaUsuarioCons telaUsuario = new TelaUsuarioCons(_editarCons.Perfil.Id);
+                TelaUsuarioCons telaUsuario = new TelaUsuarioCons(_editarCons.Perfil.IdLogin);
                 telaUsuario.Show();
             }
             else
             {
                 string nome = BoxNomeOng.Text;
                 string cnpj = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-                string telefone = BoxTelOng.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+                string telefone = new string(BoxTelOng.Text.Where(char.IsDigit).ToArray());
+                //string telefone = BoxTelOng.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string email = BoxEmailOng.Text;
                 string senha = BoxSenhaOng.Text;
                 string confirmSenha = BoxConfirmOng.Text;
@@ -140,12 +154,61 @@ namespace ProjetoDKR
                 else
                 {
                     this.Hide();
-                    // Aqui você pode adicionar o código para salvar os dados do cadastro no banco de dados
-                    TelaLogin telaLogin = new TelaLogin();
+                    try
+                    {
+                        Conexao conexao = new Conexao();
+
+                        using (MySqlConnection conn = conexao.Abrir())
+                        {
+                            string sqlLogin = @"INSERT INTO login (usuario, senha, tipo)
+                                        VALUES (@usuario, @senha, 'Consumidor');
+                                        SELECT LAST_INSERT_ID();";
+
+                            int idLogin;
+                            using (MySqlCommand cmdLogin = new MySqlCommand(sqlLogin, conn))
+                            {
+                                cmdLogin.Parameters.AddWithValue("@usuario", email);
+                                cmdLogin.Parameters.AddWithValue("@senha", senha);
+                                idLogin = Convert.ToInt32(cmdLogin.ExecuteScalar());
+                            }
+
+                            string sqlPerfil = @"INSERT INTO perfil_cons 
+                        (id_login, nome, cnpj, email, senha, telefone, cep, numero, endereco, complemento, transporte)
+                        VALUES
+                        (@idLogin, @nome, @cnpj, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @transporte);";
+
+                            using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
+                            {
+                                cmdPerfil.Parameters.AddWithValue("@idLogin", idLogin);
+                                cmdPerfil.Parameters.AddWithValue("@nome", nome);
+                                cmdPerfil.Parameters.AddWithValue("@cnpj", cnpj);
+                                cmdPerfil.Parameters.AddWithValue("@email", email);
+                                cmdPerfil.Parameters.AddWithValue("@senha", senha);
+                                cmdPerfil.Parameters.AddWithValue("@telefone", telefone);
+                                cmdPerfil.Parameters.AddWithValue("@cep", cep);
+                                cmdPerfil.Parameters.AddWithValue("@numero", numero);
+                                cmdPerfil.Parameters.AddWithValue("@endereco", endereco);
+                                cmdPerfil.Parameters.AddWithValue("@complemento", complemento);
+                                cmdPerfil.Parameters.AddWithValue("@transporte", entrega);
+
+                                cmdPerfil.ExecuteNonQuery();
+                            }
+                        }
+
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();                       
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Erro ao cadastrar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                TelaLogin telaLogin = new TelaLogin();
                     telaLogin.Show();
                 }
             }            
-        }
+        
+        
     
         private void PreencherCamposEdicao(EditarCons editarCons)
         {
