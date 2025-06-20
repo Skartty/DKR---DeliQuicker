@@ -72,8 +72,7 @@ namespace ProjetoDKR
             {
                 string nome = BoxNomeOng.Text;
                 string cnpj = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-                string telefone = new string(BoxTelOng.Text.Where(char.IsDigit).ToArray());
-                //string telefone = BoxTelOng.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+                string telefone = BoxTelOng.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string email = BoxEmailOng.Text;
                 string senha = BoxSenhaOng.Text;
                 string confirmSenha = BoxConfirmOng.Text;
@@ -90,7 +89,7 @@ namespace ProjetoDKR
                 }
 
                 CadastroConsModel cadastroConsModel = new CadastroConsModel(nome, cnpj, telefone, email,
-                    senha, confirmSenha, cep, numero, endereco, complemento, entrega);
+                senha, confirmSenha, cep, numero, endereco, complemento, entrega);
 
                 List<string> erros = new List<string>();
                 erros = cadastroConsModel.Validar();
@@ -152,10 +151,10 @@ namespace ProjetoDKR
                     }
                 }
                 else
-                {
-                    this.Hide();
+                {                    
                     try
                     {
+                        this.Hide();
                         Conexao conexao = new Conexao();
 
                         using (MySqlConnection conn = conexao.Abrir())
@@ -173,9 +172,9 @@ namespace ProjetoDKR
                             }
 
                             string sqlPerfil = @"INSERT INTO perfil_cons 
-                        (id_login, nome, cnpj, email, senha, telefone, cep, numero, endereco, complemento, transporte)
-                        VALUES
-                        (@idLogin, @nome, @cnpj, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @transporte);";
+                            (id_login, nome, cnpj, email, senha, telefone, cep, numero, endereco, complemento, transporte)
+                            VALUES
+                            (@idLogin, @nome, @cnpj, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @transporte);";
 
                             using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
                             {
@@ -196,19 +195,16 @@ namespace ProjetoDKR
                         }
 
                         MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();                       
+                        this.Hide();
+                        new TelaLogin().Show();
                     }
                     catch (MySqlException ex)
                     {
                         MessageBox.Show("Erro ao cadastrar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                TelaLogin telaLogin = new TelaLogin();
-                    telaLogin.Show();
-                }
-            }            
-        
-        
+                }                
+            }
+        }   
     
         private void PreencherCamposEdicao(EditarCons editarCons)
         {

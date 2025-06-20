@@ -79,7 +79,6 @@ namespace ProjetoDKR
                 string email = BoxEmailForn.Text;
                 string senha = BoxSenhaForn.Text;
                 string confirmSenha = BoxConfirmForn.Text;
-                //string telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
                 string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string cep = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 string numero = BoxNumForn.Text;
@@ -164,7 +163,6 @@ namespace ProjetoDKR
                 }
                 else
                 {
-
                     try
                     {
                         this.Hide();
@@ -187,9 +185,9 @@ namespace ProjetoDKR
 
                             // Inserir perfil fornecedor
                             string sqlPerfil = @"INSERT INTO perfil_forn 
-                        (id_login, cnpj, razao_social, nome_fantasia, email, senha, telefone, cep, numero, endereco, complemento, categoria, transporte)
-                        VALUES
-                        (@idLogin, @cnpj, @razao, @fantasia, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @categoria, @transporte);";
+                            (id_login, cnpj, razao_social, nome_fantasia, email, senha, telefone, cep, numero, endereco, complemento, categoria, transporte)
+                            VALUES
+                            (@idLogin, @cnpj, @razao, @fantasia, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @categoria, @transporte);";
 
                             using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
                             {
@@ -222,8 +220,6 @@ namespace ProjetoDKR
                 }
             }
         }
-            
-        
 
         private void PreencherCamposEdicao(EditarForn editarForn)
         {
