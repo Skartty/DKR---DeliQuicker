@@ -79,8 +79,8 @@ namespace ProjetoDKR
                 string email = BoxEmailForn.Text;
                 string senha = BoxSenhaForn.Text;
                 string confirmSenha = BoxConfirmForn.Text;
-                string telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
-                //string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+                //string telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
+                string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string cep = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 string numero = BoxNumForn.Text;
                 string endereco = BoxEndForn.Text;
