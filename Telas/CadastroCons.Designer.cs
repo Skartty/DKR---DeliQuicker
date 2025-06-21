@@ -352,6 +352,7 @@
             this.BoxConfirmOng.Name = "BoxConfirmOng";
             this.BoxConfirmOng.Size = new System.Drawing.Size(315, 42);
             this.BoxConfirmOng.TabIndex = 2;
+            this.BoxConfirmOng.UseSystemPasswordChar = true;
             // 
             // BoxSenhaOng
             // 
@@ -361,8 +362,10 @@
             this.BoxSenhaOng.Location = new System.Drawing.Point(24, 415);
             this.BoxSenhaOng.Multiline = true;
             this.BoxSenhaOng.Name = "BoxSenhaOng";
+            this.BoxSenhaOng.PasswordChar = '*';
             this.BoxSenhaOng.Size = new System.Drawing.Size(315, 42);
             this.BoxSenhaOng.TabIndex = 2;
+            this.BoxSenhaOng.UseSystemPasswordChar = true;
             // 
             // BoxEmailOng
             // 

@@ -73,7 +73,7 @@ namespace ProjetoDKR.Model
                 erros.Add("CEP deve conter apenas números");
 
             if (string.IsNullOrWhiteSpace(Numero))
-                erros.Add("Numero não preenchido");
+                erros.Add("Não preenchido");
             else if (!Numero.All(char.IsDigit))
                 erros.Add("Numero deve conter apenas números");
 

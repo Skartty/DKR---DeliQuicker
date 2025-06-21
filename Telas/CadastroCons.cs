@@ -16,6 +16,7 @@ namespace ProjetoDKR
         {
             _editarCons = editar;
             InitializeComponent();
+
             if (editar != null)
             {
                 if (editar.Editar)
@@ -31,7 +32,7 @@ namespace ProjetoDKR
             {
                 RBNaoOng.Checked = true;
             }                
-        }
+        }               
 
         private void txtVoltarOng_Click(object sender, EventArgs e)
         {
@@ -72,6 +73,7 @@ namespace ProjetoDKR
             {
                 string nome = BoxNomeOng.Text;
                 string cnpj = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
+                //string telefone = new string(BoxTelOng.Text.Where(char.IsDigit).ToArray());
                 string telefone = BoxTelOng.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string email = BoxEmailOng.Text;
                 string senha = BoxSenhaOng.Text;
@@ -94,15 +96,15 @@ namespace ProjetoDKR
                 List<string> erros = new List<string>();
                 erros = cadastroConsModel.Validar();
 
-                txtNomeOng.Text = "Nome";
-                txtCNPJOng.Text = "CNPJ";
-                txtTelOng.Text = "Telefone";
-                txtEmailOng.Text = "Email";
-                txtSenhaOng.Text = "Senha";
-                txtConfirmOng.Text = "Confirme sua Senha";
-                txtCEPOng.Text = "CEP";
-                txtNumOng.Text = "Numero";
-                txtEndOng.Text = "Endereço";
+                txtNomeOngErro.Text = "";
+                txtCNPJOngErro.Text = "";
+                txtTelOngErro.Text = "";
+                txtEmailOngErro.Text = "";
+                txtSenhaOngErro.Text = "";
+                txtConfirmOngErro.Text = "";
+                txtCEPOngErro.Text = "";
+                txtNumOngErro.Text = "";
+                txtEndOngErro.Text = "";
 
                 if (erros.Count > 0)
                 {

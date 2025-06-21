@@ -79,6 +79,7 @@ namespace ProjetoDKR
                 string email = BoxEmailForn.Text;
                 string senha = BoxSenhaForn.Text;
                 string confirmSenha = BoxConfirmForn.Text;
+                //string telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
                 string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string cep = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 string numero = BoxNumForn.Text;
@@ -99,17 +100,16 @@ namespace ProjetoDKR
                 List<string> erros = new List<string>();
                 erros = cadastroFornModel.Validar();
 
-                txtCNPJForn.Text = "CNPJ";
-                txtRazaoForn.Text = "Razão Social";
-                txtNomeForn.Text = "Nome Fantasia";
-                txtTelForn.Text = "Telefone";
-                txtEmailForn.Text = "Email";
-                txtSenhaForn.Text = "Senha";
-                txtConfirmForn.Text = "Confirme sua Senha";
-                txtCEPForn.Text = "CEP";
-                txtNumForn.Text = "Numero";
-                txtEndForn.Text = "Endereço";
-                txtCategoria.Text = "Categoria";
+                txtCNPJFornErro.Text = "";
+                txtRazaoFornErro.Text = "";
+                txtTelFornErro.Text = "";
+                txtEmailFornErro.Text = "";
+                txtSenhaFornErro.Text = "";
+                txtConfirmFornErro.Text = "";
+                txtCEPFornErro.Text = "";
+                txtNumFornErro.Text = "";
+                txtEndFornErro.Text = "";
+                txtCategoriaErro.Text = "";
 
                 if (erros.Count > 0)
                 {

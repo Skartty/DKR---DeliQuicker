@@ -28,7 +28,9 @@ namespace ProjetoDKR.MySQL
         public void Fechar()
         {
             if (conexao != null && conexao.State == System.Data.ConnectionState.Open)
+            {
                 conexao.Close();
+            }
         }
     }
 }
