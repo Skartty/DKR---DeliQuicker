@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DeliQuicker.Utilidades;
+using System;
+using System.Configuration;
 using System.Windows.Forms;
+
 
 namespace ProjetoDKR
 {
@@ -11,6 +14,8 @@ namespace ProjetoDKR
         [STAThread]
         static void Main()
         {
+            string connStr = ConfigurationManager.ConnectionStrings["projeto_dkr"].ConnectionString;
+            BancoInitializer.InicializarBanco(connStr);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new IntroAnimada());

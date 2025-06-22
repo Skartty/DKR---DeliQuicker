@@ -77,6 +77,7 @@
             this.BoxSenha.PasswordChar = '*';
             this.BoxSenha.Size = new System.Drawing.Size(314, 42);
             this.BoxSenha.TabIndex = 2;
+            this.BoxSenha.UseSystemPasswordChar = true;
             // 
             // btnEntrar
             // 

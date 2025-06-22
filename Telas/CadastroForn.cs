@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using DeliQuicker.Utilidades;
 
 namespace ProjetoDKR
 {
@@ -55,7 +56,6 @@ namespace ProjetoDKR
                 _editarForn.Perfil.RazaoSocial = BoxRazaoForn.Text;
                 _editarForn.Perfil.NomeFantasia = BoxNomeForn.Text;
                 _editarForn.Perfil.Email = BoxEmailForn.Text;
-                _editarForn.Perfil.Senha = BoxSenhaForn.Text;
                 _editarForn.Perfil.Telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
                 _editarForn.Perfil.CEP = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 _editarForn.Perfil.Numero = BoxNumForn.Text;
@@ -63,6 +63,19 @@ namespace ProjetoDKR
                 _editarForn.Perfil.Complemento = BoxComplForn.Text;
                 _editarForn.Perfil.Categoria = CBCategoria.Text;
                 _editarForn.Perfil.Transporte = RBSimForn.Checked;
+
+                if (!string.IsNullOrWhiteSpace(BoxSenhaForn.Text))
+                {
+                    if (BoxSenhaForn.Text == BoxConfirmForn.Text)
+                    {
+                        _editarForn.Perfil.Senha = Hashing.HashPassword(BoxSenhaForn.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("A nova senha e a confirmação não coincidem.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
 
                 Perfil editarPerfil = new Perfil();
                 editarPerfil.EditarPerfilForn(_editarForn.Perfil);
@@ -79,14 +92,12 @@ namespace ProjetoDKR
                 string email = BoxEmailForn.Text;
                 string senha = BoxSenhaForn.Text;
                 string confirmSenha = BoxConfirmForn.Text;
-                string telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
-                //string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+                string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string cep = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 string numero = BoxNumForn.Text;
                 string endereco = BoxEndForn.Text;
                 string complemento = BoxComplForn.Text;
                 string categoria = CBCategoria.Text;
-
                 bool entrega = false;
 
                 if (RBSimForn.Checked == true)
@@ -100,17 +111,16 @@ namespace ProjetoDKR
                 List<string> erros = new List<string>();
                 erros = cadastroFornModel.Validar();
 
-                txtCNPJForn.Text = "CNPJ";
-                txtRazaoForn.Text = "Razão Social";
-                txtNomeForn.Text = "Nome Fantasia";
-                txtTelForn.Text = "Telefone";
-                txtEmailForn.Text = "Email";
-                txtSenhaForn.Text = "Senha";
-                txtConfirmForn.Text = "Confirme sua Senha";
-                txtCEPForn.Text = "CEP";
-                txtNumForn.Text = "Numero";
-                txtEndForn.Text = "Endereço";
-                txtCategoria.Text = "Categoria";
+                txtCNPJFornErro.Text = "";
+                txtRazaoFornErro.Text = "";
+                txtTelFornErro.Text = "";
+                txtEmailFornErro.Text = "";
+                txtSenhaFornErro.Text = "";
+                txtConfirmFornErro.Text = "";
+                txtCEPFornErro.Text = "";
+                txtNumFornErro.Text = "";
+                txtEndFornErro.Text = "";
+                txtCategoriaErro.Text = "";
 
                 if (erros.Count > 0)
                 {
@@ -164,32 +174,31 @@ namespace ProjetoDKR
                 }
                 else
                 {
-
                     try
                     {
+                        string senhaHasheada = Hashing.HashPassword(senha);
+
                         this.Hide();
                         Conexao conexao = new Conexao();
 
                         using (MySqlConnection conn = conexao.Abrir())
                         {
-                            // Inserir login
                             string sqlLogin = @"INSERT INTO login (usuario, senha, tipo)
-                                        VALUES (@usuario, @senha, 'Fornecedor');
-                                        SELECT LAST_INSERT_ID();";
+                                                VALUES (@usuario, @senha, 'Fornecedor');
+                                                SELECT LAST_INSERT_ID();";
 
                             int idLogin;
                             using (MySqlCommand cmdLogin = new MySqlCommand(sqlLogin, conn))
                             {
                                 cmdLogin.Parameters.AddWithValue("@usuario", email);
-                                cmdLogin.Parameters.AddWithValue("@senha", senha);
+                                cmdLogin.Parameters.AddWithValue("@senha", senhaHasheada);
                                 idLogin = Convert.ToInt32(cmdLogin.ExecuteScalar());
                             }
 
-                            // Inserir perfil fornecedor
                             string sqlPerfil = @"INSERT INTO perfil_forn 
-                        (id_login, cnpj, razao_social, nome_fantasia, email, senha, telefone, cep, numero, endereco, complemento, categoria, transporte)
-                        VALUES
-                        (@idLogin, @cnpj, @razao, @fantasia, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @categoria, @transporte);";
+                                (id_login, cnpj, razao_social, nome_fantasia, email, senha, telefone, cep, numero, endereco, complemento, categoria, transporte)
+                                VALUES
+                                (@idLogin, @cnpj, @razao, @fantasia, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @categoria, @transporte);";
 
                             using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
                             {
@@ -198,7 +207,7 @@ namespace ProjetoDKR
                                 cmdPerfil.Parameters.AddWithValue("@razao", razaoSocial);
                                 cmdPerfil.Parameters.AddWithValue("@fantasia", nomeFantasia);
                                 cmdPerfil.Parameters.AddWithValue("@email", email);
-                                cmdPerfil.Parameters.AddWithValue("@senha", senha);
+                                cmdPerfil.Parameters.AddWithValue("@senha", senhaHasheada);
                                 cmdPerfil.Parameters.AddWithValue("@telefone", telefone);
                                 cmdPerfil.Parameters.AddWithValue("@cep", cep);
                                 cmdPerfil.Parameters.AddWithValue("@numero", numero);
@@ -222,8 +231,6 @@ namespace ProjetoDKR
                 }
             }
         }
-            
-        
 
         private void PreencherCamposEdicao(EditarForn editarForn)
         {
@@ -232,13 +239,14 @@ namespace ProjetoDKR
             BoxNomeForn.Text = editarForn.Perfil.NomeFantasia;
             BoxTelForn.Text = editarForn.Perfil.Telefone;
             BoxEmailForn.Text = editarForn.Perfil.Email;
-            BoxSenhaForn.Text = editarForn.Perfil.Senha;
-            BoxConfirmForn.Text = editarForn.Perfil.Senha;
             BoxCEPForn.Text = editarForn.Perfil.CEP;
             BoxNumForn.Text = editarForn.Perfil.Numero;
             BoxEndForn.Text = editarForn.Perfil.Endereco;
             BoxComplForn.Text = editarForn.Perfil.Complemento;
             CBCategoria.SelectedItem = editarForn.Perfil.Categoria;
+
+            BoxSenhaForn.Text = "";
+            BoxConfirmForn.Text = "";
 
             if (editarForn.Perfil.Transporte)
             {

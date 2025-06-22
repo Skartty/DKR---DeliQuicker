@@ -60,15 +60,19 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -120,6 +124,7 @@
     <Compile Include="Entidades\PerfilCons.cs" />
     <Compile Include="Entidades\PerfilForn.cs" />
     <Compile Include="Entidades\Produto.cs" />
+    <Compile Include="Utilidade\Hashing.cs" />
     <Compile Include="Modelo\CadastroConsModel.cs" />
     <Compile Include="Modelo\CadastroFornModel.cs" />
     <Compile Include="Modelo\EditarCons.cs" />
@@ -182,6 +187,7 @@
     <Compile Include="Telas\TelaUsuarioForn.Designer.cs">
       <DependentUpon>TelaUsuarioForn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilidade\BancoInitializer.cs" />
     <Compile Include="Utilidade\MascaraUtil.cs" />
     <Compile Include="Utilidade\RemoverAcentos.cs" />
     <EmbeddedResource Include="Components\ProdutoItem.resx">
@@ -232,7 +238,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

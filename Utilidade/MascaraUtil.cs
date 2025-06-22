@@ -44,13 +44,13 @@ public static class MascaraUtil
         string somenteNumeros = Regex.Replace(textBox.Text, @"[^\d]", "");
         if (somenteNumeros.Length == 11)
         {
-            textBox.MaxLength = 15;
-            textBox.Text = AplicarFormato(somenteNumeros, @"(\d{2})(\d{5})(\d{4})", "($1) $2-$3");
+            textBox.MaxLength = 14;
+            textBox.Text = AplicarFormato(somenteNumeros, @"(\d{2})(\d{5})(\d{4})", "($1)$2-$3");
         }
         else if (somenteNumeros.Length == 11)
         {
-            textBox.MaxLength = 14;
-            textBox.Text = AplicarFormato(somenteNumeros, @"(\d{2})(\d{4})(\d{4})", "($1) $2-$3");
+            textBox.MaxLength = 13;
+            textBox.Text = AplicarFormato(somenteNumeros, @"(\d{2})(\d{4})(\d{4})", "($1)$2-$3");
         }
     }
 

@@ -434,8 +434,10 @@
             this.BoxConfirmForn.Location = new System.Drawing.Point(24, 495);
             this.BoxConfirmForn.Multiline = true;
             this.BoxConfirmForn.Name = "BoxConfirmForn";
+            this.BoxConfirmForn.PasswordChar = '*';
             this.BoxConfirmForn.Size = new System.Drawing.Size(315, 42);
             this.BoxConfirmForn.TabIndex = 2;
+            this.BoxConfirmForn.UseSystemPasswordChar = true;
             // 
             // BoxSenhaForn
             // 
@@ -445,8 +447,10 @@
             this.BoxSenhaForn.Location = new System.Drawing.Point(24, 415);
             this.BoxSenhaForn.Multiline = true;
             this.BoxSenhaForn.Name = "BoxSenhaForn";
+            this.BoxSenhaForn.PasswordChar = '*';
             this.BoxSenhaForn.Size = new System.Drawing.Size(315, 42);
             this.BoxSenhaForn.TabIndex = 2;
+            this.BoxSenhaForn.UseSystemPasswordChar = true;
             // 
             // BoxEmailForn
             // 
@@ -652,7 +656,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(407, 749);
+            this.ClientSize = new System.Drawing.Size(390, 749);
             this.Controls.Add(this.panelForn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

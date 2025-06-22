@@ -60,6 +60,7 @@ namespace ProjetoDKR
             cadastroCons.Show();
         }
 
+
         private void iconBuscaCons_Click(object sender, System.EventArgs e)
         {
             this.Hide();

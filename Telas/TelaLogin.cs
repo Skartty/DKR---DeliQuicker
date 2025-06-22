@@ -1,7 +1,10 @@
-﻿using ProjetoDKR.Model;
+﻿using DeliQuicker.Utilidades;
+using MySql.Data.MySqlClient;
+using ProjetoDKR.Entidades;
+using ProjetoDKR.Model;
 using ProjetoDKR.MySQL;
-using ProjetoDKR.Service;
 using System;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace ProjetoDKR
@@ -16,41 +19,41 @@ namespace ProjetoDKR
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(BoxUsername.Text) || string.IsNullOrWhiteSpace(BoxSenha.Text))
+            {
+                lblRetornoMsg.Text = "Por favor, preencha o usuário e a senha.";
+                return;
+            }
+
             UserLogin userLogin = new UserLogin
             {
                 Email = BoxUsername.Text,
                 Senha = BoxSenha.Text
             };
 
-            var retorno = LoginValidacao.Autenticar(userLogin);
-            if (string.IsNullOrEmpty(retorno))
-            {
-                LoginUsuario loginUsuario = new LoginUsuario();
-                var usuario = loginUsuario.BuscaLoginUsuario(userLogin);
+            LoginDAL loginDAL = new LoginDAL();
+            Login usuarioVerificado = loginDAL.VerificarUsuario(userLogin);
 
-                if(usuario == null || string.IsNullOrEmpty(usuario.Usuario))
+            if (usuarioVerificado != null)
+            {
+                lblRetornoMsg.Text = "";
+
+                if (usuarioVerificado.Tipo == "Consumidor")
                 {
-                    lblRetornoMsg.Text = "Usuario não encontrado na base de dados!";
+                    this.Hide();
+                    TelaUsuarioCons telaUsuario = new TelaUsuarioCons(usuarioVerificado.Id);
+                    telaUsuario.Show();
                 }
-                else
+                else if (usuarioVerificado.Tipo == "Fornecedor")
                 {
-                    if (usuario.Tipo == "Consumidor")
-                    {
-                        this.Hide();
-                        TelaUsuarioCons telaUsuario = new TelaUsuarioCons(usuario.Id);
-                        telaUsuario.Show();
-                    }
-                    else if (usuario.Tipo == "Fornecedor")
-                    {
-                        this.Hide();
-                        TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(usuario.Id);
-                        telaUsuarioForn.Show();
-                    }
-                }                
+                    this.Hide();
+                    TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(usuarioVerificado.Id);
+                    telaUsuarioForn.Show();
+                }
             }
             else
             {
-                lblRetornoMsg.Text = retorno;
+                lblRetornoMsg.Text = "Usuário ou senha inválidos!";
             }
         }
 
@@ -62,4 +65,51 @@ namespace ProjetoDKR
         }
     }
 
+    public class LoginDAL
+    {
+        public Login VerificarUsuario(UserLogin userLogin)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["projeto_dkr"].ConnectionString;
+
+                using (var conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = "SELECT id, senha, tipo FROM login WHERE usuario = @usuario";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario", userLogin.Email);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string hashSalvoNoBanco = reader.GetString("senha");
+
+                                if (Hashing.VerifyPassword(userLogin.Senha, hashSalvoNoBanco))
+                                {
+                                    Login usuarioLogado = new Login
+                                    {
+                                        Id = reader.GetInt32("id"),
+                                        Usuario = userLogin.Email,
+                                        Tipo = reader.GetString("tipo")
+                                    };
+                                    return usuarioLogado;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro no banco de dados: " + ex.Message);
+            }
+
+            return null;
+        }
+    }
 }
