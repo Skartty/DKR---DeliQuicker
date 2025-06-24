@@ -1,4 +1,5 @@
-﻿using ProjetoDKR.Entidades;
+﻿using DeliQuicker.Utilidades;
+using ProjetoDKR.Entidades;
 using ProjetoDKR.Model;
 using ProjetoDKR.MySQL;
 using System.Windows.Forms;
@@ -29,7 +30,7 @@ namespace ProjetoDKR
             txtCNPJCons2.Text = perfilCons.CNPJ;
             txtEmailCons2.Text = perfilCons.Email;
 
-            senhaReal = perfilCons.Senha;
+            senhaReal = Hashing.Descriptografar(perfilCons.Senha);
             txtSenhaCons2.Text = "*******";
             senhaVisivel = false;
 

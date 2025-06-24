@@ -1,4 +1,5 @@
-﻿using ProjetoDKR.Entidades;
+﻿using DeliQuicker.Utilidades;
+using ProjetoDKR.Entidades;
 using ProjetoDKR.Model;
 using ProjetoDKR.MySQL;
 using System;
@@ -39,7 +40,7 @@ namespace ProjetoDKR
             txtNomeFan2.Text = perfilForn.NomeFantasia;
             txtEmailForn2.Text = perfilForn.Email;
 
-            senhaReal = perfilForn.Senha;
+            senhaReal = Hashing.Descriptografar(perfilForn.Senha);
             txtSenhaForn2.Text = "*******";
             senhaVisivel = false;
 

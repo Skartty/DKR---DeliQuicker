@@ -68,7 +68,7 @@ namespace ProjetoDKR
                 {
                     if (BoxSenhaForn.Text == BoxConfirmForn.Text)
                     {
-                        _editarForn.Perfil.Senha = Hashing.HashPassword(BoxSenhaForn.Text);
+                        _editarForn.Perfil.Senha = Hashing.Criptografar(BoxSenhaForn.Text);
                     }
                     else
                     {
@@ -176,7 +176,7 @@ namespace ProjetoDKR
                 {
                     try
                     {
-                        string senhaHasheada = Hashing.HashPassword(senha);
+                        string senhaHasheada = Hashing.Criptografar(senha);
 
                         this.Hide();
                         Conexao conexao = new Conexao();
@@ -245,8 +245,8 @@ namespace ProjetoDKR
             BoxComplForn.Text = editarForn.Perfil.Complemento;
             CBCategoria.SelectedItem = editarForn.Perfil.Categoria;
 
-            BoxSenhaForn.Text = "";
-            BoxConfirmForn.Text = "";
+            BoxSenhaForn.Text = Hashing.Descriptografar(editarForn.Perfil.Senha);
+            BoxConfirmForn.Text = Hashing.Descriptografar(editarForn.Perfil.Senha);
 
             if (editarForn.Perfil.Transporte)
             {

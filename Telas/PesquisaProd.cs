@@ -56,6 +56,7 @@ namespace ProjetoDKR
                     txtFiltroRestaurante.Enabled = false;
 
                     _produtoFornecedor = produtosSql.BuscarListaProdutoForn(perfilForn.Id);
+                    listaProd = _produtoFornecedor;
 
                     CarregarProduto(_produtoFornecedor);
                 }

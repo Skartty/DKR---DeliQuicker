@@ -66,7 +66,7 @@ namespace ProjetoDKR
                 {
                     if (BoxSenhaOng.Text == BoxConfirmOng.Text)
                     {
-                        _editarCons.Perfil.Senha = Hashing.HashPassword(BoxSenhaOng.Text);
+                        _editarCons.Perfil.Senha = Hashing.Criptografar(BoxSenhaOng.Text);
                     }
                     else
                     {
@@ -167,7 +167,7 @@ namespace ProjetoDKR
                 {
                     try
                     {
-                        string senhaHasheada = Hashing.HashPassword(senha);
+                        string senhaHasheada = Hashing.Criptografar(senha);
 
                         this.Hide();
                         Conexao conexao = new Conexao();
@@ -232,8 +232,8 @@ namespace ProjetoDKR
             BoxEndOng.Text = editarCons.Perfil.Endereco;
             BoxComplOng.Text = editarCons.Perfil.Complemento;
 
-            BoxSenhaOng.Text = "";
-            BoxConfirmOng.Text = "";
+            BoxSenhaOng.Text = Hashing.Descriptografar(editarCons.Perfil.Senha);
+            BoxConfirmOng.Text = Hashing.Descriptografar(editarCons.Perfil.Senha);
 
             if (editarCons.Perfil.Transporte)
             {

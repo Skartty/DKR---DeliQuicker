@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace DeliQuicker.Utilidades
 {
-    public static class Hashing
+    public static class CriptografiaSimples
     {
         private const int SaltSize = 16;
         private const int HashSize = 20;
@@ -46,6 +46,67 @@ namespace DeliQuicker.Utilidades
                 }
             }
             return true;
+        }
+    }
+
+    public static class Hashing
+    {
+        private const int SaltSize = 16;
+        private const int HashSize = 20;
+        private const int Iterations = 10000;
+
+        // Deve ser guardada em local seguro, como Azure Key Vault ou variáveis de ambiente
+        private static readonly string chave = "ChaveUltraSecreta123"; // Deve ter 16, 24 ou 32 bytes
+
+        public static string Criptografar(string texto)
+        {
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(chave.PadRight(32).Substring(0, 32));
+                aes.GenerateIV();
+
+                ICryptoTransform encryptor = aes.CreateEncryptor();
+                byte[] textoBytes = Encoding.UTF8.GetBytes(texto);
+                byte[] criptografado = encryptor.TransformFinalBlock(textoBytes, 0, textoBytes.Length);
+
+                // Junta o IV + criptografado para conseguir descriptografar depois
+                byte[] resultado = new byte[aes.IV.Length + criptografado.Length];
+                Array.Copy(aes.IV, 0, resultado, 0, aes.IV.Length);
+                Array.Copy(criptografado, 0, resultado, aes.IV.Length, criptografado.Length);
+
+                return Convert.ToBase64String(resultado);
+            }
+        }
+
+        public static bool VerifyPassword(string password, string storedHash)
+        {
+            string senhaDesc = Descriptografar(storedHash);
+
+            if(password == senhaDesc)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public static string Descriptografar(string textoCriptografado)
+        {
+            byte[] dados = Convert.FromBase64String(textoCriptografado);
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(chave.PadRight(32).Substring(0, 32));
+
+                byte[] iv = new byte[16];
+                Array.Copy(dados, iv, iv.Length);
+                aes.IV = iv;
+
+                ICryptoTransform decryptor = aes.CreateDecryptor();
+                byte[] textoBytes = decryptor.TransformFinalBlock(dados, iv.Length, dados.Length - iv.Length);
+
+                return Encoding.UTF8.GetString(textoBytes);
+            }
         }
     }
 }
