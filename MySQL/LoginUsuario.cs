@@ -32,7 +32,7 @@ namespace ProjetoDKR.MySQL
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
                             cmd.Parameters.AddWithValue("@usuario", user.Email);
-                            cmd.Parameters.AddWithValue("@senha", user.Senha); // cuidado: senha em texto puro!
+                            cmd.Parameters.AddWithValue("@senha", user.Senha); 
 
                             using (MySqlDataReader reader = cmd.ExecuteReader())
                             {

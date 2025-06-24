@@ -96,7 +96,7 @@ namespace ProjetoDKR
         private void btnCadastrarProd_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CadastroProd cadastroProd = new CadastroProd(_perfilForn.Id);
+            CadastroProd cadastroProd = new CadastroProd(_perfilForn.Id, _perfilForn.IdLogin);
             cadastroProd.Show();
         }
 

@@ -68,10 +68,10 @@
             this.txtFiltroMercado.AutoSize = true;
             this.txtFiltroMercado.BackColor = System.Drawing.Color.Transparent;
             this.txtFiltroMercado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtFiltroMercado.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroMercado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroMercado.Location = new System.Drawing.Point(42, 116);
             this.txtFiltroMercado.Name = "txtFiltroMercado";
-            this.txtFiltroMercado.Size = new System.Drawing.Size(58, 19);
+            this.txtFiltroMercado.Size = new System.Drawing.Size(61, 16);
             this.txtFiltroMercado.TabIndex = 9;
             this.txtFiltroMercado.Text = "Mercado";
             this.txtFiltroMercado.Click += new System.EventHandler(this.txtFiltroMercado_Click);
@@ -80,7 +80,7 @@
             // 
             this.BoxPesquisaProd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxPesquisaProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BoxPesquisaProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BoxPesquisaProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxPesquisaProd.Location = new System.Drawing.Point(33, 34);
             this.BoxPesquisaProd.Multiline = true;
             this.BoxPesquisaProd.Name = "BoxPesquisaProd";
@@ -93,10 +93,10 @@
             this.txtFiltroRestaurante.AutoSize = true;
             this.txtFiltroRestaurante.BackColor = System.Drawing.Color.Transparent;
             this.txtFiltroRestaurante.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtFiltroRestaurante.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroRestaurante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroRestaurante.Location = new System.Drawing.Point(151, 116);
             this.txtFiltroRestaurante.Name = "txtFiltroRestaurante";
-            this.txtFiltroRestaurante.Size = new System.Drawing.Size(80, 19);
+            this.txtFiltroRestaurante.Size = new System.Drawing.Size(80, 16);
             this.txtFiltroRestaurante.TabIndex = 9;
             this.txtFiltroRestaurante.Text = "Restaurante";
             this.txtFiltroRestaurante.Click += new System.EventHandler(this.txtFiltroRestaurante_Click);
@@ -106,10 +106,10 @@
             this.txtFiltroHortifrutti.AutoSize = true;
             this.txtFiltroHortifrutti.BackColor = System.Drawing.Color.Transparent;
             this.txtFiltroHortifrutti.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtFiltroHortifrutti.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroHortifrutti.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroHortifrutti.Location = new System.Drawing.Point(280, 116);
             this.txtFiltroHortifrutti.Name = "txtFiltroHortifrutti";
-            this.txtFiltroHortifrutti.Size = new System.Drawing.Size(68, 19);
+            this.txtFiltroHortifrutti.Size = new System.Drawing.Size(58, 16);
             this.txtFiltroHortifrutti.TabIndex = 9;
             this.txtFiltroHortifrutti.Text = "Hortifrutti";
             this.txtFiltroHortifrutti.Click += new System.EventHandler(this.txtFiltroHortifrutti_Click);
@@ -139,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(390, 844);
+            this.ClientSize = new System.Drawing.Size(390, 749);
             this.Controls.Add(this.IconBuscaProd);
             this.Controls.Add(this.painelProd);
             this.Controls.Add(this.txtFiltroHortifrutti);

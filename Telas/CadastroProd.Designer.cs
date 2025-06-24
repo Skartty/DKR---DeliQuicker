@@ -55,10 +55,10 @@
             // 
             this.txtNomeProd.AutoSize = true;
             this.txtNomeProd.BackColor = System.Drawing.Color.Transparent;
-            this.txtNomeProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeProd.Location = new System.Drawing.Point(27, 270);
             this.txtNomeProd.Name = "txtNomeProd";
-            this.txtNomeProd.Size = new System.Drawing.Size(110, 19);
+            this.txtNomeProd.Size = new System.Drawing.Size(113, 16);
             this.txtNomeProd.TabIndex = 11;
             this.txtNomeProd.Text = "Nome do Produto";
             // 
@@ -66,7 +66,7 @@
             // 
             this.BoxNomeProd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxNomeProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BoxNomeProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BoxNomeProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxNomeProd.Location = new System.Drawing.Point(29, 292);
             this.BoxNomeProd.Multiline = true;
             this.BoxNomeProd.Name = "BoxNomeProd";
@@ -77,7 +77,7 @@
             // 
             this.BoxValidadeProd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxValidadeProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BoxValidadeProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BoxValidadeProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxValidadeProd.Location = new System.Drawing.Point(29, 382);
             this.BoxValidadeProd.Multiline = true;
             this.BoxValidadeProd.Name = "BoxValidadeProd";
@@ -89,10 +89,10 @@
             // 
             this.txtValidadeProd.AutoSize = true;
             this.txtValidadeProd.BackColor = System.Drawing.Color.Transparent;
-            this.txtValidadeProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValidadeProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValidadeProd.Location = new System.Drawing.Point(27, 360);
             this.txtValidadeProd.Name = "txtValidadeProd";
-            this.txtValidadeProd.Size = new System.Drawing.Size(58, 19);
+            this.txtValidadeProd.Size = new System.Drawing.Size(62, 16);
             this.txtValidadeProd.TabIndex = 11;
             this.txtValidadeProd.Text = "Validade";
             // 
@@ -100,7 +100,7 @@
             // 
             this.BoxQtdProd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxQtdProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BoxQtdProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BoxQtdProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxQtdProd.Location = new System.Drawing.Point(200, 382);
             this.BoxQtdProd.Multiline = true;
             this.BoxQtdProd.Name = "BoxQtdProd";
@@ -111,10 +111,10 @@
             // 
             this.txtQtdProd.AutoSize = true;
             this.txtQtdProd.BackColor = System.Drawing.Color.Transparent;
-            this.txtQtdProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQtdProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQtdProd.Location = new System.Drawing.Point(196, 360);
             this.txtQtdProd.Name = "txtQtdProd";
-            this.txtQtdProd.Size = new System.Drawing.Size(76, 19);
+            this.txtQtdProd.Size = new System.Drawing.Size(77, 16);
             this.txtQtdProd.TabIndex = 11;
             this.txtQtdProd.Text = "Quantidade";
             // 
@@ -122,7 +122,7 @@
             // 
             this.BoxDescricaoProd.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BoxDescricaoProd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BoxDescricaoProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BoxDescricaoProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxDescricaoProd.Location = new System.Drawing.Point(29, 550);
             this.BoxDescricaoProd.Multiline = true;
             this.BoxDescricaoProd.Name = "BoxDescricaoProd";
@@ -133,10 +133,10 @@
             // 
             this.txtDescricaoProd.AutoSize = true;
             this.txtDescricaoProd.BackColor = System.Drawing.Color.Transparent;
-            this.txtDescricaoProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricaoProd.Location = new System.Drawing.Point(27, 528);
             this.txtDescricaoProd.Name = "txtDescricaoProd";
-            this.txtDescricaoProd.Size = new System.Drawing.Size(65, 19);
+            this.txtDescricaoProd.Size = new System.Drawing.Size(69, 16);
             this.txtDescricaoProd.TabIndex = 11;
             this.txtDescricaoProd.Text = "Descrição";
             // 
@@ -145,10 +145,10 @@
             this.txtCancelar.AutoSize = true;
             this.txtCancelar.BackColor = System.Drawing.Color.Transparent;
             this.txtCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtCancelar.Font = new System.Drawing.Font("Zen Maru Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCancelar.Location = new System.Drawing.Point(27, 27);
             this.txtCancelar.Name = "txtCancelar";
-            this.txtCancelar.Size = new System.Drawing.Size(69, 21);
+            this.txtCancelar.Size = new System.Drawing.Size(75, 18);
             this.txtCancelar.TabIndex = 11;
             this.txtCancelar.Text = "Cancelar";
             this.txtCancelar.Click += new System.EventHandler(this.txtCancelar_Click);
@@ -158,10 +158,10 @@
             this.txtSalvar.AutoSize = true;
             this.txtSalvar.BackColor = System.Drawing.Color.Transparent;
             this.txtSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtSalvar.Font = new System.Drawing.Font("Zen Maru Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalvar.Location = new System.Drawing.Point(310, 27);
             this.txtSalvar.Name = "txtSalvar";
-            this.txtSalvar.Size = new System.Drawing.Size(53, 21);
+            this.txtSalvar.Size = new System.Drawing.Size(55, 18);
             this.txtSalvar.TabIndex = 11;
             this.txtSalvar.Text = "Salvar";
             this.txtSalvar.Click += new System.EventHandler(this.txtSalvar_Click);
@@ -179,11 +179,11 @@
             this.txtAddImgProd.AutoSize = true;
             this.txtAddImgProd.BackColor = System.Drawing.Color.Transparent;
             this.txtAddImgProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtAddImgProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddImgProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddImgProd.ForeColor = System.Drawing.Color.Silver;
             this.txtAddImgProd.Location = new System.Drawing.Point(140, 195);
             this.txtAddImgProd.Name = "txtAddImgProd";
-            this.txtAddImgProd.Size = new System.Drawing.Size(101, 17);
+            this.txtAddImgProd.Size = new System.Drawing.Size(123, 15);
             this.txtAddImgProd.TabIndex = 11;
             this.txtAddImgProd.Text = "Adicionar Imagem";
             this.txtAddImgProd.Click += new System.EventHandler(this.txtAddImgProd_Click);
@@ -201,10 +201,10 @@
             // 
             this.txtCategoriaProd.AutoSize = true;
             this.txtCategoriaProd.BackColor = System.Drawing.Color.Transparent;
-            this.txtCategoriaProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoriaProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategoriaProd.Location = new System.Drawing.Point(25, 446);
             this.txtCategoriaProd.Name = "txtCategoriaProd";
-            this.txtCategoriaProd.Size = new System.Drawing.Size(66, 19);
+            this.txtCategoriaProd.Size = new System.Drawing.Size(66, 16);
             this.txtCategoriaProd.TabIndex = 24;
             this.txtCategoriaProd.Text = "Categoria";
             // 
@@ -218,7 +218,7 @@
             this.CBCategoriaProd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBCategoriaProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCategoriaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CBCategoriaProd.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBCategoriaProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBCategoriaProd.FormattingEnabled = true;
             this.CBCategoriaProd.Items.AddRange(new object[] {
             "Mercado",
@@ -226,7 +226,7 @@
             "Hortifrutti"});
             this.CBCategoriaProd.Location = new System.Drawing.Point(31, 475);
             this.CBCategoriaProd.Name = "CBCategoriaProd";
-            this.CBCategoriaProd.Size = new System.Drawing.Size(319, 27);
+            this.CBCategoriaProd.Size = new System.Drawing.Size(319, 24);
             this.CBCategoriaProd.TabIndex = 25;
             // 
             // BoxFundo
@@ -235,7 +235,7 @@
             this.BoxFundo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BoxFundo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BoxFundo.Enabled = false;
-            this.BoxFundo.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BoxFundo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BoxFundo.Location = new System.Drawing.Point(29, 468);
             this.BoxFundo.Multiline = true;
             this.BoxFundo.Name = "BoxFundo";
@@ -245,21 +245,21 @@
             // txtEndFornErro
             // 
             this.txtEndFornErro.AutoSize = true;
-            this.txtEndFornErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndFornErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndFornErro.ForeColor = System.Drawing.Color.Red;
             this.txtEndFornErro.Location = new System.Drawing.Point(28, 427);
             this.txtEndFornErro.Name = "txtEndFornErro";
-            this.txtEndFornErro.Size = new System.Drawing.Size(0, 17);
+            this.txtEndFornErro.Size = new System.Drawing.Size(0, 15);
             this.txtEndFornErro.TabIndex = 26;
             // 
             // txtCategoriaErro
             // 
             this.txtCategoriaErro.AutoSize = true;
-            this.txtCategoriaErro.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoriaErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategoriaErro.ForeColor = System.Drawing.Color.Red;
             this.txtCategoriaErro.Location = new System.Drawing.Point(28, 507);
             this.txtCategoriaErro.Name = "txtCategoriaErro";
-            this.txtCategoriaErro.Size = new System.Drawing.Size(0, 17);
+            this.txtCategoriaErro.Size = new System.Drawing.Size(0, 15);
             this.txtCategoriaErro.TabIndex = 27;
             // 
             // iconPerfilProd
@@ -279,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(390, 844);
+            this.ClientSize = new System.Drawing.Size(390, 749);
             this.Controls.Add(this.txtCategoriaProd);
             this.Controls.Add(this.CBCategoriaProd);
             this.Controls.Add(this.BoxFundo);

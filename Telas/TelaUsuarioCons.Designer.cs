@@ -66,10 +66,10 @@
             // 
             this.txtNomeUC.AutoSize = true;
             this.txtNomeUC.BackColor = System.Drawing.Color.Transparent;
-            this.txtNomeUC.Font = new System.Drawing.Font("Zen Maru Gothic Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeUC.Location = new System.Drawing.Point(34, 54);
             this.txtNomeUC.Name = "txtNomeUC";
-            this.txtNomeUC.Size = new System.Drawing.Size(138, 30);
+            this.txtNomeUC.Size = new System.Drawing.Size(152, 25);
             this.txtNomeUC.TabIndex = 0;
             this.txtNomeUC.Text = "Usuário teste";
             // 
@@ -77,10 +77,10 @@
             // 
             this.txtCNPJCons1.AutoSize = true;
             this.txtCNPJCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtCNPJCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNPJCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCNPJCons1.Location = new System.Drawing.Point(37, 115);
             this.txtCNPJCons1.Name = "txtCNPJCons1";
-            this.txtCNPJCons1.Size = new System.Drawing.Size(42, 19);
+            this.txtCNPJCons1.Size = new System.Drawing.Size(42, 16);
             this.txtCNPJCons1.TabIndex = 1;
             this.txtCNPJCons1.Text = "CNPJ";
             // 
@@ -88,10 +88,10 @@
             // 
             this.txtCNPJCons2.AutoSize = true;
             this.txtCNPJCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtCNPJCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNPJCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCNPJCons2.Location = new System.Drawing.Point(37, 146);
             this.txtCNPJCons2.Name = "txtCNPJCons2";
-            this.txtCNPJCons2.Size = new System.Drawing.Size(113, 19);
+            this.txtCNPJCons2.Size = new System.Drawing.Size(137, 16);
             this.txtCNPJCons2.TabIndex = 2;
             this.txtCNPJCons2.Text = "12.345.678/0001-23";
             // 
@@ -99,10 +99,10 @@
             // 
             this.txtEmailCons1.AutoSize = true;
             this.txtEmailCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmailCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailCons1.Location = new System.Drawing.Point(37, 177);
             this.txtEmailCons1.Name = "txtEmailCons1";
-            this.txtEmailCons1.Size = new System.Drawing.Size(40, 19);
+            this.txtEmailCons1.Size = new System.Drawing.Size(41, 16);
             this.txtEmailCons1.TabIndex = 1;
             this.txtEmailCons1.Text = "Email";
             // 
@@ -110,10 +110,10 @@
             // 
             this.txtEmailCons2.AutoSize = true;
             this.txtEmailCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmailCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailCons2.Location = new System.Drawing.Point(37, 208);
             this.txtEmailCons2.Name = "txtEmailCons2";
-            this.txtEmailCons2.Size = new System.Drawing.Size(157, 19);
+            this.txtEmailCons2.Size = new System.Drawing.Size(191, 16);
             this.txtEmailCons2.TabIndex = 2;
             this.txtEmailCons2.Text = "Usuario.Teste@gmail.com";
             // 
@@ -121,10 +121,10 @@
             // 
             this.txtTelCons1.AutoSize = true;
             this.txtTelCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtTelCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelCons1.Location = new System.Drawing.Point(37, 241);
             this.txtTelCons1.Name = "txtTelCons1";
-            this.txtTelCons1.Size = new System.Drawing.Size(60, 19);
+            this.txtTelCons1.Size = new System.Drawing.Size(61, 16);
             this.txtTelCons1.TabIndex = 1;
             this.txtTelCons1.Text = "Telefone";
             // 
@@ -132,10 +132,10 @@
             // 
             this.txtTelCons2.AutoSize = true;
             this.txtTelCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtTelCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelCons2.Location = new System.Drawing.Point(37, 272);
             this.txtTelCons2.Name = "txtTelCons2";
-            this.txtTelCons2.Size = new System.Drawing.Size(100, 19);
+            this.txtTelCons2.Size = new System.Drawing.Size(122, 16);
             this.txtTelCons2.TabIndex = 2;
             this.txtTelCons2.Text = "(19) 999999-9999";
             // 
@@ -143,10 +143,10 @@
             // 
             this.txtCEPCons1.AutoSize = true;
             this.txtCEPCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtCEPCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCEPCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCEPCons1.Location = new System.Drawing.Point(37, 303);
             this.txtCEPCons1.Name = "txtCEPCons1";
-            this.txtCEPCons1.Size = new System.Drawing.Size(34, 19);
+            this.txtCEPCons1.Size = new System.Drawing.Size(34, 16);
             this.txtCEPCons1.TabIndex = 1;
             this.txtCEPCons1.Text = "CEP";
             // 
@@ -154,10 +154,10 @@
             // 
             this.txtNumCons2.AutoSize = true;
             this.txtNumCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumCons2.Location = new System.Drawing.Point(254, 334);
             this.txtNumCons2.Name = "txtNumCons2";
-            this.txtNumCons2.Size = new System.Drawing.Size(26, 19);
+            this.txtNumCons2.Size = new System.Drawing.Size(31, 16);
             this.txtNumCons2.TabIndex = 2;
             this.txtNumCons2.Text = "749";
             // 
@@ -165,10 +165,10 @@
             // 
             this.txtEndCons1.AutoSize = true;
             this.txtEndCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtEndCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndCons1.Location = new System.Drawing.Point(37, 366);
             this.txtEndCons1.Name = "txtEndCons1";
-            this.txtEndCons1.Size = new System.Drawing.Size(63, 19);
+            this.txtEndCons1.Size = new System.Drawing.Size(66, 16);
             this.txtEndCons1.TabIndex = 1;
             this.txtEndCons1.Text = "Endereço";
             // 
@@ -176,10 +176,10 @@
             // 
             this.txtEndCons2.AutoSize = true;
             this.txtEndCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtEndCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndCons2.Location = new System.Drawing.Point(37, 397);
             this.txtEndCons2.Name = "txtEndCons2";
-            this.txtEndCons2.Size = new System.Drawing.Size(138, 19);
+            this.txtEndCons2.Size = new System.Drawing.Size(167, 16);
             this.txtEndCons2.TabIndex = 2;
             this.txtEndCons2.Text = "Rua das Flores Verdes";
             // 
@@ -187,10 +187,10 @@
             // 
             this.txtPossuiCons1.AutoSize = true;
             this.txtPossuiCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtPossuiCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPossuiCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPossuiCons1.Location = new System.Drawing.Point(37, 431);
             this.txtPossuiCons1.Name = "txtPossuiCons1";
-            this.txtPossuiCons1.Size = new System.Drawing.Size(259, 19);
+            this.txtPossuiCons1.Size = new System.Drawing.Size(266, 16);
             this.txtPossuiCons1.TabIndex = 2;
             this.txtPossuiCons1.Text = "Possui serviço de transporte dos produtos?";
             // 
@@ -198,10 +198,10 @@
             // 
             this.txtComplCons2.AutoSize = true;
             this.txtComplCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtComplCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComplCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplCons2.Location = new System.Drawing.Point(225, 397);
             this.txtComplCons2.Name = "txtComplCons2";
-            this.txtComplCons2.Size = new System.Drawing.Size(50, 19);
+            this.txtComplCons2.Size = new System.Drawing.Size(57, 16);
             this.txtComplCons2.TabIndex = 2;
             this.txtComplCons2.Text = "Casa B";
             // 
@@ -209,10 +209,10 @@
             // 
             this.txtComplCons1.AutoSize = true;
             this.txtComplCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtComplCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComplCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplCons1.Location = new System.Drawing.Point(225, 366);
             this.txtComplCons1.Name = "txtComplCons1";
-            this.txtComplCons1.Size = new System.Drawing.Size(88, 19);
+            this.txtComplCons1.Size = new System.Drawing.Size(91, 16);
             this.txtComplCons1.TabIndex = 2;
             this.txtComplCons1.Text = "Complemento";
             // 
@@ -220,10 +220,10 @@
             // 
             this.txtNumCons1.AutoSize = true;
             this.txtNumCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumCons1.Location = new System.Drawing.Point(254, 303);
             this.txtNumCons1.Name = "txtNumCons1";
-            this.txtNumCons1.Size = new System.Drawing.Size(54, 19);
+            this.txtNumCons1.Size = new System.Drawing.Size(55, 16);
             this.txtNumCons1.TabIndex = 2;
             this.txtNumCons1.Text = "Número";
             // 
@@ -231,10 +231,10 @@
             // 
             this.txtSenhaCons2.AutoSize = true;
             this.txtSenhaCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtSenhaCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenhaCons2.Location = new System.Drawing.Point(254, 208);
             this.txtSenhaCons2.Name = "txtSenhaCons2";
-            this.txtSenhaCons2.Size = new System.Drawing.Size(79, 19);
+            this.txtSenhaCons2.Size = new System.Drawing.Size(67, 16);
             this.txtSenhaCons2.TabIndex = 2;
             this.txtSenhaCons2.Text = "**********";
             // 
@@ -242,10 +242,10 @@
             // 
             this.txtSenhaCons1.AutoSize = true;
             this.txtSenhaCons1.BackColor = System.Drawing.Color.Transparent;
-            this.txtSenhaCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenhaCons1.Location = new System.Drawing.Point(254, 177);
             this.txtSenhaCons1.Name = "txtSenhaCons1";
-            this.txtSenhaCons1.Size = new System.Drawing.Size(45, 19);
+            this.txtSenhaCons1.Size = new System.Drawing.Size(46, 16);
             this.txtSenhaCons1.TabIndex = 2;
             this.txtSenhaCons1.Text = "Senha";
             // 
@@ -253,10 +253,10 @@
             // 
             this.RBSimCons1.AutoSize = true;
             this.RBSimCons1.BackColor = System.Drawing.Color.Transparent;
-            this.RBSimCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBSimCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBSimCons1.Location = new System.Drawing.Point(40, 458);
             this.RBSimCons1.Name = "RBSimCons1";
-            this.RBSimCons1.Size = new System.Drawing.Size(46, 21);
+            this.RBSimCons1.Size = new System.Drawing.Size(47, 19);
             this.RBSimCons1.TabIndex = 3;
             this.RBSimCons1.TabStop = true;
             this.RBSimCons1.Text = "Sim";
@@ -266,10 +266,10 @@
             // 
             this.RBNaoCons1.AutoSize = true;
             this.RBNaoCons1.BackColor = System.Drawing.Color.Transparent;
-            this.RBNaoCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBNaoCons1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBNaoCons1.Location = new System.Drawing.Point(129, 458);
             this.RBNaoCons1.Name = "RBNaoCons1";
-            this.RBNaoCons1.Size = new System.Drawing.Size(46, 21);
+            this.RBNaoCons1.Size = new System.Drawing.Size(48, 19);
             this.RBNaoCons1.TabIndex = 4;
             this.RBNaoCons1.TabStop = true;
             this.RBNaoCons1.Text = "Não";
@@ -302,10 +302,10 @@
             // 
             this.txtCEPCons2.AutoSize = true;
             this.txtCEPCons2.BackColor = System.Drawing.Color.Transparent;
-            this.txtCEPCons2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCEPCons2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCEPCons2.Location = new System.Drawing.Point(37, 334);
             this.txtCEPCons2.Name = "txtCEPCons2";
-            this.txtCEPCons2.Size = new System.Drawing.Size(71, 19);
+            this.txtCEPCons2.Size = new System.Drawing.Size(76, 16);
             this.txtCEPCons2.TabIndex = 1;
             this.txtCEPCons2.Text = "00000-000";
             // 
@@ -313,7 +313,7 @@
             // 
             this.btnEditarCons.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnEditarCons.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarCons.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCons.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnEditarCons.Location = new System.Drawing.Point(287, 108);
             this.btnEditarCons.Name = "btnEditarCons";
@@ -328,7 +328,7 @@
             // 
             this.btnMeusPedidos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMeusPedidos.Enabled = false;
-            this.btnMeusPedidos.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMeusPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMeusPedidos.Location = new System.Drawing.Point(28, 530);
             this.btnMeusPedidos.Name = "btnMeusPedidos";
             this.btnMeusPedidos.Size = new System.Drawing.Size(332, 44);
@@ -391,10 +391,10 @@
             // txtSairCons
             // 
             this.txtSairCons.AutoSize = true;
-            this.txtSairCons.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSairCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSairCons.Location = new System.Drawing.Point(3, 6);
             this.txtSairCons.Name = "txtSairCons";
-            this.txtSairCons.Size = new System.Drawing.Size(104, 19);
+            this.txtSairCons.Size = new System.Drawing.Size(108, 16);
             this.txtSairCons.TabIndex = 0;
             this.txtSairCons.Text = "Encerrar Sessão";
             this.txtSairCons.Click += new System.EventHandler(this.txtSairCons_Click);
@@ -404,7 +404,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(390, 844);
+            this.ClientSize = new System.Drawing.Size(390, 749);
             this.Controls.Add(this.PainelSairCons);
             this.Controls.Add(this.IconMenuCons);
             this.Controls.Add(this.MostrarSenhaOng);

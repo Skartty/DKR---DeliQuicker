@@ -80,7 +80,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.button1.Location = new System.Drawing.Point(287, 105);
             this.button1.Name = "button1";
@@ -95,10 +95,10 @@
             // 
             this.RBNaoForn1.AutoSize = true;
             this.RBNaoForn1.BackColor = System.Drawing.Color.Transparent;
-            this.RBNaoForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBNaoForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBNaoForn1.Location = new System.Drawing.Point(127, 546);
             this.RBNaoForn1.Name = "RBNaoForn1";
-            this.RBNaoForn1.Size = new System.Drawing.Size(46, 21);
+            this.RBNaoForn1.Size = new System.Drawing.Size(48, 19);
             this.RBNaoForn1.TabIndex = 28;
             this.RBNaoForn1.Text = "Não";
             this.RBNaoForn1.UseVisualStyleBackColor = false;
@@ -108,10 +108,10 @@
             this.RBSimForn1.AutoSize = true;
             this.RBSimForn1.BackColor = System.Drawing.Color.Transparent;
             this.RBSimForn1.Checked = true;
-            this.RBSimForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBSimForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBSimForn1.Location = new System.Drawing.Point(40, 546);
             this.RBSimForn1.Name = "RBSimForn1";
-            this.RBSimForn1.Size = new System.Drawing.Size(46, 21);
+            this.RBSimForn1.Size = new System.Drawing.Size(47, 19);
             this.RBSimForn1.TabIndex = 27;
             this.RBSimForn1.TabStop = true;
             this.RBSimForn1.Text = "Sim";
@@ -121,10 +121,10 @@
             // 
             this.txtPossuiForn1.AutoSize = true;
             this.txtPossuiForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtPossuiForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPossuiForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPossuiForn1.Location = new System.Drawing.Point(37, 521);
             this.txtPossuiForn1.Name = "txtPossuiForn1";
-            this.txtPossuiForn1.Size = new System.Drawing.Size(259, 19);
+            this.txtPossuiForn1.Size = new System.Drawing.Size(266, 16);
             this.txtPossuiForn1.TabIndex = 25;
             this.txtPossuiForn1.Text = "Possui serviço de transporte dos produtos?";
             // 
@@ -132,10 +132,10 @@
             // 
             this.txtComplForn1.AutoSize = true;
             this.txtComplForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtComplForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComplForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplForn1.Location = new System.Drawing.Point(225, 423);
             this.txtComplForn1.Name = "txtComplForn1";
-            this.txtComplForn1.Size = new System.Drawing.Size(88, 19);
+            this.txtComplForn1.Size = new System.Drawing.Size(91, 16);
             this.txtComplForn1.TabIndex = 24;
             this.txtComplForn1.Text = "Complemento";
             // 
@@ -143,10 +143,10 @@
             // 
             this.txtComplForn2.AutoSize = true;
             this.txtComplForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtComplForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComplForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplForn2.Location = new System.Drawing.Point(225, 454);
             this.txtComplForn2.Name = "txtComplForn2";
-            this.txtComplForn2.Size = new System.Drawing.Size(50, 19);
+            this.txtComplForn2.Size = new System.Drawing.Size(57, 16);
             this.txtComplForn2.TabIndex = 23;
             this.txtComplForn2.Text = "Casa B";
             // 
@@ -154,10 +154,10 @@
             // 
             this.txtEndForn2.AutoSize = true;
             this.txtEndForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtEndForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndForn2.Location = new System.Drawing.Point(37, 454);
             this.txtEndForn2.Name = "txtEndForn2";
-            this.txtEndForn2.Size = new System.Drawing.Size(138, 19);
+            this.txtEndForn2.Size = new System.Drawing.Size(167, 16);
             this.txtEndForn2.TabIndex = 22;
             this.txtEndForn2.Text = "Rua das Flores Verdes";
             // 
@@ -165,10 +165,10 @@
             // 
             this.txtEndForn1.AutoSize = true;
             this.txtEndForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtEndForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndForn1.Location = new System.Drawing.Point(37, 423);
             this.txtEndForn1.Name = "txtEndForn1";
-            this.txtEndForn1.Size = new System.Drawing.Size(63, 19);
+            this.txtEndForn1.Size = new System.Drawing.Size(66, 16);
             this.txtEndForn1.TabIndex = 14;
             this.txtEndForn1.Text = "Endereço";
             // 
@@ -176,10 +176,10 @@
             // 
             this.txtSenhaForn1.AutoSize = true;
             this.txtSenhaForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtSenhaForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenhaForn1.Location = new System.Drawing.Point(254, 234);
             this.txtSenhaForn1.Name = "txtSenhaForn1";
-            this.txtSenhaForn1.Size = new System.Drawing.Size(45, 19);
+            this.txtSenhaForn1.Size = new System.Drawing.Size(46, 16);
             this.txtSenhaForn1.TabIndex = 21;
             this.txtSenhaForn1.Text = "Senha";
             // 
@@ -187,10 +187,10 @@
             // 
             this.txtSenhaForn2.AutoSize = true;
             this.txtSenhaForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtSenhaForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenhaForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenhaForn2.Location = new System.Drawing.Point(254, 265);
             this.txtSenhaForn2.Name = "txtSenhaForn2";
-            this.txtSenhaForn2.Size = new System.Drawing.Size(79, 19);
+            this.txtSenhaForn2.Size = new System.Drawing.Size(67, 16);
             this.txtSenhaForn2.TabIndex = 20;
             this.txtSenhaForn2.Text = "**********";
             // 
@@ -198,10 +198,10 @@
             // 
             this.txtNumForn1.AutoSize = true;
             this.txtNumForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumForn1.Location = new System.Drawing.Point(254, 360);
             this.txtNumForn1.Name = "txtNumForn1";
-            this.txtNumForn1.Size = new System.Drawing.Size(54, 19);
+            this.txtNumForn1.Size = new System.Drawing.Size(55, 16);
             this.txtNumForn1.TabIndex = 26;
             this.txtNumForn1.Text = "Número";
             // 
@@ -209,10 +209,10 @@
             // 
             this.txtNumForn2.AutoSize = true;
             this.txtNumForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumForn2.Location = new System.Drawing.Point(254, 391);
             this.txtNumForn2.Name = "txtNumForn2";
-            this.txtNumForn2.Size = new System.Drawing.Size(26, 19);
+            this.txtNumForn2.Size = new System.Drawing.Size(31, 16);
             this.txtNumForn2.TabIndex = 19;
             this.txtNumForn2.Text = "749";
             // 
@@ -220,10 +220,10 @@
             // 
             this.txtCEPForn2.AutoSize = true;
             this.txtCEPForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtCEPForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCEPForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCEPForn2.Location = new System.Drawing.Point(37, 391);
             this.txtCEPForn2.Name = "txtCEPForn2";
-            this.txtCEPForn2.Size = new System.Drawing.Size(71, 19);
+            this.txtCEPForn2.Size = new System.Drawing.Size(76, 16);
             this.txtCEPForn2.TabIndex = 13;
             this.txtCEPForn2.Text = "00000-000";
             // 
@@ -231,10 +231,10 @@
             // 
             this.txtCEPForn1.AutoSize = true;
             this.txtCEPForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtCEPForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCEPForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCEPForn1.Location = new System.Drawing.Point(37, 360);
             this.txtCEPForn1.Name = "txtCEPForn1";
-            this.txtCEPForn1.Size = new System.Drawing.Size(34, 19);
+            this.txtCEPForn1.Size = new System.Drawing.Size(34, 16);
             this.txtCEPForn1.TabIndex = 12;
             this.txtCEPForn1.Text = "CEP";
             // 
@@ -242,10 +242,10 @@
             // 
             this.txtEmailForn2.AutoSize = true;
             this.txtEmailForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmailForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailForn2.Location = new System.Drawing.Point(37, 265);
             this.txtEmailForn2.Name = "txtEmailForn2";
-            this.txtEmailForn2.Size = new System.Drawing.Size(157, 19);
+            this.txtEmailForn2.Size = new System.Drawing.Size(191, 16);
             this.txtEmailForn2.TabIndex = 18;
             this.txtEmailForn2.Text = "Usuario.Teste@gmail.com";
             // 
@@ -253,10 +253,10 @@
             // 
             this.txtTelForn2.AutoSize = true;
             this.txtTelForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtTelForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelForn2.Location = new System.Drawing.Point(37, 329);
             this.txtTelForn2.Name = "txtTelForn2";
-            this.txtTelForn2.Size = new System.Drawing.Size(100, 19);
+            this.txtTelForn2.Size = new System.Drawing.Size(122, 16);
             this.txtTelForn2.TabIndex = 17;
             this.txtTelForn2.Text = "(19) 999999-9999";
             // 
@@ -264,10 +264,10 @@
             // 
             this.txtEmailForn1.AutoSize = true;
             this.txtEmailForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmailForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailForn1.Location = new System.Drawing.Point(37, 234);
             this.txtEmailForn1.Name = "txtEmailForn1";
-            this.txtEmailForn1.Size = new System.Drawing.Size(40, 19);
+            this.txtEmailForn1.Size = new System.Drawing.Size(41, 16);
             this.txtEmailForn1.TabIndex = 11;
             this.txtEmailForn1.Text = "Email";
             // 
@@ -275,10 +275,10 @@
             // 
             this.txtTelForn1.AutoSize = true;
             this.txtTelForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtTelForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelForn1.Location = new System.Drawing.Point(37, 298);
             this.txtTelForn1.Name = "txtTelForn1";
-            this.txtTelForn1.Size = new System.Drawing.Size(60, 19);
+            this.txtTelForn1.Size = new System.Drawing.Size(61, 16);
             this.txtTelForn1.TabIndex = 10;
             this.txtTelForn1.Text = "Telefone";
             // 
@@ -286,10 +286,10 @@
             // 
             this.txtCNPJForn2.AutoSize = true;
             this.txtCNPJForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtCNPJForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNPJForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCNPJForn2.Location = new System.Drawing.Point(37, 140);
             this.txtCNPJForn2.Name = "txtCNPJForn2";
-            this.txtCNPJForn2.Size = new System.Drawing.Size(113, 19);
+            this.txtCNPJForn2.Size = new System.Drawing.Size(137, 16);
             this.txtCNPJForn2.TabIndex = 16;
             this.txtCNPJForn2.Text = "12.345.678/0001-23";
             // 
@@ -297,10 +297,10 @@
             // 
             this.txtCNPJForn1.AutoSize = true;
             this.txtCNPJForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtCNPJForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNPJForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCNPJForn1.Location = new System.Drawing.Point(37, 112);
             this.txtCNPJForn1.Name = "txtCNPJForn1";
-            this.txtCNPJForn1.Size = new System.Drawing.Size(42, 19);
+            this.txtCNPJForn1.Size = new System.Drawing.Size(42, 16);
             this.txtCNPJForn1.TabIndex = 15;
             this.txtCNPJForn1.Text = "CNPJ";
             // 
@@ -308,10 +308,10 @@
             // 
             this.txtNomeForn.AutoSize = true;
             this.txtNomeForn.BackColor = System.Drawing.Color.Transparent;
-            this.txtNomeForn.Font = new System.Drawing.Font("Zen Maru Gothic Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeForn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeForn.Location = new System.Drawing.Point(34, 54);
             this.txtNomeForn.Name = "txtNomeForn";
-            this.txtNomeForn.Size = new System.Drawing.Size(138, 30);
+            this.txtNomeForn.Size = new System.Drawing.Size(152, 25);
             this.txtNomeForn.TabIndex = 9;
             this.txtNomeForn.Text = "Usuário teste";
             // 
@@ -319,10 +319,10 @@
             // 
             this.txtNomeFan1.AutoSize = true;
             this.txtNomeFan1.BackColor = System.Drawing.Color.Transparent;
-            this.txtNomeFan1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeFan1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeFan1.Location = new System.Drawing.Point(37, 172);
             this.txtNomeFan1.Name = "txtNomeFan1";
-            this.txtNomeFan1.Size = new System.Drawing.Size(95, 19);
+            this.txtNomeFan1.Size = new System.Drawing.Size(99, 16);
             this.txtNomeFan1.TabIndex = 15;
             this.txtNomeFan1.Text = "Nome Fantasia";
             // 
@@ -330,10 +330,10 @@
             // 
             this.txtNomeFan2.AutoSize = true;
             this.txtNomeFan2.BackColor = System.Drawing.Color.Transparent;
-            this.txtNomeFan2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeFan2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeFan2.Location = new System.Drawing.Point(37, 203);
             this.txtNomeFan2.Name = "txtNomeFan2";
-            this.txtNomeFan2.Size = new System.Drawing.Size(104, 19);
+            this.txtNomeFan2.Size = new System.Drawing.Size(125, 16);
             this.txtNomeFan2.TabIndex = 16;
             this.txtNomeFan2.Text = "UsuarioTeste123";
             // 
@@ -341,10 +341,10 @@
             // 
             this.txtCatForn1.AutoSize = true;
             this.txtCatForn1.BackColor = System.Drawing.Color.Transparent;
-            this.txtCatForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCatForn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCatForn1.Location = new System.Drawing.Point(37, 487);
             this.txtCatForn1.Name = "txtCatForn1";
-            this.txtCatForn1.Size = new System.Drawing.Size(66, 19);
+            this.txtCatForn1.Size = new System.Drawing.Size(66, 16);
             this.txtCatForn1.TabIndex = 14;
             this.txtCatForn1.Text = "Categoria";
             // 
@@ -352,10 +352,10 @@
             // 
             this.txtCatForn2.AutoSize = true;
             this.txtCatForn2.BackColor = System.Drawing.Color.Transparent;
-            this.txtCatForn2.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCatForn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCatForn2.Location = new System.Drawing.Point(156, 487);
             this.txtCatForn2.Name = "txtCatForn2";
-            this.txtCatForn2.Size = new System.Drawing.Size(58, 19);
+            this.txtCatForn2.Size = new System.Drawing.Size(68, 16);
             this.txtCatForn2.TabIndex = 23;
             this.txtCatForn2.Text = "Mercado";
             // 
@@ -364,7 +364,7 @@
             this.btnMeusProd.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnMeusProd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMeusProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMeusProd.Font = new System.Drawing.Font("Zen Maru Gothic Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMeusProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMeusProd.Location = new System.Drawing.Point(34, 629);
             this.btnMeusProd.Name = "btnMeusProd";
             this.btnMeusProd.Size = new System.Drawing.Size(321, 47);
@@ -378,7 +378,7 @@
             this.btnCadastrarProd.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCadastrarProd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarProd.Font = new System.Drawing.Font("Zen Maru Gothic Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarProd.Location = new System.Drawing.Point(34, 705);
             this.btnCadastrarProd.Name = "btnCadastrarProd";
             this.btnCadastrarProd.Size = new System.Drawing.Size(321, 47);
@@ -445,10 +445,10 @@
             // txtSairForn
             // 
             this.txtSairForn.AutoSize = true;
-            this.txtSairForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSairForn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSairForn.Location = new System.Drawing.Point(3, 6);
             this.txtSairForn.Name = "txtSairForn";
-            this.txtSairForn.Size = new System.Drawing.Size(104, 19);
+            this.txtSairForn.Size = new System.Drawing.Size(108, 16);
             this.txtSairForn.TabIndex = 0;
             this.txtSairForn.Text = "Encerrar Sessão";
             this.txtSairForn.Click += new System.EventHandler(this.txtSairForn_Click);
@@ -469,7 +469,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(390, 844);
+            this.ClientSize = new System.Drawing.Size(390, 749);
             this.Controls.Add(this.IconMenuForn);
             this.Controls.Add(this.PainelSairForn);
             this.Controls.Add(this.MostrarSenhaForn);
