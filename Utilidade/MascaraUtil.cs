@@ -21,12 +21,6 @@ public static class MascaraUtil
         textBox.SelectionStart = textBox.Text.Length; 
     }
 
-    public static void AplicarMascaraCPF(TextBox textBox)
-    {
-        textBox.MaxLength = 14;
-        textBox.Text = AplicarFormato(textBox.Text, @"(\d{3})(\d{3})(\d{3})(\d{2})", "$1.$2.$3-$4");
-    }
-
     public static void AplicarMascaraCNPJ(TextBox textBox)
     {
         textBox.MaxLength = 18;
@@ -52,6 +46,45 @@ public static class MascaraUtil
             textBox.MaxLength = 13;
             textBox.Text = AplicarFormato(somenteNumeros, @"(\d{2})(\d{4})(\d{4})", "($1)$2-$3");
         }
+    }
+    public static string AplicarMascaraCEPTexto(string texto)
+    {
+        string numeros = Regex.Replace(texto, @"\D", ""); 
+        if (numeros.Length > 8)
+            numeros = numeros.Substring(0, 8); 
+
+        if (numeros.Length >= 6)
+        {
+            return numeros.Insert(5, "-");
+        }
+        else
+        {
+            return numeros;
+        }
+    }
+
+    public static string AplicarMascaraCNPJTexto(string texto)
+    {
+        return AplicarFormato(texto, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})", "$1.$2.$3/$4-$5");
+    }
+
+    public static string AplicarMascaraDataTexto(string texto)
+    {
+        return AplicarFormato(texto, @"(\d{2})(\d{2})(\d{4})", "$1/$2/$3");
+    }
+
+    public static string AplicarMascaraTelefoneTexto(string texto)
+    {
+        string somenteNumeros = Regex.Replace(texto, @"[^\d]", "");
+        if (somenteNumeros.Length == 10)
+        {
+            return AplicarFormato(somenteNumeros, @"(\d{2})(\d{5})(\d{4})", "($1)$2-$3");
+        }
+        else if (somenteNumeros.Length == 11)
+        {
+            return AplicarFormato(somenteNumeros, @"(\d{2})(\d{4})(\d{4})", "($1)$2-$3");
+        }
+        return somenteNumeros;
     }
 
     private static string AplicarFormato(string texto, string padrao, string mascara)

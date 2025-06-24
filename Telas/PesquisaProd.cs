@@ -164,13 +164,13 @@ namespace ProjetoDKR
             if (_perfilCons != null)
             {
                 this.Hide();
-                TelaUsuarioCons telaUsuarioCons = new TelaUsuarioCons(_perfilCons.Id);
+                TelaUsuarioCons telaUsuarioCons = new TelaUsuarioCons(_perfilCons.IdLogin);
                 telaUsuarioCons.Show();
             }
             else if (_perfilForn != null)
             {
                 this.Hide();
-                TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_perfilForn.Id);
+                TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_perfilForn.IdLogin);
                 telaUsuarioForn.Show();
             }
         }

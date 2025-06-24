@@ -55,7 +55,7 @@ namespace ProjetoDKR
                 _editarCons.Perfil.Nome = BoxNomeOng.Text;
                 _editarCons.Perfil.CNPJ = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
                 _editarCons.Perfil.Telefone = new string(BoxTelOng.Text.Where(char.IsDigit).ToArray());
-                _editarCons.Perfil.Email = BoxEmailOng.Text;
+                _editarCons.Perfil.Email = BoxEmailOng.Text.Trim();
                 _editarCons.Perfil.CEP = BoxCEPOng.Text.Replace(".", "").Replace("-", "");
                 _editarCons.Perfil.Numero = BoxNumOng.Text;
                 _editarCons.Perfil.Endereco = BoxEndOng.Text;
@@ -64,9 +64,9 @@ namespace ProjetoDKR
 
                 if (!string.IsNullOrWhiteSpace(BoxSenhaOng.Text))
                 {
-                    if (BoxSenhaOng.Text == BoxConfirmOng.Text)
+                    if (BoxSenhaOng.Text.Trim() == BoxConfirmOng.Text.Trim())
                     {
-                        _editarCons.Perfil.Senha = Hashing.Criptografar(BoxSenhaOng.Text);
+                        _editarCons.Perfil.Senha = Hashing.Criptografar(BoxSenhaOng.Text.Trim());
                     }
                     else
                     {
@@ -87,9 +87,9 @@ namespace ProjetoDKR
                 string nome = BoxNomeOng.Text;
                 string cnpj = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
                 string telefone = BoxTelOng.Text.Replace("(", "").Replace(")", "").Replace("-", "");
-                string email = BoxEmailOng.Text;
-                string senha = BoxSenhaOng.Text;
-                string confirmSenha = BoxConfirmOng.Text;
+                string email = BoxEmailOng.Text.Trim();
+                string senha = BoxSenhaOng.Text.Trim();
+                string confirmSenha = BoxConfirmOng.Text.Trim();
                 string cep = BoxCEPOng.Text.Replace(".", "").Replace("-", "");
                 string numero = BoxNumOng.Text;
                 string endereco = BoxEndOng.Text;

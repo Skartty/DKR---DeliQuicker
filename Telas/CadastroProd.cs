@@ -1,4 +1,5 @@
 ﻿using ProjetoDKR.Entidades;
+using ProjetoDKR.MySQL;
 using System;
 using System.Drawing;
 using System.IO;
@@ -9,16 +10,19 @@ namespace ProjetoDKR
     public partial class CadastroProd : Form
     {
         private readonly int _idForn;
-        public CadastroProd(int idForn)
+        private readonly int _idLogin;
+        public CadastroProd(int idLogin)
         {
             InitializeComponent();
-            _idForn = idForn;
+            Perfil perfilForn = new Perfil();
+            _idForn = perfilForn.BuscarPerfilForn(idLogin).Id;
+            _idLogin = idLogin;
         }
 
         private void iconPerfilForn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idForn);
+            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
             telaUsuarioForn.Show();
         }
 
@@ -66,14 +70,18 @@ namespace ProjetoDKR
                     novoProduto.Imagem = ms.ToArray();
                 }
             }
+            Produtos prod = new Produtos();
+            prod.InserirProduto(novoProduto);
 
-            // Aqui você pode adicionar a lógica para salvar o novo produto no banco de dados ou em outro local
+            this.Hide();
+            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
+            telaUsuarioForn.Show();
         }
 
         private void txtCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idForn);
+            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
             telaUsuarioForn.Show();
         }
 

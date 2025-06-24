@@ -36,19 +36,29 @@ namespace ProjetoDKR
         private void CarregarDadosPerfil(PerfilForn perfilForn)
         {
             txtNomeForn.Text = perfilForn.RazaoSocial;
-            txtCNPJForn2.Text = perfilForn.CNPJ;
+            txtCNPJForn2.Text = MascaraUtil.AplicarMascaraCNPJTexto(perfilForn.CNPJ);
             txtNomeFan2.Text = perfilForn.NomeFantasia;
             txtEmailForn2.Text = perfilForn.Email;
 
             senhaReal = Hashing.Descriptografar(perfilForn.Senha);
+            senhaReal = senhaReal.Length > 15 
+                ? senhaReal.Substring(0, 15) + "..." 
+                : senhaReal;
+
             txtSenhaForn2.Text = "*******";
             senhaVisivel = false;
 
-            txtTelForn2.Text = perfilForn.Telefone;
-            txtCEPForn2.Text = perfilForn.CEP;
+            txtTelForn2.Text = MascaraUtil.AplicarMascaraTelefoneTexto(perfilForn.Telefone);
+            txtCEPForn2.Text = MascaraUtil.AplicarMascaraCEPTexto(perfilForn.CEP);
             txtNumForn2.Text = perfilForn.Numero;
-            txtEndForn2.Text = perfilForn.Endereco;
-            txtComplForn2.Text = perfilForn.Complemento;
+            txtEndForn2.Text = perfilForn.Endereco.Length > 25 
+                ? perfilForn.Endereco.Substring(0, 25) + "..." 
+                : perfilForn.Endereco;
+
+            txtComplForn2.Text = perfilForn.Complemento.Length > 20 
+                ? perfilForn.Complemento.Substring(0, 20) + "..." 
+                : perfilForn.Complemento;
+
             txtCatForn2.Text = perfilForn.Categoria;
 
             if (perfilForn.Transporte)
@@ -97,7 +107,7 @@ namespace ProjetoDKR
         private void btnCadastrarProd_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CadastroProd cadastroProd = new CadastroProd(_perfilForn.Id);
+            CadastroProd cadastroProd = new CadastroProd(_perfilForn.IdLogin);
             cadastroProd.Show();
         }
 

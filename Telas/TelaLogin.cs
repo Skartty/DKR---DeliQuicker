@@ -27,8 +27,8 @@ namespace ProjetoDKR
 
             UserLogin userLogin = new UserLogin
             {
-                Email = BoxUsername.Text,
-                Senha = BoxSenha.Text
+                Email = BoxUsername.Text.Trim(),
+                Senha = BoxSenha.Text.Trim()
             };
 
             LoginDAL loginDAL = new LoginDAL();

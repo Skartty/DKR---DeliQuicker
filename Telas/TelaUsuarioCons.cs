@@ -27,18 +27,27 @@ namespace ProjetoDKR
         private void CarregarDadosPerfil(PerfilCons perfilCons)
         {
             txtNomeUC.Text = perfilCons.Nome;
-            txtCNPJCons2.Text = perfilCons.CNPJ;
+            txtCNPJCons2.Text = MascaraUtil.AplicarMascaraCNPJTexto(perfilCons.CNPJ);
             txtEmailCons2.Text = perfilCons.Email;
 
             senhaReal = Hashing.Descriptografar(perfilCons.Senha);
+            senhaReal = senhaReal.Length > 15
+                ? senhaReal.Substring(0, 15) + "..."
+                : senhaReal;
+
             txtSenhaCons2.Text = "*******";
             senhaVisivel = false;
 
-            txtTelCons2.Text = perfilCons.Telefone;
-            txtCEPCons2.Text = perfilCons.CEP;
+            txtTelCons2.Text = MascaraUtil.AplicarMascaraTelefoneTexto(perfilCons.Telefone);
+            txtCEPCons2.Text = MascaraUtil.AplicarMascaraCEPTexto(perfilCons.CEP);
             txtNumCons2.Text = perfilCons.Numero;
-            txtEndCons2.Text = perfilCons.Endereco;
-            txtComplCons2.Text = perfilCons.Complemento;
+            txtEndCons2.Text = perfilCons.Endereco.Length > 25
+                ? perfilCons.Endereco.Substring(0, 25) + "..."
+                : perfilCons.Endereco;
+
+            txtComplCons2.Text = perfilCons.Complemento.Length > 20
+                ? perfilCons.Complemento.Substring(0, 20) + "..."
+                : perfilCons.Complemento;
 
             if(perfilCons.Transporte)
             {

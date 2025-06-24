@@ -55,7 +55,7 @@ namespace ProjetoDKR
                 _editarForn.Perfil.CNPJ = BoxCNPJForn.Text.Replace(".", "").Replace("/", "").Replace("-", "");
                 _editarForn.Perfil.RazaoSocial = BoxRazaoForn.Text;
                 _editarForn.Perfil.NomeFantasia = BoxNomeForn.Text;
-                _editarForn.Perfil.Email = BoxEmailForn.Text;
+                _editarForn.Perfil.Email = BoxEmailForn.Text.Trim();
                 _editarForn.Perfil.Telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
                 _editarForn.Perfil.CEP = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 _editarForn.Perfil.Numero = BoxNumForn.Text;
@@ -66,9 +66,9 @@ namespace ProjetoDKR
 
                 if (!string.IsNullOrWhiteSpace(BoxSenhaForn.Text))
                 {
-                    if (BoxSenhaForn.Text == BoxConfirmForn.Text)
+                    if (BoxSenhaForn.Text.Trim() == BoxConfirmForn.Text.Trim())
                     {
-                        _editarForn.Perfil.Senha = Hashing.Criptografar(BoxSenhaForn.Text);
+                        _editarForn.Perfil.Senha = Hashing.Criptografar(BoxSenhaForn.Text.Trim());
                     }
                     else
                     {
@@ -89,9 +89,9 @@ namespace ProjetoDKR
                 string cnpj = BoxCNPJForn.Text.Replace(".", "").Replace("/", "").Replace("-", "");
                 string razaoSocial = BoxRazaoForn.Text;
                 string nomeFantasia = BoxNomeForn.Text;
-                string email = BoxEmailForn.Text;
-                string senha = BoxSenhaForn.Text;
-                string confirmSenha = BoxConfirmForn.Text;
+                string email = BoxEmailForn.Text.Trim();
+                string senha = BoxSenhaForn.Text.Trim();
+                string confirmSenha = BoxConfirmForn.Text.Trim();
                 string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
                 string cep = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
                 string numero = BoxNumForn.Text;
