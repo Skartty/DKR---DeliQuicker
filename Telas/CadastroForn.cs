@@ -34,6 +34,14 @@ namespace ProjetoDKR
             }
         }
 
+        public TelaLogin TelaLogin
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void txtVoltarForn_Click(object sender, System.EventArgs e)
         {
             this.Hide();

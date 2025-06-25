@@ -15,5 +15,13 @@ namespace ProjetoDKR.Entidades
         public string Endereco { get; set; }
         public string Complemento { get; set; }
         public bool Transporte { get; set; }
+
+        public Model.CadastroConsModel CadastroConsModel
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

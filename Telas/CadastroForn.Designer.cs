@@ -76,7 +76,6 @@
             this.txtNumFornErro = new System.Windows.Forms.Label();
             this.txtEndFornErro = new System.Windows.Forms.Label();
             this.txtCategoriaErro = new System.Windows.Forms.Label();
-            this.roundedTextBox11 = new RoundedTextBox();
             this.panelForn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -642,15 +641,6 @@
             this.txtCategoriaErro.Size = new System.Drawing.Size(0, 15);
             this.txtCategoriaErro.TabIndex = 22;
             // 
-            // roundedTextBox11
-            // 
-            this.roundedTextBox11.BackColor = System.Drawing.Color.White;
-            this.roundedTextBox11.Location = new System.Drawing.Point(34, 456);
-            this.roundedTextBox11.Name = "roundedTextBox11";
-            this.roundedTextBox11.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextBox11.Size = new System.Drawing.Size(200, 30);
-            this.roundedTextBox11.TabIndex = 0;
-            // 
             // CadastroForn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,7 +653,7 @@
             this.MinimizeBox = false;
             this.Name = "CadastroForn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaCadastro";
+            this.Text = "DeliQuicker";
             this.panelForn.ResumeLayout(false);
             this.panelForn.PerformLayout();
             this.ResumeLayout(false);
@@ -672,7 +662,6 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private RoundedTextBox roundedTextBox11;
         private System.Windows.Forms.ComboBox BoxCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelForn;

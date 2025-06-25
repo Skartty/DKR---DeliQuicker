@@ -1,5 +1,6 @@
 ﻿using DeliQuicker.Utilidades;
 using MySql.Data.MySqlClient;
+using ProjetoDKR.Entidades;
 using ProjetoDKR.Model;
 using ProjetoDKR.MySQL;
 using System;
@@ -32,6 +33,14 @@ namespace ProjetoDKR
             else
             {
                 RBNaoOng.Checked = true;
+            }
+        }
+
+        public TelaLogin TelaLogin
+        {
+            get => default;
+            set
+            {
             }
         }
 
@@ -169,45 +178,22 @@ namespace ProjetoDKR
                     {
                         string senhaHasheada = Hashing.Criptografar(senha);
 
-                        this.Hide();
-                        Conexao conexao = new Conexao();
+                        this.Hide();                        
 
-                        using (MySqlConnection conn = conexao.Abrir())
+                        Perfil perfil = new Perfil();
+                        perfil.InserirPerfil(new PerfilCons
                         {
-                            string sqlLogin = @"INSERT INTO login (usuario, senha, tipo)
-                                                VALUES (@usuario, @senha, 'Consumidor');
-                                                SELECT LAST_INSERT_ID();";
-
-                            int idLogin;
-                            using (MySqlCommand cmdLogin = new MySqlCommand(sqlLogin, conn))
-                            {
-                                cmdLogin.Parameters.AddWithValue("@usuario", email);
-                                cmdLogin.Parameters.AddWithValue("@senha", senhaHasheada);
-                                idLogin = Convert.ToInt32(cmdLogin.ExecuteScalar());
-                            }
-
-                            string sqlPerfil = @"INSERT INTO perfil_cons 
-                                (id_login, nome, cnpj, email, senha, telefone, cep, numero, endereco, complemento, transporte)
-                                VALUES
-                                (@idLogin, @nome, @cnpj, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @transporte);";
-
-                            using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
-                            {
-                                cmdPerfil.Parameters.AddWithValue("@idLogin", idLogin);
-                                cmdPerfil.Parameters.AddWithValue("@nome", nome);
-                                cmdPerfil.Parameters.AddWithValue("@cnpj", cnpj);
-                                cmdPerfil.Parameters.AddWithValue("@email", email);
-                                cmdPerfil.Parameters.AddWithValue("@senha", senhaHasheada);
-                                cmdPerfil.Parameters.AddWithValue("@telefone", telefone);
-                                cmdPerfil.Parameters.AddWithValue("@cep", cep);
-                                cmdPerfil.Parameters.AddWithValue("@numero", numero);
-                                cmdPerfil.Parameters.AddWithValue("@endereco", endereco);
-                                cmdPerfil.Parameters.AddWithValue("@complemento", complemento);
-                                cmdPerfil.Parameters.AddWithValue("@transporte", entrega);
-
-                                cmdPerfil.ExecuteNonQuery();
-                            }
-                        }
+                            Nome = nome,
+                            CNPJ = cnpj,
+                            Email = email,
+                            Senha = senhaHasheada,
+                            Telefone = telefone,
+                            CEP = cep,
+                            Numero = numero,
+                            Endereco = endereco,
+                            Complemento = complemento,
+                            Transporte = entrega
+                        });
 
                         MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();

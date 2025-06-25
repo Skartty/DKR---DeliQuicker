@@ -478,7 +478,7 @@
             this.MinimizeBox = false;
             this.Name = "TelaUsuarioCons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaUsuarioCons";
+            this.Text = "DeliQuicker";
             this.PainelSairCons.ResumeLayout(false);
             this.PainelSairCons.PerformLayout();
             this.ResumeLayout(false);

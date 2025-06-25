@@ -34,6 +34,14 @@ namespace ProjetoDKR.Model
         public string Complemento { get; set; }
         public bool Entrega { get; set; }
 
+        public CadastroCons CadastroCons
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public List<string> Validar()
         {
             var erros = new List<string>();

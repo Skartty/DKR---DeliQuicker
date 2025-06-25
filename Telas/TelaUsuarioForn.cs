@@ -33,6 +33,14 @@ namespace ProjetoDKR
             CarregarDadosPerfil(_perfilForn);
         }
 
+        public TelaLogin TelaLogin
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void CarregarDadosPerfil(PerfilForn perfilForn)
         {
             txtNomeForn.Text = perfilForn.RazaoSocial.Trim().Length > 28
@@ -160,8 +168,8 @@ namespace ProjetoDKR
             try
             {
                 DialogResult resultado = MessageBox.Show(
-                    "Deseja realmente sair do programa?",
-                    "Confirmação de Saída",
+                    "Deseja realmente exluir a conta?",
+                    "Confirmação de Exclusão",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                 );

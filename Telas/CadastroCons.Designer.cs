@@ -541,7 +541,7 @@
             this.MinimizeBox = false;
             this.Name = "CadastroCons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadastroCons";
+            this.Text = "DeliQuicker";
             this.panelCons.ResumeLayout(false);
             this.panelCons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

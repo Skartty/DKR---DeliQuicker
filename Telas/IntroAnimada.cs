@@ -20,6 +20,14 @@ namespace ProjetoDKR
             InitializeComponent();
         }
 
+        public TelaLogin TelaLogin
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void IntroAnimada_Load(object sender, EventArgs e)
         {
             timer = new Timer();

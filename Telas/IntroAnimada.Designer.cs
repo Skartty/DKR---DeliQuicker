@@ -42,7 +42,7 @@
             this.MinimizeBox = false;
             this.Name = "IntroAnimada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "IntroAnimada";
+            this.Text = "DeliQuicker";
             this.Load += new System.EventHandler(this.IntroAnimada_Load);
             this.ResumeLayout(false);
 
