@@ -86,6 +86,7 @@
             this.ImgProd.Location = new System.Drawing.Point(4, 3);
             this.ImgProd.Name = "ImgProd";
             this.ImgProd.Size = new System.Drawing.Size(44, 42);
+            this.ImgProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImgProd.TabIndex = 20;
             this.ImgProd.TabStop = false;
             // 

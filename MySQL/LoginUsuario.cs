@@ -1,29 +1,63 @@
-﻿using ProjetoDKR.Entidades;
+﻿using MySql.Data.MySqlClient;
+using ProjetoDKR.Entidades;
 using ProjetoDKR.Model;
+using System;
+using System.Configuration;
 
 namespace ProjetoDKR.MySQL
 {
     public class LoginUsuario
     {
-        public LoginUsuario()
-        {
-            
-        }
+            private string _connectionString;
 
-        public Login BuscaLoginUsuario(UserLogin user)
-        {
-            //Banco Fictício de Login de Usuários
-            /*
-            List<Login> list = new List<Login>();
-            list.Add(new Login() { Id = 1, Senha = "123", Usuario = "Usuario.Teste@gmail.com", Tipo = "Consumidor" });
-            list.Add(new Login() { Id = 2, Senha = "321", Usuario = "Usuario.Teste2@gmail.com", Tipo = "Fornecedor" });
-
-            if(list.Any(a => a.Usuario == user.Email && a.Senha == user.Senha))
+            public LoginUsuario()
             {
-                return list.Where(w =>  w.Usuario == user.Email && w.Senha == user.Senha).First();
+                _connectionString = ConfigurationManager.ConnectionStrings["projeto_dkr"].ConnectionString;
             }
-            */
-            return null;
+
+            public Login BuscaLoginUsuario(UserLogin user)
+            {
+                Login login = null;
+
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(_connectionString))
+                    {
+                        conn.Open();
+
+                        string query = @"SELECT id, usuario, senha, tipo
+                                     FROM login
+                                     WHERE usuario = @usuario AND senha = @senha";
+
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@usuario", user.Email);
+                            cmd.Parameters.AddWithValue("@senha", user.Senha); // cuidado: senha em texto puro!
+
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    login = new Login
+                                    {
+                                        Id = reader.GetInt32("id"),
+                                        Usuario = reader.GetString("usuario"),
+                                        Senha = reader.GetString("senha"),
+                                        Tipo = reader.GetString("tipo")
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao buscar login: " + ex.Message);
+                }
+
+                return login;
+
+            }
         }
     }
-}
+

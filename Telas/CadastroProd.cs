@@ -1,4 +1,5 @@
 ﻿using ProjetoDKR.Entidades;
+using ProjetoDKR.MySQL;
 using System;
 using System.Drawing;
 using System.IO;
@@ -9,16 +10,19 @@ namespace ProjetoDKR
     public partial class CadastroProd : Form
     {
         private readonly int _idForn;
-        public CadastroProd(int idForn)
+        private readonly int _idLogin;
+        public CadastroProd(int idLogin)
         {
             InitializeComponent();
-            _idForn = idForn;
+            Perfil perfilForn = new Perfil();
+            _idForn = perfilForn.BuscarPerfilForn(idLogin).Id;
+            _idLogin = idLogin;
         }
 
         private void iconPerfilForn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idForn);
+            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
             telaUsuarioForn.Show();
         }
 
@@ -48,32 +52,45 @@ namespace ProjetoDKR
                 return;
             }
 
-            Produto novoProduto = new Produto
+            try
             {
-                IdForn = _idForn,
-                Categoria = CBCategoriaProd.Text,
-                NomeProduto = BoxNomeProd.Text,
-                Validade = BoxValidadeProd.Text,
-                Quantidade = Convert.ToInt32(BoxQtdProd.Text),
-                Descricao = BoxDescricaoProd.Text
-            };
-
-            if (ImgAddProd.Image != null)
-            {
-                using (MemoryStream ms = new MemoryStream())
+                Produto novoProduto = new Produto
                 {
-                    ImgAddProd.Image.Save(ms, ImgAddProd.Image.RawFormat);
-                    novoProduto.Imagem = ms.ToArray();
-                }
-            }
+                    IdForn = _idForn,
+                    Categoria = CBCategoriaProd.Text,
+                    NomeProduto = BoxNomeProd.Text,
+                    Validade = BoxValidadeProd.Text,
+                    Quantidade = Convert.ToInt32(BoxQtdProd.Text),
+                    Descricao = BoxDescricaoProd.Text
+                };
 
-            // Aqui você pode adicionar a lógica para salvar o novo produto no banco de dados ou em outro local
-        }
+                if (ImgAddProd.Image != null)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        ImgAddProd.Image.Save(ms, ImgAddProd.Image.RawFormat);
+                        novoProduto.Imagem = ms.ToArray();
+                    }
+                }
+                Produtos prod = new Produtos();
+                prod.InserirProduto(novoProduto);
+
+                MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Hide();
+                TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
+                telaUsuarioForn.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao salvar o produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }                    
 
         private void txtCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idForn);
+            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
             telaUsuarioForn.Show();
         }
 

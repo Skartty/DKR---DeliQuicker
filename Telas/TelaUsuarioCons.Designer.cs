@@ -57,6 +57,9 @@
             this.MostrarSenhaOng = new System.Windows.Forms.Label();
             this.IconMenuCons = new System.Windows.Forms.Label();
             this.PainelSairCons = new System.Windows.Forms.Panel();
+            this.lineCons = new System.Windows.Forms.Label();
+            this.IconExcluirCons = new System.Windows.Forms.Label();
+            this.txtExcluirCons = new System.Windows.Forms.Label();
             this.IconSairCons = new System.Windows.Forms.Label();
             this.txtSairCons = new System.Windows.Forms.Label();
             this.PainelSairCons.SuspendLayout();
@@ -253,6 +256,8 @@
             // 
             this.RBSimCons1.AutoSize = true;
             this.RBSimCons1.BackColor = System.Drawing.Color.Transparent;
+            this.RBSimCons1.Checked = true;
+            this.RBSimCons1.Enabled = false;
             this.RBSimCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBSimCons1.Location = new System.Drawing.Point(40, 458);
             this.RBSimCons1.Name = "RBSimCons1";
@@ -266,6 +271,7 @@
             // 
             this.RBNaoCons1.AutoSize = true;
             this.RBNaoCons1.BackColor = System.Drawing.Color.Transparent;
+            this.RBNaoCons1.Enabled = false;
             this.RBNaoCons1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBNaoCons1.Location = new System.Drawing.Point(129, 458);
             this.RBNaoCons1.Name = "RBNaoCons1";
@@ -371,17 +377,51 @@
             // 
             this.PainelSairCons.BackColor = System.Drawing.Color.White;
             this.PainelSairCons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PainelSairCons.Controls.Add(this.lineCons);
+            this.PainelSairCons.Controls.Add(this.IconExcluirCons);
+            this.PainelSairCons.Controls.Add(this.txtExcluirCons);
             this.PainelSairCons.Controls.Add(this.IconSairCons);
             this.PainelSairCons.Controls.Add(this.txtSairCons);
             this.PainelSairCons.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PainelSairCons.Location = new System.Drawing.Point(219, 102);
             this.PainelSairCons.Name = "PainelSairCons";
-            this.PainelSairCons.Size = new System.Drawing.Size(142, 32);
+            this.PainelSairCons.Size = new System.Drawing.Size(142, 68);
             this.PainelSairCons.TabIndex = 38;
+            // 
+            // lineCons
+            // 
+            this.lineCons.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lineCons.Image = ((System.Drawing.Image)(resources.GetObject("lineCons.Image")));
+            this.lineCons.Location = new System.Drawing.Point(6, 27);
+            this.lineCons.Name = "lineCons";
+            this.lineCons.Size = new System.Drawing.Size(104, 15);
+            this.lineCons.TabIndex = 7;
+            // 
+            // IconExcluirCons
+            // 
+            this.IconExcluirCons.BackColor = System.Drawing.Color.Transparent;
+            this.IconExcluirCons.Cursor = System.Windows.Forms.Cursors.Default;
+            this.IconExcluirCons.Image = ((System.Drawing.Image)(resources.GetObject("IconExcluirCons.Image")));
+            this.IconExcluirCons.Location = new System.Drawing.Point(113, 40);
+            this.IconExcluirCons.Name = "IconExcluirCons";
+            this.IconExcluirCons.Size = new System.Drawing.Size(20, 20);
+            this.IconExcluirCons.TabIndex = 6;
+            // 
+            // txtExcluirCons
+            // 
+            this.txtExcluirCons.AutoSize = true;
+            this.txtExcluirCons.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExcluirCons.Location = new System.Drawing.Point(3, 40);
+            this.txtExcluirCons.Name = "txtExcluirCons";
+            this.txtExcluirCons.Size = new System.Drawing.Size(87, 19);
+            this.txtExcluirCons.TabIndex = 5;
+            this.txtExcluirCons.Text = "Excluir Conta";
+            this.txtExcluirCons.Click += new System.EventHandler(this.txtExcluirCons_Click);
             // 
             // IconSairCons
             // 
             this.IconSairCons.BackColor = System.Drawing.Color.Transparent;
+            this.IconSairCons.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.IconSairCons.Image = ((System.Drawing.Image)(resources.GetObject("IconSairCons.Image")));
             this.IconSairCons.Location = new System.Drawing.Point(114, 7);
             this.IconSairCons.Name = "IconSairCons";
@@ -478,5 +518,8 @@
         private System.Windows.Forms.Panel PainelSairCons;
         private System.Windows.Forms.Label IconSairCons;
         private System.Windows.Forms.Label txtSairCons;
+        private System.Windows.Forms.Label lineCons;
+        private System.Windows.Forms.Label IconExcluirCons;
+        private System.Windows.Forms.Label txtExcluirCons;
     }
 }

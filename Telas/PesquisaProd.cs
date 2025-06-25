@@ -2,6 +2,7 @@
 using ProjetoDKR.Entidades;
 using ProjetoDKR.Model;
 using ProjetoDKR.MySQL;
+using ProjetoDKR.Utilidade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,27 +39,59 @@ namespace ProjetoDKR
 
             if (!string.IsNullOrEmpty(tipo))
             {
-                if(tipo == "Consumidor")
+                try
                 {
-                    listaProd = produtosSql.BuscarListaProdutos();
+                    if (tipo == "Consumidor")
+                    {
+                        listaProd = produtosSql.BuscarListaProdutos();
 
-                    _produtoMercado = listaProd.Where(w => w.Categoria == "Mercado").ToList();
-                    _produtoHortifrutti = listaProd.Where(w => w.Categoria == "Hortifrutti").ToList();
-                    _produtoRestaurante = listaProd.Where(w => w.Categoria == "Restaurante").ToList();
+                        _produtoMercado = listaProd.Where(w => w.Categoria == "Mercado").ToList();
+                        _produtoHortifrutti = listaProd.Where(w => w.Categoria == "Hortifrutti").ToList();
+                        _produtoRestaurante = listaProd.Where(w => w.Categoria == "Restaurante").ToList();
 
-                    CarregarProduto(listaProd);
+                        CarregarProduto(listaProd);
+                    }
+                    else if (tipo == "Fornecedor")
+                    {
+                        txtFiltroMercado.Visible = false;
+                        txtFiltroHortifrutti.Visible = false;
+                        txtFiltroRestaurante.Text = "   Produtos";
+                        txtFiltroRestaurante.Enabled = false;
+
+                        _produtoFornecedor = produtosSql.BuscarListaProdutoForn(perfilForn.Id);
+                        listaProd = _produtoFornecedor;
+
+                        CarregarProduto(_produtoFornecedor);
+                    }
                 }
-                else if(tipo == "Fornecedor")
+                catch (ArgumentException ex)
                 {
-                    txtFiltroMercado.Visible = false;
-                    txtFiltroHortifrutti.Visible = false;
-                    txtFiltroRestaurante.Text = "   Produtos";
-                    txtFiltroRestaurante.Enabled = false;
-
-                    _produtoFornecedor = produtosSql.BuscarListaProdutoForn(perfilForn.Id);
-
-                    CarregarProduto(_produtoFornecedor);
+                    Console.WriteLine($"Erro de argumentos passados em parametros. \nERRO: {ex.Message}");
                 }
+                catch (Exception ex)
+                {
+                    int idPerfil = 0;
+                    string nomePerfil = string.Empty;
+                    if (_perfilCons != null)
+                    {
+                        idPerfil = _perfilCons.Id;
+                        nomePerfil = _perfilCons.Nome;
+                    }
+                    else if (_perfilForn != null)
+                    {
+                        idPerfil = _perfilForn.Id;
+                        nomePerfil = _perfilForn.RazaoSocial;
+                    }
+
+                    DialogResult resultado = MessageBox.Show(
+                        "Não foi possível carregar produtos",
+                        "Erro interno!",
+                        MessageBoxButtons.OK
+                        );
+                    // no future, considerar um logging para a exception
+                    Console.WriteLine($"Não foi possível carregar produtos para o perfil {idPerfil} - {nomePerfil}. \nERRO: {ex.Message}");
+                }
+                
             }
         }
 
@@ -95,7 +128,17 @@ namespace ProjetoDKR
         {
             if(!string.IsNullOrEmpty(BoxPesquisaProd.Text))
             {
-                List<Produto> listaRef = produtosSql.BuscarListaProdutos(BoxPesquisaProd.Text);
+                List<Produto> listaRef = new List<Produto>();
+                if (_perfilForn != null && _perfilForn.Id != 0)
+                {
+                    List<Produto> listaForn = new List<Produto>();
+                    listaForn = produtosSql.BuscarListaProdutoForn(_perfilForn.Id);
+                    listaRef = listaForn.Where(w => RemoverAcentos.Remover(w.NomeProduto.ToLower()).Contains(RemoverAcentos.Remover(BoxPesquisaProd.Text.ToLower()).Trim())).ToList();
+                }
+                else
+                {
+                    listaRef = produtosSql.BuscarListaProdutos(RemoverAcentos.Remover(BoxPesquisaProd.Text.Trim()));
+                }
 
                 if(listaRef.Count == 0)
                 {
@@ -105,7 +148,6 @@ namespace ProjetoDKR
                     MessageBoxButtons.OK
                     );
 
-                    BoxPesquisaProd.Text = string.Empty;
                     CarregarProduto(listaProd);
                 }
                 else
@@ -117,6 +159,8 @@ namespace ProjetoDKR
             {
                 CarregarProduto(listaProd);
             }
+
+            BoxPesquisaProd.Text = string.Empty;
 
             txtFiltroMercado.ForeColor = System.Drawing.Color.Black;
             txtFiltroRestaurante.ForeColor = System.Drawing.Color.Black;
@@ -163,13 +207,13 @@ namespace ProjetoDKR
             if (_perfilCons != null)
             {
                 this.Hide();
-                TelaUsuarioCons telaUsuarioCons = new TelaUsuarioCons(_perfilCons.Id);
+                TelaUsuarioCons telaUsuarioCons = new TelaUsuarioCons(_perfilCons.IdLogin);
                 telaUsuarioCons.Show();
             }
             else if (_perfilForn != null)
             {
                 this.Hide();
-                TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_perfilForn.Id);
+                TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_perfilForn.IdLogin);
                 telaUsuarioForn.Show();
             }
         }
