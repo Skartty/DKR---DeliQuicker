@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaUsuarioForn));
             this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditarForn = new System.Windows.Forms.Button();
             this.RBNaoForn1 = new System.Windows.Forms.RadioButton();
             this.RBSimForn1 = new System.Windows.Forms.RadioButton();
             this.txtPossuiForn1 = new System.Windows.Forms.Label();
@@ -79,20 +79,20 @@
             this.label22.Size = new System.Drawing.Size(18, 18);
             this.label22.TabIndex = 30;
             // 
-            // button1
+            // btnEditarForn
             // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.Location = new System.Drawing.Point(287, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 27);
-            this.button1.TabIndex = 29;
-            this.button1.Text = " Editar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditarForn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditarForn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarForn.Font = new System.Drawing.Font("Zen Maru Gothic Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarForn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnEditarForn.Location = new System.Drawing.Point(287, 105);
+            this.btnEditarForn.Name = "btnEditarForn";
+            this.btnEditarForn.Size = new System.Drawing.Size(73, 27);
+            this.btnEditarForn.TabIndex = 29;
+            this.btnEditarForn.Text = " Editar";
+            this.btnEditarForn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarForn.UseVisualStyleBackColor = false;
+            this.btnEditarForn.Click += new System.EventHandler(this.btnEditarForn_Click);
             // 
             // RBNaoForn1
             // 
@@ -509,15 +509,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(390, 844);
-            this.Controls.Add(this.IconMenuForn);
             this.Controls.Add(this.PainelSairForn);
+            this.Controls.Add(this.IconMenuForn);
             this.Controls.Add(this.MostrarSenhaForn);
             this.Controls.Add(this.iconBuscaForn);
             this.Controls.Add(this.iconPerfilForn);
             this.Controls.Add(this.btnCadastrarProd);
             this.Controls.Add(this.btnMeusProd);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEditarForn);
             this.Controls.Add(this.RBNaoForn1);
             this.Controls.Add(this.RBSimForn1);
             this.Controls.Add(this.txtPossuiForn1);
@@ -558,7 +558,7 @@
         #endregion
 
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditarForn;
         private System.Windows.Forms.RadioButton RBNaoForn1;
         private System.Windows.Forms.RadioButton RBSimForn1;
         private System.Windows.Forms.Label txtPossuiForn1;

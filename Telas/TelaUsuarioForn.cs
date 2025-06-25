@@ -78,33 +78,14 @@ namespace ProjetoDKR
                 RBNaoForn1.Checked = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEditarForn_Click(object sender, EventArgs e)
         {
-            EditarForn editarForn = new EditarForn
-            {
-                Editar = true,
-                Perfil = _perfilForn
-            };
+            this.Hide();
+            EditarForn editarForn = new EditarForn();
+            editarForn.Editar = true;
+            editarForn.Perfil = _perfilForn;
 
             CadastroForn cadastroForn = new CadastroForn(editarForn);
-
-            cadastroForn.FormClosed += (s, args) =>
-            {
-                Perfil perfilRepo = new Perfil();
-                var perfilAtualizado = perfilRepo.BuscarPerfilForn(_perfilForn.IdLogin);
-
-                if (perfilAtualizado == null)
-                {
-                    MessageBox.Show("Erro: Perfil atualizado não encontrado.");
-                    Application.Exit();
-                    return;
-                }
-
-                TelaUsuarioForn novaTela = new TelaUsuarioForn(perfilAtualizado.IdLogin);
-                novaTela.Show();
-            };
-
-            this.Close(); 
             cadastroForn.Show();
         }
 
