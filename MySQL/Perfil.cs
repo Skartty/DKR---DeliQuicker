@@ -1,8 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DeliQuicker.Utilidades;
+using MySql.Data.MySqlClient;
 using ProjetoDKR.Entidades;
 using System;
 using System.Configuration;
+using System.Runtime.ConstrainedExecution;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace ProjetoDKR.MySQL
@@ -51,6 +54,56 @@ namespace ProjetoDKR.MySQL
             }
             return perfil;
         }
+
+        public void InserirPerfil(PerfilCons perfil)
+        {
+            try
+            {                                              
+                Conexao conexao = new Conexao();
+
+                using (MySqlConnection conn = conexao.Abrir())
+                {
+                    string sqlLogin = @"INSERT INTO login (usuario, senha, tipo)
+                                                VALUES (@usuario, @senha, 'Consumidor');
+                                                SELECT LAST_INSERT_ID();";
+
+                    int idLogin;
+                    using (MySqlCommand cmdLogin = new MySqlCommand(sqlLogin, conn))
+                    {
+                        cmdLogin.Parameters.AddWithValue("@usuario", perfil.Email);
+                        cmdLogin.Parameters.AddWithValue("@senha", perfil.Senha);
+                        idLogin = Convert.ToInt32(cmdLogin.ExecuteScalar());
+                    }
+
+                    string sqlPerfil = @"INSERT INTO perfil_cons 
+                                (id_login, nome, cnpj, email, senha, telefone, cep, numero, endereco, complemento, transporte)
+                                VALUES
+                                (@idLogin, @nome, @cnpj, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @transporte);";
+
+                    using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
+                    {
+                        cmdPerfil.Parameters.AddWithValue("@idLogin", idLogin);
+                        cmdPerfil.Parameters.AddWithValue("@nome", perfil.Nome);
+                        cmdPerfil.Parameters.AddWithValue("@cnpj", perfil.CNPJ);
+                        cmdPerfil.Parameters.AddWithValue("@email", perfil.Email);
+                        cmdPerfil.Parameters.AddWithValue("@senha", perfil.Senha);
+                        cmdPerfil.Parameters.AddWithValue("@telefone", perfil.Telefone);
+                        cmdPerfil.Parameters.AddWithValue("@cep", perfil.CEP);
+                        cmdPerfil.Parameters.AddWithValue("@numero", perfil.Numero);
+                        cmdPerfil.Parameters.AddWithValue("@endereco", perfil.Endereco);
+                        cmdPerfil.Parameters.AddWithValue("@complemento", perfil.Complemento);
+                        cmdPerfil.Parameters.AddWithValue("@transporte", perfil.Transporte);
+
+                        cmdPerfil.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("Erro ao inserir perfil do consumidor: " + ex.Message);
+            }
+        }
+
         public void EditarPerfilCons(PerfilCons perfil)
         {
             try

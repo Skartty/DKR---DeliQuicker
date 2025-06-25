@@ -153,7 +153,7 @@
             this.MinimizeBox = false;
             this.Name = "PesquisaProd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PesquisaProd";
+            this.Text = "DeliQuicker";
             this.ResumeLayout(false);
             this.PerformLayout();
 

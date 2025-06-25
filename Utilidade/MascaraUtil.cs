@@ -3,6 +3,46 @@ using System.Windows.Forms;
 
 public static class MascaraUtil
 {
+    public static ProjetoDKR.CadastroForn CadastroForn
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
+    public static ProjetoDKR.CadastroProd CadastroProd
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
+    public static ProjetoDKR.CadastroCons CadastroCons
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
+    public static ProjetoDKR.TelaUsuarioCons TelaUsuarioCons
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
+    public static ProjetoDKR.TelaUsuarioForn TelaUsuarioForn
+    {
+        get => default;
+        set
+        {
+        }
+    }
+
     public static void AplicarMascaraCEP(TextBox textBox)
     {
         string numeros = Regex.Replace(textBox.Text, @"\D", ""); 

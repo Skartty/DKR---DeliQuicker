@@ -1,4 +1,5 @@
 ﻿using ProjetoDKR.Model;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -27,12 +28,19 @@ namespace ProjetoDKR.Components
                         
             txtQuant.Text = produto.Quantidade.ToString("D2");
 
-            if (produto.Imagem != null && produto.Imagem.Length > 0)
+            try
             {
-                using (MemoryStream ms = new MemoryStream(produto.Imagem))
+                if (produto.Imagem != null && produto.Imagem.Length > 0)
                 {
-                    ImgProd.Image = Image.FromStream(ms);
+                    using (MemoryStream ms = new MemoryStream(produto.Imagem))
+                    {
+                        ImgProd.Image = Image.FromStream(ms);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar imagem: " + ex.Message);
             }
         }
     }

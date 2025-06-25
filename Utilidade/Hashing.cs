@@ -13,6 +13,30 @@ namespace DeliQuicker.Utilidades
         private const int HashSize = 20;
         private const int Iterations = 10000;
 
+        public static ProjetoDKR.TelaLogin TelaLogin
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static ProjetoDKR.TelaUsuarioCons TelaUsuarioCons
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static ProjetoDKR.TelaUsuarioForn TelaUsuarioForn
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static string HashPassword(string password)
         {
             byte[] salt;
@@ -58,6 +82,14 @@ namespace DeliQuicker.Utilidades
         // Deve ser guardada em local seguro, como Azure Key Vault ou variáveis de ambiente
         private static readonly string chave = "ChaveUltraSecreta123"; // Deve ter 16, 24 ou 32 bytes
 
+        public static ProjetoDKR.MySQL.Conexao Conexao
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static string Criptografar(string texto)
         {
             using (Aes aes = Aes.Create())
@@ -82,7 +114,7 @@ namespace DeliQuicker.Utilidades
         {
             string senhaDesc = Descriptografar(storedHash);
 
-            if(password == senhaDesc)
+            if (password == senhaDesc)
             {
                 return true;
             }

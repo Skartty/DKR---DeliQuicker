@@ -6,5 +6,13 @@ namespace ProjetoDKR.Model
     {
         public bool Editar { get; set; }
         public PerfilForn Perfil { get; set; }
+
+        public TelaUsuarioForn TelaUsuarioForn
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

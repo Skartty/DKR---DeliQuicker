@@ -38,6 +38,14 @@ namespace ProjetoDKR.Model
         public bool Entrega { get; set; }
         public string Categoria { get; set; }
 
+        public CadastroForn CadastroForn
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public List<string> Validar()
         {
             var erros = new List<string>();

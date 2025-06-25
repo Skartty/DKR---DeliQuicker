@@ -184,7 +184,7 @@
             this.MinimizeBox = false;
             this.Name = "TelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaLogin";
+            this.Text = "DeliQuicker";
             this.ResumeLayout(false);
             this.PerformLayout();
 

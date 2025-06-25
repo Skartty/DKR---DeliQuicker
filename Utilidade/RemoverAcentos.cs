@@ -5,6 +5,14 @@ namespace ProjetoDKR.Utilidade
 {
     public static class RemoverAcentos
     {
+        public static PesquisaProd PesquisaProd
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static string Remover(string texto)
         {
             if (string.IsNullOrEmpty(texto))

@@ -95,6 +95,22 @@ namespace ProjetoDKR
             }
         }
 
+        public TelaUsuarioCons TelaUsuarioCons
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public TelaUsuarioForn TelaUsuarioForn
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void CarregarProduto(List<Produto> listProd)
         {
             List<ProdutoModel> produtoModels = new List<ProdutoModel>();

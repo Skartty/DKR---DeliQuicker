@@ -16,5 +16,13 @@
         public string Complemento { get; set; }
         public string Categoria { get; set; }
         public bool Transporte { get; set; }
+
+        public Model.CadastroFornModel CadastroFornModel
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

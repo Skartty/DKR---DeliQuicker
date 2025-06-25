@@ -304,6 +304,7 @@
             this.MinimizeBox = false;
             this.Name = "CadastroProd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DeliQuicker";
             ((System.ComponentModel.ISupportInitialize)(this.ImgAddProd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

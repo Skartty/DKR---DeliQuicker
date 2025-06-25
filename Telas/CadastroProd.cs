@@ -19,6 +19,14 @@ namespace ProjetoDKR
             _idLogin = idLogin;
         }
 
+        public TelaUsuarioForn TelaUsuarioForn
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void iconPerfilForn_Click(object sender, EventArgs e)
         {
             this.Hide();

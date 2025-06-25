@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProjetoDKR.Components.ProdutoItem">
+    <Position X="15.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACRAABAAAACAAAACAQAAEAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Components\ProdutoItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MascaraUtil">
+    <Position X="18.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBAABAAAAAEAEAAAAQAAAUgACYAAAAAABAAAQAAAAAA=</HashCode>
+      <FileName>Utilidade\MascaraUtil.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CadastroForn" />
+      <Property Name="CadastroProd" />
+      <Property Name="CadastroCons" />
+      <Property Name="TelaUsuarioCons" />
+      <Property Name="TelaUsuarioForn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Entidades.Login">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAAAAAAQAAAAAAACAAAAAAAAAEAAAAAAQ=</HashCode>
+      <FileName>Entidades\Login.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoginUsuario" />
+      <Property Name="Perfil" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Entidades.PerfilCons">
+    <Position X="30.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAgCBAACAAAAAAAAAAACAIAAAAAAAAAAEJEAA=</HashCode>
+      <FileName>Entidades\PerfilCons.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CadastroConsModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Entidades.PerfilForn">
+    <Position X="9.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgKBAACAgAAEAAAAAECAIAAAAAAAAAAAJEAA=</HashCode>
+      <FileName>Entidades\PerfilForn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CadastroFornModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Entidades.Produto">
+    <Position X="18.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABBIAgAAAAAIAAAAAAABAAAAAQAAAAAEA=</HashCode>
+      <FileName>Entidades\Produto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProdutoItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Model.CadastroConsModel">
+    <Position X="27.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAgCFAACAAAAAAAgAAACAIAQAAAAAAAAEBEAA=</HashCode>
+      <FileName>Modelo\CadastroConsModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CadastroCons" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Model.CadastroFornModel">
+    <Position X="12.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAAAAAgCBAACAgAAEAAgAAECAIAQAAAAAAAAABEAA=</HashCode>
+      <FileName>Modelo\CadastroFornModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CadastroForn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Model.EditarCons">
+    <Position X="21.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Modelo\EditarCons.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaUsuarioCons" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Model.EditarForn">
+    <Position X="21.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Modelo\EditarForn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaUsuarioForn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Model.ProdutoModel">
+    <Position X="15.25" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABBIAAAAAAAIAAAAAAABAAAAAQAAAAAAA=</HashCode>
+      <FileName>Modelo\ProdutoModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProdutoItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Model.UserLogin">
+    <Position X="14.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\UserLogin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoginUsuario" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.MySQL.Conexao">
+    <Position X="21.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhBABEAAAAEAEAEAAAAAAAAAAQAAAAAAAAAAAAAQAQA=</HashCode>
+      <FileName>MySQL\Conexao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaLogin" />
+      <Property Name="CadastroForn" />
+      <Property Name="CadastroCons" />
+      <Property Name="CadastroProd" />
+      <Property Name="PesquisaProd" />
+      <Property Name="TelaUsuarioCons" />
+      <Property Name="TelaUsuarioForn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.MySQL.LoginUsuario">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAA=</HashCode>
+      <FileName>MySQL\LoginUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoDKR.MySQL.Perfil">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABARAAAAAAAAAAAQAAAAAgAAAAAAAAAIAQAAAAIAAAA=</HashCode>
+      <FileName>MySQL\Perfil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoDKR.MySQL.Produtos">
+    <Position X="12.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAABAAAAAAAAAAAAAIAAAAAAAQQAA=</HashCode>
+      <FileName>MySQL\Produtos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PesquisaProd" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.CadastroCons" Collapsed="true">
+    <Position X="24.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgCIKFREBCChADBgAgCCAAdCAEEAAAIUKwAAEAxYjQA=</HashCode>
+      <FileName>Telas\CadastroCons.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaLogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.CadastroForn" Collapsed="true">
+    <Position X="18.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>J4KQigBQADUCABjARICKAAACwEUSQyCCQQAACIIFQYA=</HashCode>
+      <FileName>Telas\CadastroForn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaLogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.CadastroProd" Collapsed="true">
+    <Position X="24.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAhIACAAABgAJICCSkAKCYAQASAAAAAAAIEIAAI=</HashCode>
+      <FileName>Telas\CadastroProd.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaUsuarioForn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.IntroAnimada" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAECAAAABAAACAAAACAIAAAAAAABAAABAAAQA=</HashCode>
+      <FileName>Telas\IntroAnimada.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaLogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.PesquisaProd" Collapsed="true">
+    <Position X="18.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACgACQCCoBEAIACACAAAASBwABAABAAAFAAMAAIIA=</HashCode>
+      <FileName>Telas\PesquisaProd.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaUsuarioCons" />
+      <Property Name="TelaUsuarioForn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.TelaLogin" Collapsed="true">
+    <Position X="18.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAgCAEEEACCAAAhAAACAAAAiABAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Telas\TelaLogin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserLogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.LoginDAL">
+    <Position X="11.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Telas\TelaLogin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoginUsuario" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.TelaUsuarioCons" Collapsed="true">
+    <Position X="21.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cYBQAmAAQSIwIQABIACENMBCIAwIEBLkAAIAAABACUA=</HashCode>
+      <FileName>Telas\TelaUsuarioCons.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaLogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.TelaUsuarioForn" Collapsed="true">
+    <Position X="21.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cCGCJCBIQGCCyAgECiCCQAASAAAKMAQJA2ABAAAEQUQ=</HashCode>
+      <FileName>Telas\TelaUsuarioForn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaLogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DeliQuicker.Utilidades.BancoInitializer">
+    <Position X="24.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Utilidade\BancoInitializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Conexao" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DeliQuicker.Utilidades.CriptografiaSimples" Collapsed="true">
+    <Position X="21.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEEAAAgAACAAIAAQAAAAAAAAAAAABAAQA=</HashCode>
+      <FileName>Utilidade\Hashing.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaLogin" />
+      <Property Name="TelaUsuarioCons" />
+      <Property Name="TelaUsuarioForn" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DeliQuicker.Utilidades.Hashing">
+    <Position X="18.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAgAACEAIAAAAAAAAAgAAAAABBAAA=</HashCode>
+      <FileName>Utilidade\Hashing.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Conexao" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProjetoDKR.Utilidade.RemoverAcentos">
+    <Position X="15.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Utilidade\RemoverAcentos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PesquisaProd" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
