@@ -52,19 +52,19 @@ namespace ProjetoDKR
         {
             if (_editarForn != null && _editarForn.Editar)
             {
-                _editarForn.Perfil.CNPJ = BoxCNPJForn.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-                _editarForn.Perfil.RazaoSocial = BoxRazaoForn.Text;
-                _editarForn.Perfil.NomeFantasia = BoxNomeForn.Text;
+                _editarForn.Perfil.CNPJ = BoxCNPJForn.Text.Trim().Replace(".", "").Replace("/", "").Replace("-", "");
+                _editarForn.Perfil.RazaoSocial = BoxRazaoForn.Text.Trim();
+                _editarForn.Perfil.NomeFantasia = BoxNomeForn.Text.Trim();
                 _editarForn.Perfil.Email = BoxEmailForn.Text.Trim();
-                _editarForn.Perfil.Telefone = new string(BoxTelForn.Text.Where(char.IsDigit).ToArray());
-                _editarForn.Perfil.CEP = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
-                _editarForn.Perfil.Numero = BoxNumForn.Text;
-                _editarForn.Perfil.Endereco = BoxEndForn.Text;
-                _editarForn.Perfil.Complemento = BoxComplForn.Text;
-                _editarForn.Perfil.Categoria = CBCategoria.Text;
+                _editarForn.Perfil.Telefone = new string(BoxTelForn.Text.Trim().Where(char.IsDigit).ToArray());
+                _editarForn.Perfil.CEP = BoxCEPForn.Text.Trim().Replace(".", "").Replace("-", "");
+                _editarForn.Perfil.Numero = BoxNumForn.Text.Trim();
+                _editarForn.Perfil.Endereco = BoxEndForn.Text.Trim();
+                _editarForn.Perfil.Complemento = BoxComplForn.Text.Trim();
+                _editarForn.Perfil.Categoria = CBCategoria.Text.Trim();
                 _editarForn.Perfil.Transporte = RBSimForn.Checked;
 
-                if (!string.IsNullOrWhiteSpace(BoxSenhaForn.Text))
+                if (!string.IsNullOrWhiteSpace(BoxSenhaForn.Text.Trim()))
                 {
                     if (BoxSenhaForn.Text.Trim() == BoxConfirmForn.Text.Trim())
                     {
@@ -86,18 +86,18 @@ namespace ProjetoDKR
             }
             else
             {
-                string cnpj = BoxCNPJForn.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-                string razaoSocial = BoxRazaoForn.Text;
-                string nomeFantasia = BoxNomeForn.Text;
+                string cnpj = BoxCNPJForn.Text.Trim().Replace(".", "").Replace("/", "").Replace("-", "");
+                string razaoSocial = BoxRazaoForn.Text.Trim();
+                string nomeFantasia = BoxNomeForn.Text.Trim();
                 string email = BoxEmailForn.Text.Trim();
                 string senha = BoxSenhaForn.Text.Trim();
                 string confirmSenha = BoxConfirmForn.Text.Trim();
-                string telefone = BoxTelForn.Text.Replace("(", "").Replace(")", "").Replace("-", "");
-                string cep = BoxCEPForn.Text.Replace(".", "").Replace("-", "");
-                string numero = BoxNumForn.Text;
-                string endereco = BoxEndForn.Text;
-                string complemento = BoxComplForn.Text;
-                string categoria = CBCategoria.Text;
+                string telefone = BoxTelForn.Text.Trim().Replace("(", "").Replace(")", "").Replace("-", "");
+                string cep = BoxCEPForn.Text.Trim().Replace(".", "").Replace("-", "");
+                string numero = BoxNumForn.Text.Trim();
+                string endereco = BoxEndForn.Text.Trim();
+                string complemento = BoxComplForn.Text.Trim();
+                string categoria = CBCategoria.Text.Trim();
                 bool entrega = false;
 
                 if (RBSimForn.Checked == true)

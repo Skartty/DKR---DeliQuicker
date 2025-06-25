@@ -52,17 +52,17 @@ namespace ProjetoDKR
         {
             if (_editarCons != null && _editarCons.Editar)
             {
-                _editarCons.Perfil.Nome = BoxNomeOng.Text;
-                _editarCons.Perfil.CNPJ = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-                _editarCons.Perfil.Telefone = new string(BoxTelOng.Text.Where(char.IsDigit).ToArray());
+                _editarCons.Perfil.Nome = BoxNomeOng.Text.Trim();
+                _editarCons.Perfil.CNPJ = BoxCNPJOng.Text.Trim().Replace(".", "").Replace("/", "").Replace("-", "");
+                _editarCons.Perfil.Telefone = new string(BoxTelOng.Text.Trim().Where(char.IsDigit).ToArray());
                 _editarCons.Perfil.Email = BoxEmailOng.Text.Trim();
-                _editarCons.Perfil.CEP = BoxCEPOng.Text.Replace(".", "").Replace("-", "");
-                _editarCons.Perfil.Numero = BoxNumOng.Text;
-                _editarCons.Perfil.Endereco = BoxEndOng.Text;
-                _editarCons.Perfil.Complemento = BoxComplOng.Text;
+                _editarCons.Perfil.CEP = BoxCEPOng.Text.Trim().Replace(".", "").Replace("-", "");
+                _editarCons.Perfil.Numero = BoxNumOng.Text.Trim();
+                _editarCons.Perfil.Endereco = BoxEndOng.Text.Trim();
+                _editarCons.Perfil.Complemento = BoxComplOng.Text.Trim();
                 _editarCons.Perfil.Transporte = RBSimOng.Checked;
 
-                if (!string.IsNullOrWhiteSpace(BoxSenhaOng.Text))
+                if (!string.IsNullOrWhiteSpace(BoxSenhaOng.Text.Trim()))
                 {
                     if (BoxSenhaOng.Text.Trim() == BoxConfirmOng.Text.Trim())
                     {
@@ -84,16 +84,16 @@ namespace ProjetoDKR
             }
             else
             {
-                string nome = BoxNomeOng.Text;
-                string cnpj = BoxCNPJOng.Text.Replace(".", "").Replace("/", "").Replace("-", "");
-                string telefone = BoxTelOng.Text.Replace("(", "").Replace(")", "").Replace("-", "");
+                string nome = BoxNomeOng.Text.Trim();
+                string cnpj = BoxCNPJOng.Text.Trim().Replace(".", "").Replace("/", "").Replace("-", "");
+                string telefone = BoxTelOng.Text.Trim().Replace("(", "").Replace(")", "").Replace("-", "");
                 string email = BoxEmailOng.Text.Trim();
                 string senha = BoxSenhaOng.Text.Trim();
                 string confirmSenha = BoxConfirmOng.Text.Trim();
                 string cep = BoxCEPOng.Text.Replace(".", "").Replace("-", "");
-                string numero = BoxNumOng.Text;
-                string endereco = BoxEndOng.Text;
-                string complemento = BoxComplOng.Text;
+                string numero = BoxNumOng.Text.Trim();
+                string endereco = BoxEndOng.Text.Trim();
+                string complemento = BoxComplOng.Text.Trim();
                 bool entrega = false;
 
                 if (RBSimOng.Checked == true)

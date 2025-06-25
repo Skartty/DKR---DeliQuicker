@@ -35,7 +35,10 @@ namespace ProjetoDKR
 
         private void CarregarDadosPerfil(PerfilForn perfilForn)
         {
-            txtNomeForn.Text = perfilForn.RazaoSocial;
+            txtNomeForn.Text = perfilForn.RazaoSocial.Trim().Length > 28
+                ? perfilForn.RazaoSocial.Trim().Substring(0, 28).Trim() + "..."
+                : perfilForn.RazaoSocial.Trim();
+
             txtCNPJForn2.Text = MascaraUtil.AplicarMascaraCNPJTexto(perfilForn.CNPJ);
             txtNomeFan2.Text = perfilForn.NomeFantasia;
             txtEmailForn2.Text = perfilForn.Email;
@@ -150,6 +153,29 @@ namespace ProjetoDKR
             {
                 Application.Exit();
             }
+        }
+
+        private void txtExcluirForn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "Deseja realmente sair do programa?",
+                    "Confirmação de Saída",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    _perfil.ExcluirPerfilForn(_perfilForn);
+                    Application.Exit();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao tentar excluir o perfil do usuario.");
+            }            
         }
     }
 }

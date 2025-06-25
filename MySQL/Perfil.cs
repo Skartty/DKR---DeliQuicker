@@ -51,8 +51,6 @@ namespace ProjetoDKR.MySQL
             }
             return perfil;
         }
-
-
         public void EditarPerfilCons(PerfilCons perfil)
         {
             try
@@ -102,6 +100,31 @@ namespace ProjetoDKR.MySQL
             }
         }
 
+        public void ExcluirPerfilCons(PerfilCons perfil)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"DELETE FROM login WHERE id = @idLogin";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idLogin", perfil.IdLogin);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao deletar o perfil do consumidor: " + ex.Message);
+            }
+        }
+
+
 
         public PerfilForn BuscarPerfilForn(int idLogin)
         {
@@ -140,9 +163,6 @@ namespace ProjetoDKR.MySQL
             }
             return perfil;
         }
-
-
-
         public void EditarPerfilForn(PerfilForn perfil)
         {
             try
@@ -192,6 +212,30 @@ namespace ProjetoDKR.MySQL
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao atualizar o perfil do fornecedor: " + ex.Message);
+            }
+        }
+
+        public void ExcluirPerfilForn(PerfilForn perfil)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"DELETE FROM login WHERE id = @idLogin";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idLogin", perfil.IdLogin);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao deletar o perfil do fornecedor: " + ex.Message);
             }
         }
     }

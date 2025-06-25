@@ -48,47 +48,53 @@ namespace ProjetoDKR.MySQL
         public List<Produto> BuscarListaProdutos(string referencia = null)
         {
             List<Produto> produtos = new List<Produto>();
-
-            using (MySqlConnection conn = new MySqlConnection(_connectionString))
+            try
             {
-                conn.Open();
-
-                string sql = @"SELECT * FROM produto";
-
-                if (!string.IsNullOrEmpty(referencia))
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
-                    sql += " WHERE nome_produto LIKE @referencia";
-                }
+                    conn.Open();
 
-                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-                {
+                    string sql = @"SELECT * FROM produto";
+
                     if (!string.IsNullOrEmpty(referencia))
                     {
-                        cmd.Parameters.AddWithValue("@referencia", "%" + referencia + "%");
+                        sql += " WHERE nome_produto LIKE @referencia";
                     }
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                     {
-                        while (reader.Read())
+                        if (!string.IsNullOrEmpty(referencia))
                         {
-                            Produto produto = new Produto
-                            {
-                                Id = reader.GetInt32("id"),
-                                IdForn = reader.GetInt32("id_forn"),
-                                NomeProduto = reader.GetString("nome_produto"),
-                                Categoria = reader.GetString("categoria"),
-                                Validade = reader.GetDateTime("validade").ToString("yyyy-MM-dd"),
-                                Quantidade = reader.GetInt32("quantidade"),
-                                Descricao = reader.GetString("descricao"),
-                                Imagem = reader["imagem"] != DBNull.Value ? (byte[])reader["imagem"] : null
-                            };
+                            cmd.Parameters.AddWithValue("@referencia", "%" + referencia + "%");
+                        }
 
-                            produtos.Add(produto);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Produto produto = new Produto
+                                {
+                                    Id = reader.GetInt32("id"),
+                                    IdForn = reader.GetInt32("id_forn"),
+                                    NomeProduto = reader.GetString("nome_produto"),
+                                    Categoria = reader.GetString("categoria"),
+                                    Validade = reader.GetDateTime("validade").ToString("yyyy-MM-dd"),
+                                    Quantidade = reader.GetInt32("quantidade"),
+                                    Descricao = reader.GetString("descricao"),
+                                    Imagem = reader["imagem"] != DBNull.Value ? (byte[])reader["imagem"] : null
+                                };
+
+                                produtos.Add(produto);
+                            }
                         }
                     }
                 }
             }
-
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
             return produtos;
         }
 

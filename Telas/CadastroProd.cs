@@ -52,31 +52,40 @@ namespace ProjetoDKR
                 return;
             }
 
-            Produto novoProduto = new Produto
+            try
             {
-                IdForn = _idForn,
-                Categoria = CBCategoriaProd.Text,
-                NomeProduto = BoxNomeProd.Text,
-                Validade = BoxValidadeProd.Text,
-                Quantidade = Convert.ToInt32(BoxQtdProd.Text),
-                Descricao = BoxDescricaoProd.Text
-            };
-
-            if (ImgAddProd.Image != null)
-            {
-                using (MemoryStream ms = new MemoryStream())
+                Produto novoProduto = new Produto
                 {
-                    ImgAddProd.Image.Save(ms, ImgAddProd.Image.RawFormat);
-                    novoProduto.Imagem = ms.ToArray();
-                }
-            }
-            Produtos prod = new Produtos();
-            prod.InserirProduto(novoProduto);
+                    IdForn = _idForn,
+                    Categoria = CBCategoriaProd.Text,
+                    NomeProduto = BoxNomeProd.Text,
+                    Validade = BoxValidadeProd.Text,
+                    Quantidade = Convert.ToInt32(BoxQtdProd.Text),
+                    Descricao = BoxDescricaoProd.Text
+                };
 
-            this.Hide();
-            TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
-            telaUsuarioForn.Show();
-        }
+                if (ImgAddProd.Image != null)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        ImgAddProd.Image.Save(ms, ImgAddProd.Image.RawFormat);
+                        novoProduto.Imagem = ms.ToArray();
+                    }
+                }
+                Produtos prod = new Produtos();
+                prod.InserirProduto(novoProduto);
+
+                MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Hide();
+                TelaUsuarioForn telaUsuarioForn = new TelaUsuarioForn(_idLogin);
+                telaUsuarioForn.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao salvar o produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }                    
 
         private void txtCancelar_Click(object sender, EventArgs e)
         {

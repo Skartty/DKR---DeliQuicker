@@ -61,6 +61,9 @@
             this.iconPerfilForn = new System.Windows.Forms.Label();
             this.MostrarSenhaForn = new System.Windows.Forms.Label();
             this.PainelSairForn = new System.Windows.Forms.Panel();
+            this.lineForn = new System.Windows.Forms.Label();
+            this.IconExcluirForn = new System.Windows.Forms.Label();
+            this.txtExcluirForn = new System.Windows.Forms.Label();
             this.IconSairForn = new System.Windows.Forms.Label();
             this.txtSairForn = new System.Windows.Forms.Label();
             this.IconMenuForn = new System.Windows.Forms.Label();
@@ -95,6 +98,7 @@
             // 
             this.RBNaoForn1.AutoSize = true;
             this.RBNaoForn1.BackColor = System.Drawing.Color.Transparent;
+            this.RBNaoForn1.Enabled = false;
             this.RBNaoForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBNaoForn1.Location = new System.Drawing.Point(127, 546);
             this.RBNaoForn1.Name = "RBNaoForn1";
@@ -108,6 +112,7 @@
             this.RBSimForn1.AutoSize = true;
             this.RBSimForn1.BackColor = System.Drawing.Color.Transparent;
             this.RBSimForn1.Checked = true;
+            this.RBSimForn1.Enabled = false;
             this.RBSimForn1.Font = new System.Drawing.Font("Zen Maru Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBSimForn1.Location = new System.Drawing.Point(40, 546);
             this.RBSimForn1.Name = "RBSimForn1";
@@ -425,17 +430,51 @@
             // 
             this.PainelSairForn.BackColor = System.Drawing.Color.White;
             this.PainelSairForn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PainelSairForn.Controls.Add(this.lineForn);
+            this.PainelSairForn.Controls.Add(this.IconExcluirForn);
+            this.PainelSairForn.Controls.Add(this.txtExcluirForn);
             this.PainelSairForn.Controls.Add(this.IconSairForn);
             this.PainelSairForn.Controls.Add(this.txtSairForn);
             this.PainelSairForn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PainelSairForn.Location = new System.Drawing.Point(218, 99);
             this.PainelSairForn.Name = "PainelSairForn";
-            this.PainelSairForn.Size = new System.Drawing.Size(142, 32);
+            this.PainelSairForn.Size = new System.Drawing.Size(142, 68);
             this.PainelSairForn.TabIndex = 35;
+            // 
+            // lineForn
+            // 
+            this.lineForn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lineForn.Image = ((System.Drawing.Image)(resources.GetObject("lineForn.Image")));
+            this.lineForn.Location = new System.Drawing.Point(6, 27);
+            this.lineForn.Name = "lineForn";
+            this.lineForn.Size = new System.Drawing.Size(104, 15);
+            this.lineForn.TabIndex = 4;
+            // 
+            // IconExcluirForn
+            // 
+            this.IconExcluirForn.BackColor = System.Drawing.Color.Transparent;
+            this.IconExcluirForn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.IconExcluirForn.Image = ((System.Drawing.Image)(resources.GetObject("IconExcluirForn.Image")));
+            this.IconExcluirForn.Location = new System.Drawing.Point(113, 40);
+            this.IconExcluirForn.Name = "IconExcluirForn";
+            this.IconExcluirForn.Size = new System.Drawing.Size(20, 20);
+            this.IconExcluirForn.TabIndex = 3;
+            // 
+            // txtExcluirForn
+            // 
+            this.txtExcluirForn.AutoSize = true;
+            this.txtExcluirForn.Font = new System.Drawing.Font("Zen Maru Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExcluirForn.Location = new System.Drawing.Point(3, 40);
+            this.txtExcluirForn.Name = "txtExcluirForn";
+            this.txtExcluirForn.Size = new System.Drawing.Size(87, 19);
+            this.txtExcluirForn.TabIndex = 2;
+            this.txtExcluirForn.Text = "Excluir Conta";
+            this.txtExcluirForn.Click += new System.EventHandler(this.txtExcluirForn_Click);
             // 
             // IconSairForn
             // 
             this.IconSairForn.BackColor = System.Drawing.Color.Transparent;
+            this.IconSairForn.Cursor = System.Windows.Forms.Cursors.Default;
             this.IconSairForn.Image = ((System.Drawing.Image)(resources.GetObject("IconSairForn.Image")));
             this.IconSairForn.Location = new System.Drawing.Point(114, 7);
             this.IconSairForn.Name = "IconSairForn";
@@ -553,5 +592,8 @@
         private System.Windows.Forms.Label txtSairForn;
         private System.Windows.Forms.Label IconSairForn;
         private System.Windows.Forms.Label IconMenuForn;
+        private System.Windows.Forms.Label txtExcluirForn;
+        private System.Windows.Forms.Label lineForn;
+        private System.Windows.Forms.Label IconExcluirForn;
     }
 }
