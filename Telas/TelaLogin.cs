@@ -17,14 +17,6 @@ namespace ProjetoDKR
             this.AcceptButton = btnEntrar;
         }
 
-        public UserLogin UserLogin
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(BoxUsername.Text) || string.IsNullOrWhiteSpace(BoxSenha.Text))

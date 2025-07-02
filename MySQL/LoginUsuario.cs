@@ -58,6 +58,52 @@ namespace ProjetoDKR.MySQL
             return login;
 
         }
+        public bool BuscaLoginExistente(string email)
+        {
+            Login login = null;
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
+                {
+                    conn.Open();
+
+                    string query = @"SELECT id, usuario, senha, tipo
+                                     FROM login
+                                     WHERE usuario = @usuario";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario", email);                        
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                login = new Login
+                                {
+                                    Id = reader.GetInt32("id"),
+                                    Usuario = reader.GetString("usuario"),
+                                    Senha = reader.GetString("senha"),
+                                    Tipo = reader.GetString("tipo")
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            if (login == null)
+            {
+                return false;
+            }
+            
+            return true;
+        }
 
     }
 }

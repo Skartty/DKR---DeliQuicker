@@ -216,6 +216,59 @@ namespace ProjetoDKR.MySQL
             }
             return perfil;
         }
+
+        public void InserirPerfilForn(PerfilForn perfil)
+        {
+            try
+            {
+
+                Conexao conexao = new Conexao();
+                using (MySqlConnection conn = conexao.Abrir())
+                {
+                    string sqlLogin = @"INSERT INTO login (usuario, senha, tipo)
+                                                VALUES (@usuario, @senha, 'Fornecedor');
+                                                SELECT LAST_INSERT_ID();";
+
+                    int idLogin;
+                    using (MySqlCommand cmdLogin = new MySqlCommand(sqlLogin, conn))
+                    {
+                        cmdLogin.Parameters.AddWithValue("@usuario", perfil.Email);
+                        cmdLogin.Parameters.AddWithValue("@senha", perfil.Senha);
+                        idLogin = Convert.ToInt32(cmdLogin.ExecuteScalar());
+                    }
+
+                    string sqlPerfil = @"INSERT INTO perfil_forn 
+                                (id_login, cnpj, razao_social, nome_fantasia, email, senha, telefone, cep, numero, endereco, complemento, categoria, transporte)
+                                VALUES
+                                (@idLogin, @cnpj, @razao, @fantasia, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @categoria, @transporte);";
+
+                    using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
+                    {
+                        cmdPerfil.Parameters.AddWithValue("@idLogin", idLogin);
+                        cmdPerfil.Parameters.AddWithValue("@cnpj", perfil.CNPJ);
+                        cmdPerfil.Parameters.AddWithValue("@razao", perfil.RazaoSocial);
+                        cmdPerfil.Parameters.AddWithValue("@fantasia", perfil.NomeFantasia);
+                        cmdPerfil.Parameters.AddWithValue("@email", perfil.Email);
+                        cmdPerfil.Parameters.AddWithValue("@senha", perfil.Senha);
+                        cmdPerfil.Parameters.AddWithValue("@telefone", perfil.Telefone);
+                        cmdPerfil.Parameters.AddWithValue("@cep", perfil.CEP);
+                        cmdPerfil.Parameters.AddWithValue("@numero", perfil.Numero);
+                        cmdPerfil.Parameters.AddWithValue("@endereco", perfil.Endereco);
+                        cmdPerfil.Parameters.AddWithValue("@complemento", perfil.Complemento);
+                        cmdPerfil.Parameters.AddWithValue("@categoria", perfil.Categoria);
+                        cmdPerfil.Parameters.AddWithValue("@transporte", perfil.Transporte);
+
+                        cmdPerfil.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception("Erro ao inserir perfil do fornecedor: " + ex.Message);
+            }
+        }
+
+
         public void EditarPerfilForn(PerfilForn perfil)
         {
             try

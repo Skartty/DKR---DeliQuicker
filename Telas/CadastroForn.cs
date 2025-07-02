@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DeliQuicker.Utilidades;
+using ProjetoDKR.Entidades;
 
 namespace ProjetoDKR
 {
@@ -31,14 +32,6 @@ namespace ProjetoDKR
             else
             {
                 RBNaoForn.Checked = true;
-            }
-        }
-
-        public TelaLogin TelaLogin
-        {
-            get => default;
-            set
-            {
             }
         }
 
@@ -184,57 +177,60 @@ namespace ProjetoDKR
                 {
                     try
                     {
-                        string senhaHasheada = Hashing.Criptografar(senha);
+                        LoginUsuario loginExistente = new LoginUsuario();
+                        
+                        bool exist = loginExistente.BuscaLoginExistente(email);
 
-                        this.Hide();
-                        Conexao conexao = new Conexao();
-
-                        using (MySqlConnection conn = conexao.Abrir())
+                        if(!exist)
                         {
-                            string sqlLogin = @"INSERT INTO login (usuario, senha, tipo)
-                                                VALUES (@usuario, @senha, 'Fornecedor');
-                                                SELECT LAST_INSERT_ID();";
+                            this.Hide();
+                            Conexao conexao = new Conexao();
 
-                            int idLogin;
-                            using (MySqlCommand cmdLogin = new MySqlCommand(sqlLogin, conn))
+                            PerfilForn novoPerfil = new PerfilForn
                             {
-                                cmdLogin.Parameters.AddWithValue("@usuario", email);
-                                cmdLogin.Parameters.AddWithValue("@senha", senhaHasheada);
-                                idLogin = Convert.ToInt32(cmdLogin.ExecuteScalar());
-                            }
+                                CNPJ = cnpj,
+                                RazaoSocial = razaoSocial,
+                                NomeFantasia = nomeFantasia,
+                                Email = email,
+                                Senha = Hashing.Criptografar(senha),
+                                Telefone = telefone,
+                                CEP = cep,
+                                Numero = numero,
+                                Endereco = endereco,
+                                Complemento = complemento,
+                                Transporte = entrega,
+                                Categoria = categoria
+                            };
 
-                            string sqlPerfil = @"INSERT INTO perfil_forn 
-                                (id_login, cnpj, razao_social, nome_fantasia, email, senha, telefone, cep, numero, endereco, complemento, categoria, transporte)
-                                VALUES
-                                (@idLogin, @cnpj, @razao, @fantasia, @email, @senha, @telefone, @cep, @numero, @endereco, @complemento, @categoria, @transporte);";
+                            Perfil perfil = new Perfil();
 
-                            using (MySqlCommand cmdPerfil = new MySqlCommand(sqlPerfil, conn))
-                            {
-                                cmdPerfil.Parameters.AddWithValue("@idLogin", idLogin);
-                                cmdPerfil.Parameters.AddWithValue("@cnpj", cnpj);
-                                cmdPerfil.Parameters.AddWithValue("@razao", razaoSocial);
-                                cmdPerfil.Parameters.AddWithValue("@fantasia", nomeFantasia);
-                                cmdPerfil.Parameters.AddWithValue("@email", email);
-                                cmdPerfil.Parameters.AddWithValue("@senha", senhaHasheada);
-                                cmdPerfil.Parameters.AddWithValue("@telefone", telefone);
-                                cmdPerfil.Parameters.AddWithValue("@cep", cep);
-                                cmdPerfil.Parameters.AddWithValue("@numero", numero);
-                                cmdPerfil.Parameters.AddWithValue("@endereco", endereco);
-                                cmdPerfil.Parameters.AddWithValue("@complemento", complemento);
-                                cmdPerfil.Parameters.AddWithValue("@categoria", categoria);
-                                cmdPerfil.Parameters.AddWithValue("@transporte", entrega);
+                            perfil.InserirPerfilForn(novoPerfil);
 
-                                cmdPerfil.ExecuteNonQuery();
-                            }
+                            MessageBox.Show("Cadastro de fornecedor realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            new TelaLogin().Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel cadastrar este usuário", "Usuário ja cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            this.Hide();
+                            TelaLogin telaLogin = new TelaLogin();
+                            telaLogin.Show();
                         }
 
-                        MessageBox.Show("Cadastro de fornecedor realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                        new TelaLogin().Show();
                     }
                     catch (MySqlException ex)
                     {
                         MessageBox.Show("Erro ao cadastrar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Não foi possivel cadastrar este usuário", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        this.Hide();
+                        TelaLogin telaLogin = new TelaLogin();
+                        telaLogin.Show();
                     }
                 }
             }

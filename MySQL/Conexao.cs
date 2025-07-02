@@ -18,62 +18,6 @@ namespace ProjetoDKR.MySQL
             conexaoString = ConfigurationManager.ConnectionStrings["projeto_dkr"].ConnectionString;
         }
 
-        public TelaLogin TelaLogin
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public CadastroForn CadastroForn
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public CadastroCons CadastroCons
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public CadastroProd CadastroProd
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public PesquisaProd PesquisaProd
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public TelaUsuarioCons TelaUsuarioCons
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public TelaUsuarioForn TelaUsuarioForn
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         public MySqlConnection Abrir()
         {
             conexao = new MySqlConnection(conexaoString);

@@ -33,14 +33,6 @@ namespace ProjetoDKR
             CarregarDadosPerfil(_perfilForn);
         }
 
-        public TelaLogin TelaLogin
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         private void CarregarDadosPerfil(PerfilForn perfilForn)
         {
             txtNomeForn.Text = perfilForn.RazaoSocial.Trim().Length > 28

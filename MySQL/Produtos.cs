@@ -15,13 +15,6 @@ namespace ProjetoDKR.MySQL
             _connectionString = ConfigurationManager.ConnectionStrings["projeto_dkr"].ConnectionString;
         }
 
-        public PesquisaProd PesquisaProd
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
         public void InserirProduto(Produto produto)
         {

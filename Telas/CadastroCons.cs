@@ -36,14 +36,6 @@ namespace ProjetoDKR
             }
         }
 
-        public TelaLogin TelaLogin
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         private void txtVoltarOng_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -178,30 +170,54 @@ namespace ProjetoDKR
                     {
                         string senhaHasheada = Hashing.Criptografar(senha);
 
-                        this.Hide();                        
+                        LoginUsuario loginExistente = new LoginUsuario();
 
-                        Perfil perfil = new Perfil();
-                        perfil.InserirPerfil(new PerfilCons
+                        bool exist = loginExistente.BuscaLoginExistente(email.Trim());
+
+                        if(!exist)
                         {
-                            Nome = nome,
-                            CNPJ = cnpj,
-                            Email = email,
-                            Senha = senhaHasheada,
-                            Telefone = telefone,
-                            CEP = cep,
-                            Numero = numero,
-                            Endereco = endereco,
-                            Complemento = complemento,
-                            Transporte = entrega
-                        });
+                            this.Hide();
 
-                        MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                        new TelaLogin().Show();
+                            Perfil perfil = new Perfil();
+                            perfil.InserirPerfil(new PerfilCons
+                            {
+                                Nome = nome,
+                                CNPJ = cnpj,
+                                Email = email,
+                                Senha = senhaHasheada,
+                                Telefone = telefone,
+                                CEP = cep,
+                                Numero = numero,
+                                Endereco = endereco,
+                                Complemento = complemento,
+                                Transporte = entrega
+                            });
+
+                            MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            new TelaLogin().Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel cadastrar este usuário", "Usuário ja cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            this.Hide();
+                            TelaLogin telaLogin = new TelaLogin();
+                            telaLogin.Show();
+                        }
+
                     }
                     catch (MySqlException ex)
                     {
                         MessageBox.Show("Erro ao cadastrar: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Não foi possivel cadastrar este usuário", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        this.Hide();
+                        TelaLogin telaLogin = new TelaLogin();
+                        telaLogin.Show();
                     }
                 }
             }

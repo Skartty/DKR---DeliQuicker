@@ -25,14 +25,6 @@ namespace ProjetoDKR
             CarregarDadosPerfil(_perfilCons);
         }
 
-        public TelaLogin TelaLogin
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         private void CarregarDadosPerfil(PerfilCons perfilCons)
         {
             txtNomeUC.Text = perfilCons.Nome.Trim().Length > 28

@@ -88,26 +88,10 @@ namespace ProjetoDKR
                         "Erro interno!",
                         MessageBoxButtons.OK
                         );
-                    // no future, considerar um logging para a exception
+                    
                     Console.WriteLine($"Não foi possível carregar produtos para o perfil {idPerfil} - {nomePerfil}. \nERRO: {ex.Message}");
                 }
                 
-            }
-        }
-
-        public TelaUsuarioCons TelaUsuarioCons
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public TelaUsuarioForn TelaUsuarioForn
-        {
-            get => default;
-            set
-            {
             }
         }
 
